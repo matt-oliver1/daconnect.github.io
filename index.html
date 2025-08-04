@@ -923,6 +923,13 @@ window.addEventListener('scroll', function() {
       <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">PRICING</span>
       <h2 class="fw-bold mb-4">Simple, Transparent <span class="text-secondary">Pricing</span></h2>
       <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your business needs. No hidden fees, cancel anytime.</p>
+      <div class="pricing-toggle d-flex justify-content-center align-items-center my-4">
+        <span class="me-3 fw-medium pricing-period active" data-period="monthly">Monthly</span>
+        <div class="form-check form-switch mx-2">
+          <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
+        </div>
+        <span class="ms-3 fw-medium pricing-period" data-period="yearly">Yearly</span>
+      </div>
       <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
     </div>
     
@@ -934,8 +941,8 @@ window.addEventListener('scroll', function() {
             <div>
               <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Basic</h5>
               <div class="d-flex align-items-end mb-4">
-                <span class="display-5 fw-bold" style="color: var(--primary-color);">$99</span>
-                <span class="text-muted ms-2">/month</span>
+                <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$99" data-yearly="$999">$99</span>
+                <span class="text-muted ms-2 period">/month</span>
               </div>
               <p class="text-muted mb-4">Perfect for individuals and small businesses getting started</p>
               <ul class="list-unstyled mb-4">
@@ -963,7 +970,7 @@ window.addEventListener('scroll', function() {
       </div>
       
       <!-- Standard Plan -->
-      <!-- <div class="col-md-6 col-lg-3 mb-4">
+      <div class="col-md-6 col-lg-3 mb-4">
         <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card" style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
           <div class="card-body p-4 d-flex flex-column h-100 position-relative">
             <div class="position-absolute top-0 end-0 m-3">
@@ -972,8 +979,8 @@ window.addEventListener('scroll', function() {
             <div>
               <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Standard</h5>
               <div class="d-flex align-items-end mb-4">
-                <span class="display-5 fw-bold" style="color: var(--primary-color);">$199</span>
-                <span class="text-muted ms-2">/month</span>
+                <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$299" data-yearly="$2999">$299</span>
+                <span class="text-muted ms-2 period">/month</span>
               </div>
               <p class="text-muted mb-4">Ideal for growing businesses<br><br></p>
               <ul class="list-unstyled mb-4">
@@ -998,7 +1005,7 @@ window.addEventListener('scroll', function() {
             <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto" style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get Started</a>
           </div>
         </div>
-      </div>-->
+      </div>
       
       <!-- Professional Plan -->
        <!-- <div class="col-md-6 col-lg-3 mb-4">
@@ -1522,5 +1529,6 @@ window.addEventListener('scroll', function() {
       updateActiveLink();
     });
   </script>
+  <script src="js/pricing-toggle.js"></script>
 </body>
 </html>
