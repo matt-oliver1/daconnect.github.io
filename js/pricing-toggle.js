@@ -89,7 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSubscriptionLinks(isYearly) {
     subscriptionLinks.forEach(link => {
       const plan = link.dataset.plan;
-      const occurrence = isYearly ? 'yearly' : 'monthly';
+      // Force Exclusive plan to always use yearly occurrence regardless of toggle
+      const occurrence = plan === 'exclusive' ? 'yearly' : (isYearly ? 'yearly' : 'monthly');
       link.href = `https://app.data-scraping.com/subscription?plan=${plan}&occurrence=${occurrence}`;
     });
   }
