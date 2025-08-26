@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const button = card.querySelector('.btn');
       
       if (button) {
-        if (title === 'Basic') {
+        if (title === 'Standard') {
           basicButton = button;
-        } else if (title === 'Standard') {
+        } else if (title === 'Exclusive') {
           standardButton = button;
         } else if (title === 'Enterprise') {
           enterpriseButton = button;
@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (basicButton) {
     basicButton.classList.add('subscription-link');
-    basicButton.dataset.plan = 'basic';
+    basicButton.dataset.plan = 'standard';
   }
   
   if (standardButton) {
     standardButton.classList.add('subscription-link');
-    standardButton.dataset.plan = 'standard';
+    standardButton.dataset.plan = 'exclusive';
   }
   
   // Enterprise button should not be affected by the pricing toggle
