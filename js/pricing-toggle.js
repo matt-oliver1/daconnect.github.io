@@ -5,37 +5,42 @@ document.addEventListener('DOMContentLoaded', function() {
   const prices = document.querySelectorAll('.price');
   const periods = document.querySelectorAll('.period');
   
-  // Find all pricing buttons and add data-plan attribute
-  // Using a more compatible approach to find the buttons
-  const cards = document.querySelectorAll('.card');
-  let basicButton, standardButton, enterpriseButton;
-  
-  cards.forEach(card => {
-    const titleElement = card.querySelector('.fw-bold');
-    if (titleElement) {
-      const title = titleElement.textContent.trim();
-      const button = card.querySelector('.btn');
-      
-      if (button) {
-        if (title === 'Standard') {
-          basicButton = button;
-        } else if (title === 'Exclusive') {
-          standardButton = button;
-        } else if (title === 'Enterprise') {
-          enterpriseButton = button;
-        }
-      }
+  // Build app.<root-domain> dynamically from current hostname
+  function getRootDomain(hostname) {
+    if (!hostname) return '';
+    if (hostname === 'localhost' || /^(\d+\.){3}\d+$/.test(hostname)) return hostname;
+    const parts = hostname.split('.');
+    if (parts.length >= 3 && parts.slice(-2).join('.') === 'com.au') {
+      return parts.slice(-3).join('.');
     }
-  });
-  
-  if (basicButton) {
-    basicButton.classList.add('subscription-link');
-    basicButton.dataset.plan = 'standard';
+    return parts.slice(-2).join('.');
   }
+  function getAppBaseUrl() {
+    const protocol = window.location.protocol === 'http:' ? 'http:' : 'https:';
+    const root = getRootDomain(window.location.hostname);
+    return `${protocol}//app.${root}`;
+  }
+  const appBaseUrl = getAppBaseUrl();
+  
+  // Robustly locate the Standard and Exclusive plan buttons by card content
+  // Standard: the card with a dynamic price span having data-monthly/data-yearly
+  const standardPriceEl = document.querySelector('#pricing .pricing-card .price');
+  const standardCard = standardPriceEl ? standardPriceEl.closest('.pricing-card') : null;
+  const standardButton = standardCard ? standardCard.querySelector('.btn') : null;
+
+  // Exclusive: the card that contains the Exclusive image
+  const exclusiveMarker = document.querySelector('#pricing .pricing-card img[alt="DAconnect Exclusive"]');
+  const exclusiveCard = exclusiveMarker ? exclusiveMarker.closest('.pricing-card') : null;
+  const exclusiveButton = exclusiveCard ? exclusiveCard.querySelector('.btn') : null;
   
   if (standardButton) {
     standardButton.classList.add('subscription-link');
-    standardButton.dataset.plan = 'exclusive';
+    standardButton.dataset.plan = 'list';
+  }
+  
+  if (exclusiveButton) {
+    exclusiveButton.classList.add('subscription-link');
+    exclusiveButton.dataset.plan = 'exclusive';
   }
   
   // Enterprise button should not be affected by the pricing toggle
@@ -91,7 +96,25 @@ document.addEventListener('DOMContentLoaded', function() {
       const plan = link.dataset.plan;
       // Force Exclusive plan to always use yearly occurrence regardless of toggle
       const occurrence = plan === 'exclusive' ? 'yearly' : (isYearly ? 'yearly' : 'monthly');
-      link.href = `https://app.data-scraping.com/subscription?plan=${plan}&occurrence=${occurrence}`;
+      // Use JS redirect function if available; otherwise, fall back to direct URL
+      // Prevent duplicate listeners when toggling pricing
+      if (!link.dataset.subscriptionBound) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Compute current values at click time to avoid stale closures
+          const currentPlan = this.dataset.plan;
+          const isYearlyNow = currentPlan === 'exclusive' ? true : (!!pricingToggle && !!pricingToggle.checked);
+          const currentOccurrence = isYearlyNow ? 'yearly' : 'monthly';
+          if (typeof window.redirectToSubscription === 'function') {
+            window.redirectToSubscription({ plan: currentPlan, occurrence: currentOccurrence });
+          } else {
+            window.location.href = `${appBaseUrl}/subscription?plan=${currentPlan}&occurrence=${currentOccurrence}`;
+          }
+        });
+        link.dataset.subscriptionBound = '1';
+      }
+      // Also set href for accessibility and as a non-JS fallback
+      link.href = `${appBaseUrl}/subscription?plan=${plan}&occurrence=${occurrence}`;
     });
   }
 });

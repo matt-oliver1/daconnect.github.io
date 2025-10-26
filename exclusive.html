@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DAconnect Exclusive — Sample Flyer</title>
+
+  <!-- Fonts (match your site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#262626;
+      --card-bg:#fff;
+      --accent:#d6a83a;
+      --muted:#4a5568;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:48px 20px;
+    }
+
+    /* Flyer container */
+    .flyer{
+      width: 560px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      padding: 28px 32px 32px 32px;
+      color:#222;
+    }
+
+    /* Top logo + address */
+    .flyer .logo{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:12px;
+      margin-top:12px;
+    }
+    .flyer .logo img{height:74px; object-fit:contain}
+    .address{
+      text-align:center;
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    /* Heading */
+    .title{
+      text-align:center;
+      font-weight:800;
+      font-size:28px;
+      line-height:1.08;
+      letter-spacing:-0.01em;
+      margin:8px 0 10px 0;
+      color:#2b3338;
+    }
+
+    .subtitle{
+      text-align:center;
+      font-size:15px;
+      color:var(--muted);
+      margin:0 auto 22px auto;
+      max-width:420px;
+      line-height:1.4;
+    }
+
+    /* grid of small profile cards: 2 cols x 3 rows */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap:26px;
+      row-gap:26px;
+      margin-top:6px;
+      width:100%;
+    }
+
+    .card{
+      box-sizing:border-box;
+      background:none;
+      border:none;
+      border-radius:0;
+      box-shadow:none;
+      margin-bottom:0;
+      width:100%;
+    }
+
+    .card img {
+      width:100%;
+      height:auto;
+      object-fit:fill;
+      display:block;
+      border-radius:0;
+      border:1px solid #d1d5db;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background:#fff;
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+    .card img:hover{
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      transform: translateY(-1px);
+    }
+
+    .card .card-head{
+      height:44px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 10px;
+      font-weight:700;
+      color:#0f1720;
+    }
+
+    /* small logo square in header */
+    .card .logo-box{
+      width:34px;
+      height:34px;
+      border-radius:4px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.04);
+      font-size:12px;
+      color:#fff;
+    }
+
+    /* different header colours to mimic screenshot variety */
+    .card.head-blue .logo-box{background:#cfeef6}
+    .card.head-green .logo-box{background:#e8f4e6}
+    .card.head-peach .logo-box{background:#f6e8e6}
+    .card.head-yellow .logo-box{background:#fbf6df}
+    .card.head-lightblue .logo-box{background:#e6f6f9}
+    .card.head-gray .logo-box{background:#efefef}
+
+    .card .card-body{
+      padding:10px 12px;
+      font-size:12px;
+      color:#25303a;
+      overflow:hidden;
+    }
+
+    .biz-name{
+      font-weight:700;
+      font-size:13px;
+      margin-bottom:6px;
+    }
+    .biz-role{font-size:12px; color:var(--muted); margin-bottom:6px}
+    .biz-details{font-size:11px; color:#334; line-height:1.2}
+
+    /* Disclosure styling */
+    .disclosure{
+      margin-top:28px;
+      padding-top:18px;
+      font-size:13px;
+      color:#525f6b;
+      line-height:1.55;
+      border-top:1px solid #e5e7eb;
+    }
+    .disclosure strong{color:#2b3338}
+    .disclosure a{color:#0ea5e9; text-decoration:underline}
+
+    /* single column on small screens */
+    @media (max-width:560px){
+      .flyer{width:100%; max-width:420px; padding:20px}
+      .cards{grid-template-columns: 1fr; column-gap:0; row-gap:16px}
+      .card{height:auto}
+      .flyer .logo img{height:64px}
+    }
+
+    /* Print styles */
+    @media print{
+      @page { size: A4; margin: 12mm }
+      body{ background:#fff; padding:0; display:block }
+      .flyer{ width:auto; max-width:none; box-shadow:none; border:0; padding:0 }
+      .card img{ box-shadow:none }
+      .disclosure{ color:#444 }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer" role="document" aria-label="DAconnect Exclusive sample flyer">
+    <div class="logo">
+      <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect logo">
+    </div>
+
+    <div class="address">12 King St, Norwood SA, 5067</div>
+
+    <h1 class="title">Your Development<br/>Starts Here</h1>
+
+    <p class="subtitle">
+      These are the trusted professionals who want your work — ready to quote, build, and deliver on your next project.
+    </p>
+
+    <div class="cards">
+      <div class="card head-blue">
+        <img src="images/exclusive_articool_bathrooms.png" alt="Better Bathrooms">
+      </div>
+      <div class="card head-green">
+        <img src="images/exclusive_asbestos_removals.png" alt="Better Bathrooms">
+      </div>
+      <div class="card head-yellow">
+        <img src="images/exclusive_adelaide_tree_care.png" alt="Better Bathrooms">
+      </div>
+      <div class="card head-peach">
+        <img src="images/exclusive_brickstone_builders.png" alt="Better Bathrooms">
+      </div>
+      <div class="card head-lightblue">
+        <img src="images/exclusive_better_bathrooms.png" alt="Better Bathrooms">
+      </div>
+      <div class="card head-gray">
+        <img src="images/exclusive_barossa_brickworks.png" alt="Better Bathrooms">
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <strong>Disclosure:</strong><br>
+      DAconnect operates in accordance with the Australian Spam Act 2003. This message has been sent in relation to a single Development Application and is intended to connect applicants with relevant local service providers. You will not receive ongoing or repeated emails regarding this development.<br><br>
+      All business information contained herein has been sourced from publicly available data. DAconnect is not affiliated with any council or government agency and does not provide preferential treatment or endorsement.
+      <br><br>
+      <span>Do not want to receive these emails? <a href="#">Click here to unsubscribe</a></span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DA Connect | Development Application Tracking for Builders & Trades</title>
-  <meta name="description" content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
-  <meta name="keywords" content="development applications, DA tracking, construction leads, building permits, SA DAs, builder leads, trade leads, construction leads">
-  <meta name="author" content="DAConnect">
+  <title>DAconnect | Development Application Tracking</title>
+  <meta name="description"
+    content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
+  <meta name="keywords"
+    content="development applications, DA tracking, construction leads, building permits, SA DAs, builder leads, trade leads, construction leads">
+  <meta name="author" content="DAconnect">
   <meta name="robots" content="index, follow">
-  
+
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://data-scraping.com/" />
-  
+  <link rel="canonical" href="https://daconnect.com.au/" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="images/site.webmanifest">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://data-scraping.com/">
-  <meta property="og:title" content="DA Connect | Development Application Tracking for Builders & Trades">
-  <meta property="og:description" content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
-  <meta property="og:image" content="https://data-scraping.com/images/og-image.jpg">
-  
+  <meta property="og:url" content="https://daconnect.com.au/">
+  <meta property="og:title" content="DAconnect | Development Application Tracking">
+  <meta property="og:description"
+    content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
+  <meta property="og:image" content="https://daconnect.com.au/images/og-image.jpg">
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://data-scraping.com/">
-  <meta name="twitter:title" content="DA Connect | Development Application Tracking for Builders & Trades">
-  <meta name="twitter:description" content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
-  <meta name="twitter:image" content="https://data-scraping.com/images/og-image.jpg">
-  
+  <meta name="twitter:url" content="https://daconnect.com.au/">
+  <meta name="twitter:title" content="DAconnect | Development Application Tracking">
+  <meta name="twitter:description"
+    content="Track development applications in SA. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.">
+  <meta name="twitter:image" content="https://daconnect.com.au/images/og-image.jpg">
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DAConnect",
-    "url": "https://data-scraping.com",
-    "logo": "https://data-scraping.com/images/DA-Connect_logo_title_transparent_white_logo.png",
+    "name": "DAconnect",
+    "url": "https://daconnect.com.au",
+    "logo": "https://daconnect.com.au/images/DA-Connect_logo_title_transparent_white_logo.png",
     "sameAs": [
       "https://www.facebook.com/da.connect.au",
       "https://www.instagram.com/da.connect.au",
@@ -52,1415 +57,903 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDP7CQQF6R"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-DDP7CQQF6R');
   </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* Diagonal banner styles */
-    .price-banner {
-      position: absolute;
-      top: 65px;
-      right: -95px;
-      width: 290px;
-      padding: 12px 0;
-      text-align: center;
-      background-color: rgba(200, 200, 200, 0.5);
-      color: #333;
-      font-size: 0.7rem;
-      font-weight: 600;
-      transform: rotate(45deg);
-      transform-origin: right top;
-      z-index: 1;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      pointer-events: none;
-      line-height: 1.4;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 60px;
-    }
-    
-    .price-container {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-    }
-    
-    /* Pricing Card Hover Effects */
-    #pricing .card {
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-      border: 1px solid rgba(0,0,0,0.05) !important;
-    }
-    
-    #pricing .card:hover {
-      transform: translateY(-8px) !important;
-      border: 2px solid var(--secondary-color) !important;
-      margin: -2px; /* Prevents layout shift from border */
-    }
-    .pricing-card .badge.bg-secondary {
-      background-color: var(--secondary-color) !important;
-      transition: all 0.3s ease;
-    }
-    .pricing-card .btn,
-    #pricing .card .btn {
-      transition: all 0.3s ease !important;
-    }
-    
-    #pricing .card:hover .btn {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    #pricing .card.featured .btn {
-      background: linear-gradient(135deg, var(--secondary-color), #2a9d8f) !important;
-      border: none !important;
-    }
-    
-    /* Small Height Responsive Styles */
-    @media (max-height: 800px) {
-      .hero-section {
-        min-height: 95vh !important;
-      }
-      .hero-content {
-        padding: 2.5rem !important;
-        top: 40% !important;
-        max-width: 42% !important;
-      }
-      .hero-content h1 {
-        font-size: 3rem !important;
-        line-height: 1.05 !important;
-        margin-bottom: 1.25rem !important;
-      }
-      .hero-content p {
-        font-size: 1.1rem !important;
-        margin-bottom: 1.75rem !important;
-      }
-      .hero-content .btn {
-        padding: 0.85rem 1.75rem !important;
-        font-size: 1rem !important;
-      }
-    }
-    
-    @media (max-height: 700px) {
-      .hero-section {
-        min-height: 90vh !important;
-      }
-      .hero-content {
-        padding: 2rem !important;
-        top: 45% !important; /* Increased from 35% */
-        max-width: 40% !important;
-        margin-top: 20px !important; /* Added margin-top */
-      }
-      .hero-content h1 {
-        font-size: 2.25rem !important;
-        line-height: 1.05 !important;
-        margin-bottom: 1rem !important;
-      }
-      .hero-content p {
-        font-size: 0.95rem !important;
-        margin-bottom: 1.5rem !important;
-        line-height: 1.5 !important;
-      }
-      .hero-content .btn {
-        padding: 0.75rem 1.5rem !important;
-        font-size: 0.9rem !important;
-      }
-    }
-    
-    @media (max-height: 600px) {
-      .hero-section {
-        min-height: 85vh !important;
-      }
-      .hero-content h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.0 !important;
-        margin-bottom: 0.75rem !important;
-      }
-      .hero-content p {
-        font-size: 0.85rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-      }
-      .hero-content .btn {
-        padding: 0.6rem 1.25rem !important;
-        font-size: 0.85rem !important;
-      }
-    }
-    
-    @media (max-height: 500px) {
-      .hero-section {
-        min-height: 80vh !important;
-      }
-      .hero-content h1 {
-        font-size: 1.75rem !important;
-        line-height: 1.1 !important;
-        margin-bottom: 0.5rem !important;
-      }
-      .hero-content p {
-        font-size: 0.85rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-      }
-      .hero-content .btn {
-        padding: 0.5rem 1rem !important;
-        font-size: 0.85rem !important;
-      }
-      .hero-content .d-flex {
-        gap: 0.5rem !important;
-      }
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-  </style>
-  <style>
-    /* Hero Section Responsive Styles */
-    @media (max-width: 1199.98px) {
-      .hero-content {
-        max-width: 55% !important;
-        padding: 2.5rem !important;
-      }
-      .hero-content h1 {
-        font-size: 3rem !important;
-      }
-    }
-
-    @media (max-width: 991.98px) {
-      .hero-content {
-        max-width: 65% !important;
-        padding: 2rem !important;
-        left: 5% !important;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem !important;
-      }
-      .hero-content p {
-        font-size: 1.1rem !important;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      .hero-section {
-        min-height: 80vh !important;
-        display: flex !important;
-        align-items: flex-end !important;
-        padding-bottom: 0px !important;
-        padding-top: 0 !important;
-      }
-      .hero-content {
-        position: relative !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        left: 0 !important;
-        top: auto !important;
-        transform: none !important;
-        margin: 2rem auto !important;
-        padding: 1.5rem !important;
-        border-radius: 12px !important;
-        background: rgba(255, 255, 255, 0.98) !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
-      }
-      .hero-content h1 {
-        font-size: 2.25rem !important;
-        text-align: center;
-      }
-      .hero-content p {
-        text-align: center;
-        font-size: 1.1rem !important;
-      }
-      .hero-content .d-flex {
-        justify-content: center;
-      }
-      .hero-image {
-        position: absolute !important;
-        top: 0;
-        right: 0;
-        width: 100% !important;
-        height: 100% !important;
-        z-index: 1 !important;
-        opacity: 0.2 !important;
-      }
-      .hero-image img {
-        object-position: center top !important;
-      }
-      .hero-section > div:last-child {
-        display: none !important;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      .hero-content .btn {
-        padding: 0.5rem 1rem !important;
-        font-size: 0.9rem !important;
-        margin: 0 0.2rem 0.2rem !important;
-      }
-      
-      .hero-content .btn i {
-        font-size: 0.8em !important;
-      }
-    }
-    
-    @media (max-width: 575.98px) {
-      .hero-content {
-        margin: 1rem auto !important;
-        padding: 1.25rem !important;
-      }
-      .hero-content h1 {
-        font-size: 2rem !important;
-        margin-bottom: 1rem !important;
-      }
-      .hero-content p {
-        font-size: 1rem !important;
-        margin-bottom: 1.5rem !important;
-      }
-      .hero-content .btn {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    /* What Is DA Connect Feature Boxes Hover Effect */
-    #what-is-it .card {
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-      border: 2px solid transparent !important;
-      cursor: default;
-      background-color: #fff;
-    }
-    
-    #what-is-it .card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 15px 30px rgba(42, 157, 143, 0.1) !important;
-      border-color: var(--secondary-color) !important;
-    }
-    
-    #what-is-it .card .icon-wrapper {
-      transition: all 0.3s ease;
-      background: rgba(42, 157, 143, 0.1);
-    }
-    
-    #what-is-it .card:hover .icon-wrapper {
-      background: rgba(42, 157, 143, 0.2) !important;
-      transform: scale(1.1) rotate(5deg);
-    }
-    
-    #what-is-it .card .card-title {
-      transition: color 0.3s ease;
-    }
-    
-    #what-is-it .card:hover .card-title {
-      color: var(--secondary-color) !important;
-    }
-    
-    #what-is-it .card .text-muted {
-      transition: color 0.3s ease;
-    }
-    
-    #what-is-it .card:hover .text-muted {
-      color: #495057 !important;
-    }
-    
-    /* Disable hover effects on testimonial card */
-    #who-its-for .card.bg-light {
-      transition: none !important;
-      transform: none !important;
-      box-shadow: none !important;
-      border-color: transparent !important;
-      cursor: default !important;
-    }
-    
-    #who-its-for .card.bg-light:hover {
-      transform: none !important;
-      box-shadow: none !important;
-      border-color: transparent !important;
-    }
-    
-    /* Why Choose Us Card Hover Effect */
-    #who-its-for .card {
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-      border: 2px solid transparent !important;
-      cursor: default;
-    }
-    
-    #who-its-for .card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
-      border-color: var(--secondary-color) !important;
-      background-color: #fff;
-    }
-    
-    #who-its-for .card .icon-wrapper {
-      transition: all 0.3s ease;
-    }
-    
-    #who-its-for .card:hover .icon-wrapper {
-      background: rgba(42, 157, 143, 0.2) !important;
-      transform: scale(1.1);
-    }
-    
-    #who-its-for .card .card-title {
-      transition: color 0.3s ease;
-    }
-    
-    #who-its-for .card:hover .card-title {
-      color: var(--secondary-color) !important;
-    }
-    
-    /* Navbar Underline Animation */
-    .nav-link {
-      position: relative;
-      padding: 0.5rem 1rem;
-      margin: 0 0.25rem;
-      transition: color 0.3s ease;
-      color: var(--secondary-color) !important;
-    }
-    
-    .nav-link:hover {
-      color: var(--primary-color) !important;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      background-color: var(--secondary-color);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
-    
-    .nav-link.active {
-      color: var(--primary-color) !important;
-      font-weight: 600;
-    }
-    
-    .nav-link.active::after {
-      background-color: var(--primary-color);
-    }
-    
-    :root {
-      --primary-color: #1d3557;
-      --secondary-color: #2d7b5b;
-      --accent-color: #e63946;
-      --light-color: #f1faee;
-      --dark-color: #1d3557;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    
-    .navbar {
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      color: var(--primary-color);
-    }
-    
-    .navbar-brand img {
-      height: 40px;
-      margin-right: 10px;
-    }
-    
-    .nav-link {
-      color: var(--primary-color);
-      font-weight: 500;
-      margin: 0 10px;
-      transition: color 0.3s;
-    }
-    
-    .nav-link:hover {
-      color: var(--secondary-color);
-    }
-    
-    .btn-primary {
-      background-color: var(--secondary-color);
-      border-color: var(--secondary-color);
-      padding: 10px 20px;
-      font-weight: 600;
-      border-radius: 30px;
-    }
-    
-    .btn-primary:hover {
-      background-color: #248277;
-      border-color: #248277;
-    }
-  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg sticky-top py-3" style="background-color: white; box-shadow: 0 2px 30px rgba(0,0,0,0.06);">
-  <div class="container">
-    <!-- Logo -->
-    <a class="navbar-brand me-5" href="#">
-      <img src="images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAConnect" style="height: 42px;">
-    </a>
-    
-    <!-- Mobile Toggle -->
-    <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
-      <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--primary-color);"></i>
-    </button>
-    
-    <!-- Desktop Menu -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link px-3 py-2 mx-1 position-relative" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-            Home
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top py-3" style="background-color: white; box-shadow: 0 2px 30px rgba(0,0,0,0.06);">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand me-5" href="#">
+        <img src="images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect" style="height: 42px;">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav">
+        <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#"
+              onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#howitworks">
+              How It Works
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#theprocess">
+              The Process
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#whychooseus">
+              Why Choose Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#pricing">
+              Pricing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#freesample">
+              Free Sample
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right-aligned items -->
+        <div class="d-flex align-items-center">
+          <a href="#contact" class="nav-link px-2 me-1">
+            Contact
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-3 py-2 mx-1 position-relative" href="#what-is-it">
-            About
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-3 py-2 mx-1 position-relative" href="#how-it-works">
-            How It Works
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-3 py-2 mx-1 position-relative" href="#who-its-for">
-            Why Choose Us
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-3 py-2 mx-1 position-relative" href="#pricing">
-            Pricing
-          </a>
-        </li>
-      </ul>
-      
-      <!-- Right-aligned items -->
-      <div class="d-flex align-items-center">
-        <a href="#contact" class="nav-link px-2 me-1">
-          Contact
-        </a>
-        <div class="vr d-none d-lg-block mx-2" style="height: 24px; opacity: 0.2;"></div>
-        <!-- <a href="#faqs" class="nav-link px-2 me-2 d-none d-lg-block">
+          <div class="vr d-none d-lg-block mx-2" style="height: 24px; opacity: 0.2;"></div>
+          <!-- <a href="#faqs" class="nav-link px-2 me-2 d-none d-lg-block">
           FAQs
         </a> -->
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-primary px-3" style="background-color: #cccccc; border-color: #bbbbbb; font-weight: 500; cursor: not-allowed; opacity: 0.7; padding: 0.4rem 0.8rem !important; font-size: 0.85rem !important; white-space: nowrap;" disabled>
-            Sign In
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-primary px-3"
+              style="background-color: #cccccc; border-color: #bbbbbb; font-weight: 500; cursor: not-allowed; opacity: 0.7; padding: 0.4rem 0.8rem !important; font-size: 0.85rem !important; white-space: nowrap;"
+              disabled>
+              Sign In (Coming soon)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <div class="hero-section" style="position: relative; min-height: 100vh; display: flex; overflow: hidden;">
+    <!-- Text Content -->
+    <div class="hero-content"
+      style="position: absolute; left: 10%; top: 40%; transform: translateY(-50%); max-width: 44%; z-index: 3; background: rgba(255, 255, 255, 0.95); padding: 3.5rem; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
+      <div>
+        <h1 class="mb-4"
+          style="font-size: 3.75rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 1.5rem 0; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          Development Applications <br>Delivered to Your Inbox - <span style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; text-decoration-color: var(--secondary-color);">Get the Work First!</span>
+        </h1>
+        <p class="mb-4" style="font-size: 1.25rem; line-height: 1.6; color: #4a5568; margin-bottom: 2rem !important;">
+          Stop searching. Start winning. We monitor Council websites 24/7 to bring you <strong>exclusive access</strong>
+          to new development applications in your area. Be the first to know and the first to quote.
+        </p>
+        <div class="d-flex flex-wrap gap-3 align-items-center">
+          <a href="#pricing" class="btn btn-primary btn-lg px-5"
+            style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 123, 91, 0.2);">
+            Get Started
+            <i class="fas fa-arrow-right ms-2" style="font-size: 0.9em; transition: transform 0.3s ease;"></i>
           </a>
         </div>
       </div>
     </div>
-  </div>
-</nav>
 
-<!-- Navbar Styles -->
-<style>
-.navbar {
-  transition: all 0.3s ease;
-}
-
-.navbar.scrolled {
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-  padding: 0.5rem 0;
-}
-
-.nav-link {
-  color: var(--primary-color) !important;
-  font-size: 0.95rem; /* Restored original size */
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-  white-space: nowrap; /* Prevent text wrapping */
-  padding: 0.6rem 0.8rem !important;
-}
-
-.nav-link:not(.btn):after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  background-color: var(--secondary-color);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-link:not(.btn):hover:after,
-.nav-link.active:after {
-  width: 60%;
-}
-
-.nav-link:hover {
-  color: var(--secondary-color) !important;
-}
-
-.btn-outline-secondary {
-  border-color: #dee2e6;
-  color: var(--primary-color);
-}
-
-.btn-outline-secondary:hover {
-  background-color: #f8f9fa;
-  border-color: #dee2e6;
-  color: var(--primary-color);
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-  outline: none;
-}
-
-@media (max-width: 1399.98px) {
-  .navbar {
-    padding: 0.5rem 0;
-  }
-  .nav-link {
-    padding: 0.5rem 0.6rem !important;
-  }
-  .navbar-brand img {
-    height: 38px !important;
-  }
-  .btn {
-    padding: 0.4rem 1rem !important;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    background: white;
-    padding: 1rem;
-    margin: 0 -1rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-radius: 0 0 12px 12px;
-  }
-  
-  .nav-link {
-    padding: 0.6rem 1rem !important;
-    margin: 0.15rem 0;
-  }
-  
-  .nav-link:after {
-    display: none;
-  }
-  
-  .btn {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-  
-  .vr {
-    display: none;
-  }
-}
-</style>
-
-<script>
-// Add shadow on scroll
-window.addEventListener('scroll', function() {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 10) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-</script>
-
-<!-- Hero Section -->
-<div class="hero-section" style="position: relative; min-height: 100vh; display: flex; overflow: hidden;">
-  <!-- Text Content -->
-  <div class="hero-content" style="position: absolute; left: 10%; top: 40%; transform: translateY(-50%); max-width: 44%; z-index: 3; background: rgba(255, 255, 255, 0.95); padding: 3.5rem; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
-    <div>
-      <h1 class="mb-4" style="font-size: 3.75rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 1.5rem 0; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-        Development Applications <br>Delivered to Your Inbox
-      </h1>
-      <p class="mb-4" style="font-size: 1.25rem; line-height: 1.6; color: #4a5568; margin-bottom: 2rem !important;">
-        Stop searching. Start winning. We monitor council websites 24/7 to bring you <strong>exclusive access</strong> to new development applications in your area. Be the first to know and the first to quote.
-      </p>
-      <div class="d-flex flex-wrap gap-3 align-items-center">
-        <a href="#pricing" class="btn btn-primary btn-lg px-5" style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 123, 91, 0.2);">
-          Get Started
-          <i class="fas fa-arrow-right ms-2" style="font-size: 0.9em; transition: transform 0.3s ease;"></i>
-        </a>
-        <a href="#how-it-works" class="btn btn-outline-secondary btn-lg" style="padding: 1rem 2rem; border-radius: 10px; font-weight: 500; transition: all 0.3s ease;">
-          See How It Works
-        </a>
+    <!-- Image Section -->
+    <div class="hero-image"
+      style="position: absolute; top: 0; right: 0; width: 65%; height: 100%; z-index: 1; overflow: hidden;">
+      <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+        <img src="images/construction_looking_at_phone_banner.png" alt="DA Connect Service Interface" class="hero-bg"
+          style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; min-width: 100%; min-height: 100%;">
       </div>
+    </div>
+
+    <!-- Gradient Overlay -->
+    <div
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.3) 70%); z-index: 2;">
     </div>
   </div>
-  
-  <!-- Image Section -->
-  <div class="hero-image" style="position: absolute; top: 0; right: 0; width: 65%; height: 100%; z-index: 1; overflow: hidden;">
-    <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
-      <img src="images/construction_looking_at_phone_banner.png" alt="DA Connect Service Interface" 
-           style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; min-width: 100%; min-height: 100%;">
-    </div>
-  </div>
-  
-  <!-- Gradient Overlay -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.3) 70%); z-index: 2;"></div>
-</div>
 
-    <!-- What Is Section -->
-<section id="what-is-it" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">ABOUT US</span>
-      <h2 class="fw-bold mb-4">What Is <span class="text-secondary">DAConnect?</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 700px;">
-        Your competitive edge with real-time development application tracking and lead generation.
-      </p>
-      <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
-    </div>
-
-    <div class="row align-items-center g-5 mb-5">
-      <div class="col-lg-6">
-        <div class="pe-lg-5">
-          <h3 class="fw-bold mb-4" style="font-size: 2rem; line-height: 1.2;">
-            Never Miss an Opportunity Again
-          </h3>
-          <p class="lead text-muted mb-4">
-            DAConnect helps you track development applications in your area — so you can quote early and win more work. 
-            We send you weekly updates of new DAs direct to your inbox. No searching. No logins. Just qualified leads.
-          </p>
-          <div class="d-flex flex-wrap gap-3 mb-4">
-             <div class="d-flex align-items-center">
-              <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-              </div>
-              <span>Real time monitoring</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-              </div>
-              <span>Weekly email updates</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-              </div>
-              <span>12 month contracts available</span>
-            </div>
-          </div>
-          <a href="#pricing" class="btn btn-primary btn-lg mt-2" style="border-radius: 8px; font-size: 1.1rem; padding: 0.7rem 2rem;">
-            View Pricing Plans
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="position-relative" style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 20px;">
-          <img src="images/example of weekly list.png" alt="DAConnect Dashboard" class="img-fluid w-100" style="padding-bottom: 10px;">
-        </div>
-      </div>
-    </div>
-
-    <!-- Features Grid -->
-    <div class="row g-4 mt-4">
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4">
-            <div class="icon-wrapper mb-4" style="width: 60px; height: 60px; background: rgba(42, 157, 143, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <i class="fas fa-map-marked-alt text-secondary" style="font-size: 1.5rem;"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Track Local Projects</h5>
-            <p class="text-muted mb-0">Monitor planning applications in your target areas with real-time updates and detailed property information.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4">
-            <div class="icon-wrapper mb-4" style="width: 60px; height: 60px; background: rgba(42, 157, 143, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <i class="fas fa-bell text-secondary" style="font-size: 1.5rem;"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Get Weekly Alerts</h5>
-            <p class="text-muted mb-0">We deliver fresh, qualified leads directly to your inbox every week. No more endless searching through council websites.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4">
-            <div class="icon-wrapper mb-4" style="width: 60px; height: 60px; background: rgba(42, 157, 143, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <i class="fas fa-tools text-secondary" style="font-size: 1.5rem;"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Win More Jobs</h5>
-            <p class="text-muted mb-0">Reach potential clients before your competitors even know about new development opportunities in your area.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- How It Works Section -->
-<section id="how-it-works" class="py-5" style="scroll-margin-top: 100px; background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">OUR PROCESS</span>
-      <h2 class="fw-bold mb-4">How It <span class="text-secondary">Works</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 700px;">
-        Get started in minutes and begin receiving qualified leads directly to your inbox every week.
-      </p>
-      <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
-    </div>
-    
-    <style>
-      .process-card {
-        height: 100%;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(0,0,0,0.05);
-      }
-      .process-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-      }
-      .process-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(42, 157, 143, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-      }
-      .process-icon i {
-        font-size: 2rem;
-        color: var(--secondary-color);
-        transition: all 0.3s ease;
-      }
-      .process-card:hover .process-icon {
-        background: linear-gradient(135deg, rgba(42, 157, 143, 0.2) 0%, rgba(42, 157, 143, 0.3) 100%);
-        transform: scale(1.1);
-      }
-      .process-card:hover .process-icon i {
-        color: var(--secondary-color);
-        transform: scale(1.1) rotate(5deg);
-      }
-      .process-image {
-        height: 200px;
-        object-fit: contain;
-        margin: 0 auto 1.5rem;
-        display: block;
-        max-width: 100%;
-      }
-    </style>
-
-    <div class="row g-4">
-      <!-- Step 1 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm process-card">
-          <div class="card-body p-4 text-center d-flex flex-column">
-            <div class="process-icon mb-3">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Choose Your Area</h5>
-            <div class="mb-4">
-              <img src="images/section1.PNG" alt="Choose Your Area" class="process-image">
-            </div>
-            <p class="text-muted mb-0">Select your local council, an entire state, or go nationwide to receive relevant development applications.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Step 2 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm process-card">
-          <div class="card-body p-4 text-center d-flex flex-column">
-            <div class="process-icon mb-3">
-              <i class="fas fa-search"></i>
-            </div>
-            <h5 class="fw-bold mb-3">We Monitor Applications</h5>
-            <div class="mb-4">
-              <img src="images/section2.PNG" alt="Monitor Applications" class="process-image">
-            </div>
-            <p class="text-muted mb-0">Our system tracks new development applications as they're lodged with each council in your selected area.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Step 3 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm process-card">
-          <div class="card-body p-4 text-center d-flex flex-column">
-            <div class="process-icon mb-3">
-              <i class="fas fa-envelope-open-text"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Weekly Updates</h5>
-            <div class="mb-4">
-              <img src="images/section3.PNG" alt="Weekly Updates" class="process-image">
-            </div>
-            <p class="text-muted mb-0">Receive a clear, up-to-date report of new development applications directly to your inbox every week.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Step 4 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm process-card">
-          <div class="card-body p-4 text-center d-flex flex-column">
-            <div class="process-icon mb-3">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <h5 class="fw-bold mb-3">Win More Work</h5>
-            <div class="mb-4">
-              <img src="images/section4.PNG" alt="Win More Work" class="process-image">
-            </div>
-            <p class="text-muted mb-0">Contact property owners and applicants before your competitors do, and grow your business.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center mt-5 pt-3">
-      <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
-        <div class="d-flex align-items-center">
-          <div class="icon-wrapper me-2" style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-check text-secondary"></i>
-          </div>
-          <span>Comprehensive DA listings</span>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="icon-wrapper me-2" style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-check text-secondary"></i>
-          </div>
-          <span>Easy-to-read format</span>
-        </div>
-        <div class="d-flex align-items-center">
-          <div class="icon-wrapper me-2" style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-check text-secondary"></i>
-          </div>
-          <span>Delivered weekly to your inbox</span>
-        </div>
-      </div>
-      <a href="#pricing" class="btn btn-primary btn-lg mt-3 px-5" style="border-radius: 8px; font-size: 1.1rem;">
-        Get Started Today
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Game Changer Section -->
-<section id="who-its-for" class="py-5 bg-light">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">WHY CHOOSE US</span>
-      <h2 class="fw-bold mb-4">Why It's a <span class="text-secondary">Game Changer</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 700px;">Empowering your business with real-time development application data to gain a competitive edge in the construction industry.</p>
-      <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
-    </div>
-    
-    <div class="row g-4">
-      <!-- For Builders -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 text-center">
-            <div class="icon-wrapper mb-4" style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-hard-hat text-secondary" style="font-size: 1.75rem;"></i>
-            </div>
-            <h5 class="card-title fw-bold mb-3">For Builders</h5>
-            <p class="card-text text-muted">
-              Be first to quote. Start conversations with property owners before your competitors even hear about the job.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- For Tradies -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 text-center">
-            <div class="icon-wrapper mb-4" style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-tools text-secondary" style="font-size: 1.75rem;"></i>
-            </div>
-            <h5 class="card-title fw-bold mb-3">For Tradies</h5>
-            <p class="card-text text-muted">
-              Tap into upcoming builds and renovations. Reach out at the right time with the right services.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- For Town Planners -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 text-center">
-            <div class="icon-wrapper mb-4" style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-drafting-compass text-secondary" style="font-size: 1.75rem;"></i>
-            </div>
-            <h5 class="card-title fw-bold mb-3">Town Planners & Certifiers</h5>
-            <p class="card-text text-muted">
-              Get ahead of the approval curve and position your services exactly when they're needed most.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- For Suppliers -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm-hover transition-all" style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 text-center">
-            <div class="icon-wrapper mb-4" style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-truck-loading text-secondary" style="font-size: 1.75rem;"></i>
-            </div>
-            <h5 class="card-title fw-bold mb-3">Suppliers & Contractors</h5>
-            <p class="card-text text-muted">
-              Stay informed about upcoming projects to align your resources and secure business opportunities early.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Testimonial -->
-    <div class="row mt-5">
-      <div class="col-lg-8 mx-auto">
-        <div class="card border-0 bg-light">
-          <div class="card-body p-4">
-            <div class="d-flex align-items-center mb-3">
-              <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-              <p class="lead mb-0">
-                "We picked up two renovation jobs in the first month. It's a no-brainer."
-              </p>
-            </div>
-            <p class="text-end mb-0 fw-bold">— Paul M., Builder, SA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing Section -->
-<section id="pricing" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
-  <div class="container py-5">
-    <div class="text-center mb-5">
-      <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">PRICING</span>
-      <h2 class="fw-bold mb-4">Simple, Transparent <span class="text-secondary">Pricing</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your business needs. No hidden fees, cancel anytime.</p>
-      <div class="pricing-toggle d-flex justify-content-center align-items-center my-4">
-        <span class="me-3 fw-medium pricing-period active" data-period="monthly">Monthly</span>
-        <div class="form-check form-switch mx-2">
-          <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
-        </div>
-        <span class="ms-3 fw-medium pricing-period" data-period="yearly">Yearly</span>
-      </div>
-      <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
-    </div>
-    
-    <div class="row g-4 justify-content-center">
-      <!-- Standard Plan -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card" style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 d-flex flex-column h-100">
-            <div>
-              <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Standard</h5>
-              <div class="d-flex align-items-end mb-4 position-relative">
-                <div class="price-banner">South Australia Only<br><span style="font-size: 0.6rem; font-weight: 500;">(More states coming soon)</span></div>
-                <div class="price-container">
-                  <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$69" data-yearly="$750">$69</span>
-                  <span class="text-muted ms-2 period">/month</span>
-                </div>
-              </div>
-              <p class="text-muted mb-4">Perfect for individuals and small businesses getting started</p>
-              <ul class="list-unstyled mb-4">
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Unlimited councils of your choice in your state</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Weekly DA reports</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Email support</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Basic analytics</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto" style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get Started</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Exclusive Plan -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card" style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
-          <div class="card-body p-4 d-flex flex-column h-100 position-relative">
-            <div>
-              <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Exclusive</h5>
-              <div class="d-flex flex-column mb-4 position-relative">
-                <div class="d-flex align-items-end position-relative">
-                  <div class="price-banner">South Australia Only<br><span style="font-size: 0.6rem; font-weight: 500;">(More states coming soon)</span></div>
-                  <div class="price-container">
-                    <span class="display-5 fw-bold" style="color: var(--primary-color);">$999</span>
-                    <span class="text-muted ms-2">/year</span>
-                  </div>
-                </div>
-              </div>
-              <p class="text-muted mb-4">Ideal for growing businesses<br><br></p>
-              <ul class="list-unstyled mb-4">
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Exclusive marketing to DAs</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Email support</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Advanced analytics</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Advanced filters</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto" style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get Started</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Professional Plan -->
-       <!-- <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card" style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 d-flex flex-column h-100">
-            <div>
-              <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Professional</h5>
-              <div class="d-flex align-items-end mb-4">
-                <span class="display-5 fw-bold" style="color: var(--primary-color);">$799</span>
-                <span class="text-muted ms-2">/month</span>
-              </div>
-              <p class="text-muted mb-4">For established businesses<br><br></p>
-              <ul class="list-unstyled mb-4">
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Australia-wide coverage</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Priority email & phone support</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Advanced analytics</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Advanced filters</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>API Access</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto" style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get Started</a>
-          </div>
-        </div>
-      </div>-->
-      
-      <!-- Enterprise Plan -->
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card" style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
-          <div class="card-body p-4 d-flex flex-column h-100">
-            <div>
-              <h5 class="fw-bold mb-3" style="color: var(--primary-color);">Enterprise</h5>
-              <div class="d-flex align-items-end mb-4">
-                <span class="display-5 fw-bold" style="color: var(--primary-color);">Custom</span>
-                <span class="text-muted ms-2">pricing</span>
-              </div>
-              <p class="text-muted mb-4">For large organizations with custom needs</p>
-              <ul class="list-unstyled mb-4">
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Australia-wide coverage (All states coming soon)</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Priority email & phone support</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Custom integrations</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Dedicated account manager</span>
-                </li>
-                <li class="mb-3 d-flex align-items-start">
-                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                  <span>Custom reporting</span>
-                </li>
-              </ul>
-            </div>
-            <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto enterprise-contact-btn" style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;" data-enquiry-type="Enterprise Pricing Enquiry">Contact Sales</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center mt-5 pt-4">
-      <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-        <div class="d-flex align-items-center">
-          <div class="icon-wrapper me-2" style="width: 32px; height: 32px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-file-contract text-secondary" style="font-size: 0.8rem;"></i>
-          </div>
-          <span class="small">No long-term contracts</span>
-        </div>
-        <div class="vr d-none d-md-block"></div>
-        <div class="d-flex align-items-center">
-          <div class="icon-wrapper me-2" style="width: 32px; height: 32px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-times-circle text-secondary" style="font-size: 0.8rem;"></i>
-          </div>
-          <span class="small">Cancel anytime</span>
-        </div>
-      </div>
-      <p class="text-muted mb-0">Need help choosing the right plan? <a href="#contact" class="text-secondary text-decoration-underline">Contact our team</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container py-5" style="max-width: 1400px;">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="text-center mb-5">
-          <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">GET IN TOUCH</span>
-          <h2 class="fw-bold mb-4">Contact <span class="text-secondary">Our Team</span></h2>
-          <p class="lead text-muted mx-auto" style="max-width: 700px;">Have questions or need more information? Send us a message and we'll get back to you as soon as possible.</p>
-          <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
-        </div>
-        
-        <div class="row g-5">
-          <!-- Contact Form -->
-          <div class="col-lg-8">
-            <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
-              <div class="card-body p-4 p-md-5">
-                <form id="contactForm" action="https://formspree.io/f/xovwdzwy" method="POST">
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <label for="name" class="form-label fw-medium">Full Name <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control form-control-lg" id="name" name="name" required style="padding: 12px 16px; border-radius: 8px;">
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <label for="email" class="form-label fw-medium">Email Address <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control form-control-lg" id="email" name="email" required style="padding: 12px 16px; border-radius: 8px;">
-                    </div>
-                  </div>
-                  
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <label for="phone" class="form-label fw-medium">Contact Phone</label>
-                      <input type="tel" class="form-control form-control-lg" id="phone" name="phone" style="padding: 12px 16px; border-radius: 8px;">
-                      <div class="form-text">Optional</div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <label for="business" class="form-label fw-medium">Business Name</label>
-                      <input type="text" class="form-control form-control-lg" id="business" name="business" style="padding: 12px 16px; border-radius: 8px;">
-                      <div class="form-text">If applicable</div>
-                    </div>
-                  </div>
-                  
-                  <div class="mb-4">
-                    <label for="message" class="form-label fw-medium">Your Message <span class="text-danger">*</span></label>
-                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required style="padding: 12px 16px; border-radius: 8px;" placeholder="How can we help you?"></textarea>
-                  </div>
-                  
-                  <!-- Hidden field for enquiry type -->
-                  <input type="hidden" id="enquiryType" name="enquiryType" value="">
-                  
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg" style="padding: 12px 30px; border-radius: 8px; font-size: 1.1rem;">
-                      <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
-                      Send Message
-                    </button>
-                  </div>
-                  
-                  <div id="formSuccess" class="alert alert-success mt-4 d-none" role="alert">
-                    <i class="fas fa-check-circle me-2"></i> Your message has been sent successfully! We'll get back to you soon.
-                  </div>
-                  
-                  <div id="formError" class="alert alert-danger mt-4 d-none" role="alert">
-                    <i class="fas fa-exclamation-circle me-2"></i> There was an error sending your message. Please try again later.
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Contact Information -->
-          <div class="col-lg-4">
-            <div class="card border-0 h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
-              <div class="card-body p-4 p-md-5">
-                <h5 class="fw-bold mb-4">Contact Information</h5>
-                <p class="mb-4">Have questions about our services or need assistance? Reach out to us through the form or contact us directly.</p>
-                
-                <div class="d-flex align-items-start mb-4">
-                  <div class="icon-wrapper me-3" style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-envelope text-secondary"></i>
-                  </div>
-                  <div>
-                    <h6 class="mb-1 fw-semibold">Email Us</h6>
-                    <a href="mailto:daconnect@aimpublishing.com.au" class="text-decoration-none text-muted">daconnect@aimpublishing.com.au</a>
-                  </div>
-                </div>
-                
-                <div class="d-flex align-items-start mb-4">
-                  <div class="icon-wrapper me-3" style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-clock text-secondary"></i>
-                  </div>
-                  <div>
-                    <h6 class="mb-1 fw-semibold">Business Hours</h6>
-                    <p class="mb-0 text-muted">Monday - Friday: 9:00 AM - 5:00 PM AEST</p>
-                  </div>
-                </div>
-                
-                <div class="d-flex align-items-start mb-4">
-                  <div class="icon-wrapper me-3" style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-building text-secondary"></i>
-                  </div>
-                  <div>
-                    <h6 class="mb-1 fw-semibold">ABN</h6>
-                    <p class="mb-0 text-muted">74 168 911 402</p>
-                  </div>
-                </div>
-                
-                <div class="mt-5">
-                  <h6 class="fw-semibold mb-3">Follow Us</h6>
-                  <div class="d-flex gap-3">
-                    <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted" style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/da.connect.au" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted" style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/daconnectau" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted" style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
-                      <i class="fab fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- FAQ Section -->
-   <!--<section id="faqs" class="py-5 bg-light">
+  <!-- How It Works -->
+  <section id="howitworks" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%); padding-bottom: 6rem;">
     <div class="container py-5">
       <div class="text-center mb-5">
-        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">FAQS</span>
-        <h2 class="fw-bold mb-4">Frequently Asked <span class="text-secondary">Questions</span></h2>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;">Find answers to common questions about our DA tracking and lead generation service.</p>
-        <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;"></div>
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
+          style="font-weight: 500; letter-spacing: 1px;">HOW IT WORKS</span>
+        <img src="images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect"
+          style="height: 55px; display: block; margin: 0 auto 1.5rem;">
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">
+          Your competitive edge with real-time development application tracking and lead generation.
+        </p>
+        <div class="divider mx-auto"
+          style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
+        </div>
       </div>
-      
+
+      <!-- Row 1: List section + Image -->
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6">
+          <div class="pe-lg-5">
+            <h3 class="fw-bold mb-4" style="font-size: 2rem; line-height: 1.2;">Never Miss an Opportunity Again</h3>
+            <p class="lead text-muted mb-4">
+              <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect" style="height: 55px; display: block;">
+              Keeps you ahead by tracking Council Development Applications (DAs) in your area. Get weekly updates of new
+              DAs straight to your inbox. No searching, No wasted time. Just early access to qualified leads so you can
+              quote first and win more work.
+            </p>
+            <div class="d-flex flex-column gap-3 mb-0">
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2"
+                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Receive only the Development Applications that match your preferred work or category</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2"
+                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Preferential rate available for 12-month upfront payment</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2"
+                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Easy to read format</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2"
+                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Cancel anytime</span>
+              </div>
+            </div>
+            <!-- Mobile-only image shown above the button (with iPhone scrollable mockup) -->
+            <div class="d-block d-lg-none my-3 position-relative">
+              <img src="images/example of weekly list.png" alt="DAconnect Dashboard mobile preview" class="img-fluid w-100" style="border-radius: 12px;">
+              <div class="iphone-overlay" style="position: absolute; top: 175px; right: -85px; z-index: 3;">
+                <div class="iphone-mockup auto-scroll-container" style="width: 120px; height: 220px;">
+                  <div class="iphone-screen auto-scroll-viewport">
+                    <img src="images/DAconnect_list_mobile.png" alt="DAconnect mobile list" class="auto-scroll-image">
+                  </div>
+                  <img src="images/iphone.png" alt="iPhone frame" class="iphone-frame" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <a href="#pricing" class="btn btn-primary btn-lg mt-4" style="border-radius: 8px; font-size: 1.1rem; padding: 0.7rem 2rem;">View Pricing Plans</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-flex align-items-center" style="overflow: visible;">
+          <div class="position-relative w-100" style="border-radius: 16px; overflow: visible; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 20px; z-index: 2;">
+            <img src="images/example of weekly list.png" alt="DAconnect Dashboard" class="img-fluid w-100"
+              style="padding-bottom: 10px; border-radius: 12px;">
+            <div class="iphone-overlay" style="position: absolute; top: 230px; right: -105px; z-index: 3;">
+              <div class="iphone-mockup auto-scroll-container" style="width: 195px; height: 260px;">
+                <div class="iphone-screen auto-scroll-viewport">
+                  <img src="images/DAconnect_list_mobile.png" alt="DAconnect mobile list" class="auto-scroll-image">
+                </div>
+                <img src="images/iphone.png" alt="iPhone frame" class="iphone-frame" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Row 2: Exclusive section + Image -->
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6 order-lg-1 order-2 d-flex align-items-center exclusive-image-col">
+          <div id="exclusiveImageContainer" class="position-relative w-100 scrolling-image-container" style="background: #f6f8fa; border: 1px solid #e9ecef; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 20px;">
+            <div id="exclusiveViewport" style="height: 100%; width: 100%; overflow: hidden; background: #ffffff; border-radius: 12px; display: flex; align-items: flex-start; justify-content: center;">
+              <img id="exclusiveImage" src="images/DAconnect-exclusive-list2.PNG" alt="DAconnect" class="img-fluid scrolling-image" style="width: 85% !important; max-width: 85% !important; margin: 0 auto; display: block; object-fit: contain; object-position: top center;">
+            </div>
+          </div>
+          
+          <!-- Mobile-only CTA below image -->
+          <div class="d-block d-lg-none w-100 mt-3">
+            <a href="#pricing" class="btn btn-primary btn-lg w-100" style="border-radius: 8px; font-size: 1.05rem; padding: 0.7rem 1rem;">View Pricing Plans</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1 exclusive-text">
+          <div class="ps-lg-5">
+            <h3 class="fw-bold mb-4" style="font-size: 2rem; line-height: 1.2;">Get in front before your competitors even hear about it</h3>
+          <p class="lead text-muted mb-4">
+            <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect" style="height: 75px; display: block;">
+            Be the first in line. On top of your weekly DA updates, we go one step further. When a new DA is lodged, the applicant receives a comprehensive, exclusive list of businesses, trades, and companies ready to take on the project. 
+            Your logo, details, and services are delivered directly to the decision-maker's inbox. No waiting. No guessing. Just your business in front of the right people—before your competitors even hear about it.
+            Your <u>Exclusive profile</u> is tailored to highlight the opportunities you want most. This is your chance to get in front first—before your competitors even know the project exists
+          </p>
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Manage and update your profile, logo, and content in real time</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>12-month upfront payment</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Real time monitoring</span>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
+                </div>
+                <span>Easy to read format</span>
+              </div>
+            </div>
+            <a href="#pricing" class="btn btn-primary btn-lg mt-4" style="border-radius: 8px; font-size: 1.1rem; padding: 0.7rem 2rem;">View Pricing Plans</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Process Section -->
+  <section id="theprocess" class="py-5"
+    style="scroll-margin-top: 100px; background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
+          style="font-weight: 500; letter-spacing: 1px;">THE PROCESS</span>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">
+          Start in minutes. Weekly DA leads direct to your inbox — and with <u>Exclusive</u>, your business reaches decision-makers before your competitors.
+        </p>
+        <div class="divider mx-auto"
+          style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
+        </div>
+      </div>
+
+
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm process-card">
+            <div class="card-body p-4 text-center d-flex flex-column">
+              <div class="process-icon mb-3">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Select your Council or Council areas</h5>
+              <div class="mb-4">
+                <img src="images/section1.PNG" alt="Select your Council or Council areas" class="process-image">
+              </div>
+              <p class="text-muted mb-0">Receive relevant Development Application Information.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm process-card">
+            <div class="card-body p-4 text-center d-flex flex-column">
+              <div class="process-icon mb-3">
+                <i class="fas fa-search"></i>
+              </div>
+              <h5 class="fw-bold mb-3">We Monitor Applications</h5>
+              <div class="mb-4">
+                <img src="images/section2.PNG" alt="Monitor Applications" class="process-image">
+              </div>
+              <p class="text-muted mb-0">Our system tracks new Development Applications as they're lodged with each
+                Council in your selected area.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm process-card">
+            <div class="card-body p-4 text-center d-flex flex-column">
+              <div class="process-icon mb-3">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Weekly Updates</h5>
+              <div class="mb-4">
+                <img src="images/section3.PNG" alt="Weekly Updates" class="process-image">
+              </div>
+              <p class="text-muted mb-0">Receive a clear, up-to-date report of new Development Applications directly to
+                your inbox every week.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm process-card">
+            <div class="card-body p-4 text-center d-flex flex-column">
+              <div class="process-icon mb-3">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Win More Work</h5>
+              <div class="position-relative mb-4">
+                <img src="images/section4.PNG" alt="Win More Work" class="process-image">
+                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect" class="position-absolute"
+                  style="height: 75px; bottom: -25px; left: 50%; transform: translateX(-50%);">
+              </div>
+              <p class="text-muted mb-0">Puts you first with property owners and applicants — ahead of the competition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 pt-3">
+        <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
+          <div class="d-flex align-items-center">
+            <div class="icon-wrapper me-2"
+              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-check text-secondary"></i>
+            </div>
+            <span>Comprehensive DA listings</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="icon-wrapper me-2"
+              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-check text-secondary"></i>
+            </div>
+            <span>Easy-to-read format</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="icon-wrapper me-2"
+              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <i class="fas fa-check text-secondary"></i>
+            </div>
+            <span>Delivered weekly to your inbox</span>
+          </div>
+        </div>
+        <a href="#pricing" class="btn btn-primary btn-lg mt-3 px-5" style="border-radius: 8px; font-size: 1.1rem;">
+          Get Started Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game Changer Section -->
+  <section id="whychooseus" class="py-5 bg-light">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
+          style="font-weight: 500; letter-spacing: 1px;">WHY CHOOSE US</span>
+        <h2 class="fw-bold mb-4">Why It's a <span class="text-secondary">Game Changer</span></h2>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Empowering your business with real-time development
+          application data to gain a competitive edge in the construction industry.</p>
+        <div class="divider mx-auto"
+          style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- For Builders -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm-hover transition-all"
+            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 text-center">
+              <div class="icon-wrapper mb-4"
+                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="fas fa-hard-hat text-secondary" style="font-size: 1.75rem;"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">For Builders</h5>
+              <p class="card-text text-muted">
+                Be first to quote. Start conversations with property owners before your competitors even hear about the
+                job.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- For Tradies -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm-hover transition-all"
+            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 text-center">
+              <div class="icon-wrapper mb-4"
+                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="fas fa-tools text-secondary" style="font-size: 1.75rem;"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">For Tradies</h5>
+              <p class="card-text text-muted">
+                Tap into upcoming builds and renovations. Reach out at the right time with the right services.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- For Town Planners -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm-hover transition-all"
+            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 text-center">
+              <div class="icon-wrapper mb-4"
+                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="fas fa-drafting-compass text-secondary" style="font-size: 1.75rem;"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">Town Planners & Certifiers</h5>
+              <p class="card-text text-muted">
+                Get ahead of the approval curve and position your services exactly when they're needed most.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- For Suppliers -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm-hover transition-all"
+            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 text-center">
+              <div class="icon-wrapper mb-4"
+                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <i class="fas fa-truck-loading text-secondary" style="font-size: 1.75rem;"></i>
+              </div>
+              <h5 class="card-title fw-bold mb-3">Suppliers & Contractors</h5>
+              <p class="card-text text-muted">
+                Stay informed about upcoming projects to align your resources and secure business opportunities early.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="row mt-5">
+        <div class="col-lg-8 mx-auto">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-4">
+              <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000" data-bs-pause="hover">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
+                      <p class="lead mb-0">"We picked up two renovation jobs in the first month. It's a no-brainer."</p>
+                    </div>
+                    <p class="text-end mb-0 fw-bold">— Paul M., Builder, SA</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
+                      <p class="lead mb-0">"DA alerts put us in before demolition. We're quoting rough-ins and stormwater early and winning more jobs."</p>
+                    </div>
+                    <p class="text-end mb-0 fw-bold">— Alex P., Plumber, SA</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
+                      <p class="lead mb-0">"The weekly DA emails mean we're quoting first, not chasing. It's been a steady flow of landscaping leads."</p>
+                    </div>
+                    <p class="text-end mb-0 fw-bold">— Sarah L., Landscaper, SA</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
+                      <p class="lead mb-0">"Early visibility on new builds means we're scheduling switchboards and rough-ins weeks sooner. It's added steady fit-out work."</p>
+                    </div>
+                    <p class="text-end mb-0 fw-bold">— Mia W., Electrician, SA</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
+                      <p class="lead mb-0">"Exclusive got our name in front of applicants on day one. We secured two extensions this month from it."</p>
+                    </div>
+                    <p class="text-end mb-0 fw-bold">— Ben H., Builder, SA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
+          style="font-weight: 500; letter-spacing: 1px;">PRICING</span>
+        <h2 class="fw-bold mb-4">Simple, Transparent <span class="text-secondary">Pricing</span></h2>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your business needs. No
+          hidden fees, cancel anytime.</p>
+        <div class="pricing-toggle d-flex justify-content-center align-items-center my-4">
+          <span class="me-3 fw-medium pricing-period active" data-period="monthly">Monthly</span>
+          <div class="form-check form-switch mx-2">
+            <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
+          </div>
+          <span class="ms-3 fw-medium pricing-period" data-period="yearly">Yearly</span>
+        </div>
+        <div class="divider mx-auto"
+          style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Standard Plan -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
+            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 d-flex flex-column h-100">
+              <div>
+                <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect List" style="height: 55px; display: block;">
+                <div class="d-flex align-items-end mb-4 position-relative">
+                  <div class="price-banner">South Australia Only<br><span
+                      style="font-size: 0.6rem; font-weight: 500;">(More states launching soon)</span></div>
+                  <div class="price-container">
+                    <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$69"
+                      data-yearly="$750">$69</span>
+                    <span class="text-muted ms-2 period">/month</span>
+                  </div>
+                </div>
+                <p class="text-muted mb-4">Ideal for individuals and businesses ready to tap into development opportunities.</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Access <b>unlimited Councils</b> of your choice (Currently within South Australia Only)</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Receive <b>weekly DA reports</b> straight to your inbox</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Email support</b> whenever you need help</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Essential analytics</b> to track and grow your leads</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto"
+                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
+                Started</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exclusive Plan -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
+            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
+            <div class="card-body p-4 d-flex flex-column h-100 position-relative">
+              <div>
+                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 65px; display: block; margin-top:-10px">
+                <div class="d-flex flex-column mb-4 position-relative">
+                  <div class="d-flex align-items-end position-relative">
+                    <div class="price-banner">South Australia Only<br><span
+                        style="font-size: 0.6rem; font-weight: 500;">(More states launching soon)</span></div>
+                    <div class="price-container">
+                      <span class="display-5 fw-bold" style="color: var(--primary-color);">$999</span>
+                      <span class="text-muted ms-2">/year</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-muted mb-0">Designed for growing businesses ready to get ahead of the competition.<br><br></p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Direct exposure</b>: Your business marketed exclusively to DA applicants</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Manage & update</b> your profile, logo, and content in real time (with a copy sent to you for records)</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Priority email support</b></span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Advanced analytics</b> for deeper insights</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span><b>Powerful filters</b> to target the opportunities you want most</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto"
+                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
+                Started</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
+            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+            <div class="card-body p-4 d-flex flex-column h-100">
+              <div>
+                <h5 class="fw-bold mt-2 mb-2" style="color: var(--primary-color);">Enterprise</h5>
+                <div class="d-flex align-items-end mb-4">
+                  <span class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary-color);">Corporate</span>
+                  <span class="text-muted ms-2">pricing</span>
+                </div>
+                <p class="text-muted" style="margin-bottom: 2.5rem;">For large organizations with custom needs</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-3 d-flex align-items-start mt-4">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Australia-wide coverage (All states coming soon)</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Priority email & phone support</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Custom integrations</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Dedicated account manager</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Custom reporting</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto enterprise-contact-btn"
+                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;"
+                data-enquiry-type="Enterprise Pricing Enquiry">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 pt-4">
+        <p class="text-muted mb-0">Need help choosing the right plan? <a href="#contact"
+            class="text-secondary text-decoration-underline">Contact our team</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Sample Section -->
+  <section id="freesample" class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+    <div class="container py-5" style="max-width: 1100px;">
+      <div class="text-center mb-4">
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">FREE SAMPLE</span>
+        <h2 class="fw-bold mb-3">Want a look at the business you’re missing out on?</h2>
+        <p class="lead text-muted mx-auto" style="max-width: 720px;">We'll send you a free sample of our weekly DA lists so you can try DAconnect before you subscribe.</p>
+        <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.25rem auto 0; border-radius: 2px;"></div>
+      </div>
+      <div class="row justify-content-center align-items-center g-4 mb-2">
+        <div class="col-auto">
+          <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect" style="height: 55px;">
+        </div>
+        <div class="col-auto">
+          <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 65px;">
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="row justify-content-center g-3 mt-2 mb-2">
+          <div class="col-12 col-md-4">
+            <input type="text" id="freeSampleName" class="form-control form-control-lg" placeholder="Your Name">
+          </div>
+          <div class="col-12 col-md-4">
+            <input type="email" id="freeSampleEmail" class="form-control form-control-lg" placeholder="Your Email">
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-lg free-sample-btn mt-3" style="border-radius: 10px; padding: 0.85rem 2rem;"
+           data-enquiry-type="Free Sample Request"
+           data-message="I'd like to receive free sample lists. Please email me samples of DAconnect and DAconnect Exclusive.">
+          Get Free Samples
+        </a>
+        <p class="text-muted mt-3 mb-0">Prefer email? Contact us at
+          <a href="mailto:council@daconnect.com.au" class="text-secondary text-decoration-underline">council@daconnect.com.au</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container py-5" style="max-width: 1400px;">
       <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="accordion" id="faqAccordion">
-            <!-- Question 1 -->
-            <!--<div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-              <h3 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  How does DAConnect help my business find new leads?
-                </button>
-              </h3>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  DAConnect monitors development applications (DAs) across multiple council areas in real-time. Our system identifies new applications that match your business criteria, such as location, project type, and budget. You'll receive instant notifications about relevant opportunities, giving you a head start to reach out to potential clients before your competitors do.
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
+              style="font-weight: 500; letter-spacing: 1px;">GET IN TOUCH</span>
+            <h2 class="fw-bold mb-4">Contact <span class="text-secondary">Our Team</span></h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Have questions or need more information? Send
+              us a message and we'll get back to you as soon as possible.</p>
+            <div class="divider mx-auto"
+              style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
+            </div>
+          </div>
+
+          <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+              <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+                <div class="card-body p-4 p-md-5">
+                  <form id="contactForm" action="https://formspree.io/f/xovwdzwy" method="POST">
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <label for="name" class="form-label fw-medium">Full Name <span
+                            class="text-danger">*</span></label>
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required
+                          style="padding: 12px 16px; border-radius: 8px;">
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <label for="email" class="form-label fw-medium">Email Address <span
+                            class="text-danger">*</span></label>
+                        <input type="email" class="form-control form-control-lg" id="email" name="email" required
+                          style="padding: 12px 16px; border-radius: 8px;">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <label for="phone" class="form-label fw-medium">Contact Phone</label>
+                        <input type="tel" class="form-control form-control-lg" id="phone" name="phone"
+                          style="padding: 12px 16px; border-radius: 8px;">
+                        <div class="form-text">Optional</div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <label for="business" class="form-label fw-medium">Business Name</label>
+                        <input type="text" class="form-control form-control-lg" id="business" name="business"
+                          style="padding: 12px 16px; border-radius: 8px;">
+                        <div class="form-text">If applicable</div>
+                      </div>
+                    </div>
+
+                    <!-- Enquiry Category -->
+                    <div class="mb-4">
+                      <label class="form-label fw-medium d-block mb-2">Enquiry Category</label>
+                      <div class="d-flex flex-wrap gap-4">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="enquiryCategory" id="enquiryGeneral" value="General Enquiry" checked>
+                          <label class="form-check-label" for="enquiryGeneral">General Enquiry</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="enquiryCategory" id="enquiryExclusive" value="Exclusive">
+                          <label class="form-check-label" for="enquiryExclusive">Exclusive</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="message" class="form-label fw-medium">Your Message <span
+                          class="text-danger">*</span></label>
+                      <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required
+                        style="padding: 12px 16px; border-radius: 8px;" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <!-- Hidden field for enquiry type -->
+                    <input type="hidden" id="enquiryType" name="enquiryType" value="">
+
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary btn-lg"
+                        style="padding: 12px 30px; border-radius: 8px; font-size: 1.1rem;">
+                        <span class="spinner-border spinner-border-sm d-none me-2" role="status"
+                          aria-hidden="true"></span>
+                        Send Message
+                      </button>
+                    </div>
+
+                    <div id="formSuccess" class="alert alert-success mt-4 d-none" role="alert">
+                      <i class="fas fa-check-circle me-2"></i> Your message has been sent successfully! We'll get back
+                      to you soon.
+                    </div>
+
+                    <div id="formError" class="alert alert-danger mt-4 d-none" role="alert">
+                      <i class="fas fa-exclamation-circle me-2"></i> There was an error sending your message. Please try
+                      again later.
+                    </div>
+                  </form>
                 </div>
               </div>
-            </div>-->
+            </div>
 
-            <!-- Question 2 -->
-            <!--<div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-              <h3 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  What types of developments do you track?
-                </button>
-              </h3>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  We track a wide range of development applications including new residential builds, renovations, extensions, commercial developments, industrial projects, and more. Our system categorizes each application by type, value, and scope, making it easy for you to find the projects that best match your business services.
-                </div>
-              </div>
-            </div>-->
+            <!-- Contact Information -->
+            <div class="col-lg-4">
+              <div class="card border-0 h-100 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+                <div class="card-body p-4 p-md-5">
+                  <h5 class="fw-bold mb-4">Contact Information</h5>
+                  <p class="mb-4">Have questions about our services or need assistance? Reach out to us through the form
+                    or contact us directly.</p>
 
-            <!-- Question 3 -->
-            <!--<div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-              <h3 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  How current is the DA information you provide?
-                </button>
-              </h3>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Our system updates multiple times daily to ensure you have access to the most current development applications. We monitor council websites and planning portals in real-time, and typically have new applications in our system within hours of them being lodged with the council.
-                </div>
-              </div>
-            </div>-->
+                  <div class="d-flex align-items-start mb-4">
+                    <div class="icon-wrapper me-3"
+                      style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-envelope text-secondary"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Email Us</h6>
+                      <a href="mailto:council@daconnect.com.au"
+                        class="text-decoration-none text-muted">council@daconnect.com.au</a>
+                    </div>
+                  </div>
 
-            <!-- Question 4 -->
-            <!--<div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-              <h3 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Can I customize the types of DAs I receive notifications for?
-                </button>
-              </h3>
-              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Absolutely! Our advanced filtering system allows you to customize exactly what types of development applications you want to be notified about. You can filter by location, project type, estimated value, and more. This ensures you only receive leads that are highly relevant to your specific business needs.
-                </div>
-              </div>
-            </div>-->
+                  <div class="d-flex align-items-start mb-4">
+                    <div class="icon-wrapper me-3"
+                      style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-phone text-secondary"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Phone</h6>
+                      <a href="tel:+61872286805" class="text-decoration-none text-muted">(08) 7228 6805</a>
+                    </div>
+                  </div>
 
-            <!-- Question 5 -->
-            <!--<div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-              <h3 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed fw-semibold py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  How do I get started with DAConnect?
-                </button>
-              </h3>
-              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Getting started is simple! Just choose a plan that suits your business needs, create your account, and set up your search criteria. Our intuitive dashboard will guide you through the process. You can start receiving DA alerts within minutes of signing up. If you need any assistance, our support team is always ready to help you get the most out of our service.
+                  <div class="d-flex align-items-start mb-4">
+                    <div class="icon-wrapper me-3"
+                      style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-clock text-secondary"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">Business Hours</h6>
+                      <p class="mb-0 text-muted">Monday - Friday: 9:00 AM - 5:00 PM AEST</p>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start mb-4">
+                    <div class="icon-wrapper me-3"
+                      style="width: 44px; height: 44px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      <i class="fas fa-building text-secondary"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">ABN</h6>
+                      <p class="mb-0 text-muted">74 168 911 402</p>
+                    </div>
+                  </div>
+
+                  <div class="mt-5">
+                    <h6 class="fw-semibold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                      <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none text-muted"
+                        style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="https://www.instagram.com/da.connect.au" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none text-muted"
+                        style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/company/daconnectau" target="_blank" rel="noopener noreferrer"
+                        class="text-decoration-none text-muted"
+                        style="width: 40px; height: 40px; border: 1px solid #dee2e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1468,213 +961,84 @@ window.addEventListener('scroll', function() {
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- Footer -->
-<footer class="py-5 bg-dark text-light">
-  <div class="container">
-    <div class="row g-3">
-      <!-- Brand Column -->
-      <div class="col-lg-4">
-        <h5 class="mb-4">DAConnect</h5>
-        <p class="mb-4">Get real-time council Development Application data delivered to your inbox every week.</p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/da.connect.au" target="_blank" rel="noopener noreferrer" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/daconnectau" target="_blank" rel="noopener noreferrer" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+  <footer class="py-5 bg-dark text-light">
+    <div class="container">
+      <div class="row g-3">
+        <!-- Brand Column -->
+        <div class="col-lg-4">
+          <h5 class="mb-4">DAconnect</h5>
+          <p class="mb-4">Get real-time council Development Application data delivered to your inbox every week.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer"
+              class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/da.connect.au" target="_blank" rel="noopener noreferrer"
+              class="text-light me-3"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/daconnectau" target="_blank" rel="noopener noreferrer"
+              class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2">
+          <h6 class="mb-4">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="#howitworks" class="text-light text-decoration-none">How It Works</a></li>
+            <li class="mb-2"><a href="#theprocess" class="text-light text-decoration-none">The Process</a></li>
+            <li class="mb-2"><a href="#whychooseus" class="text-light text-decoration-none">Why Choose Us</a></li>
+            <li class="mb-2"><a href="#pricing" class="text-light text-decoration-none">Pricing</a></li>
+            <li class="mb-2"><a href="#freesample" class="text-light text-decoration-none">Free Sample</a></li>
+            <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-3">
+          <h6 class="mb-4">Contact Info</h6>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fas fa-envelope me-2"></i>
+              <a href="mailto:council@daconnect.com.au" style="color: #dee2e6;">council@daconnect.com.au</a>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-phone me-2"></i>
+              <a href="tel:+61872286805" style="color: #dee2e6;">(08) 7228 6805</a>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-clock me-2"></i>
+              Mon - Fri: 9:00 AM - 5:00 PM AEST
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-building me-2"></i>
+              ABN: 74 168 911 402
+            </li>
+          </ul>
         </div>
       </div>
-      
-      <!-- Quick Links -->
-      <div class="col-lg-2">
-        <h6 class="mb-4">Quick Links</h6>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
-          <li class="mb-2"><a href="#how-it-works" class="text-light text-decoration-none">How It Works</a></li>
-          <li class="mb-2"><a href="#who-its-for" class="text-light text-decoration-none">Who It's For</a></li>
-          <li class="mb-2"><a href="#pricing" class="text-light text-decoration-none">Pricing</a></li>
-          <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Contact Info -->
-      <div class="col-lg-3">
-        <h6 class="mb-4">Contact Info</h6>
-        <ul class="list-unstyled">
-          <li class="mb-3">
-            <i class="fas fa-envelope me-2"></i>
-            daconnect@aimpublishing.com.au
-          </li>
-          <li class="mb-3">
-            <i class="fas fa-clock me-2"></i>
-            Mon - Fri: 9:00 AM - 5:00 PM AEST
-          </li>
-          <li class="mb-3">
-            <i class="fas fa-building me-2"></i>
-            ABN: 74 168 911 402
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <hr class="my-4 border-secondary">
-    
-    <!-- Copyright -->
-    <div class="row">
-      <div class="col-md-6">
-        <p class="mb-0">&copy; 2025 DAConnect. All rights reserved.</p>
-        <small class="text-white-50">ABN: 74 168 911 402</small>
-      </div>
-    </div>
-  </div>
-</footer>
 
-  <!-- Handle Enterprise contact button click -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const enterpriseBtn = document.querySelector('.enterprise-contact-btn');
-      const enquiryTypeField = document.getElementById('enquiryType');
-      const messageField = document.getElementById('message');
-      
-      if (enterpriseBtn) {
-        enterpriseBtn.addEventListener('click', function(e) {
-          // Set the enquiry type
-          enquiryTypeField.value = this.getAttribute('data-enquiry-type');
-          
-          // Add a note to the message if it's empty
-          if (!messageField.value.trim()) {
-            messageField.value = 'I am interested in learning more about Enterprise pricing options.';
-          }
-          
-          // Smooth scroll to the contact form
-          const contactSection = document.getElementById('contact');
-          if (contactSection) {
-            e.preventDefault();
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      }
-    });
-  </script>
-  
+      <hr class="my-4 border-secondary">
+
+      <!-- Copyright -->
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 DAconnect. All rights reserved.</p>
+          <small class="text-white-50">ABN: 74 168 911 402</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Formspree Form Handling -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contactForm');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const spinner = submitBtn.querySelector('.spinner-border');
-      const successAlert = document.getElementById('formSuccess');
-      const errorAlert = document.getElementById('formError');
 
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Show loading state
-        submitBtn.disabled = true;
-        spinner.classList.remove('d-none');
-        successAlert.classList.add('d-none');
-        errorAlert.classList.add('d-none');
-        
-        try {
-          const formData = new FormData(form);
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            // Show success message
-            successAlert.classList.remove('d-none');
-            form.reset();
-            // Scroll to success message
-            successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          } else {
-            throw new Error('Form submission failed');
-          }
-        } catch (error) {
-          // Show error message
-          errorAlert.classList.remove('d-none');
-          errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } finally {
-          // Reset loading state
-          submitBtn.disabled = false;
-          spinner.classList.add('d-none');
-        }
-      });
-    });
-  </script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      // Function to update active link
-      function updateActiveLink() {
-        let current = '';
-        const scrollPosition = window.scrollY + 150; // Adjust offset as needed
-        
-        // If at the very top of the page
-        if (window.scrollY < 100) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          document.querySelector('.nav-link[onclick*="scrollTo"]')?.classList.add('active');
-          return;
-        }
-        
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            current = '#' + section.getAttribute('id');
-          }
-        });
-        
-        // Update active state for nav links
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === current) {
-            link.classList.add('active');
-          }
-        });
-      }
-      
-      // Add click handler for smooth scrolling
-      navLinks.forEach(link => {
-        if (link.getAttribute('onclick')) return; // Skip if already has onclick
-        
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            window.scrollTo({
-              top: targetSection.offsetTop - 80, // Adjust for fixed header
-              behavior: 'smooth'
-            });
-            
-            // Update active link
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-          }
-        });
-      });
-      
-      // Update active link on scroll
-      window.addEventListener('scroll', updateActiveLink);
-      
-      // Set initial active link
-      updateActiveLink();
-    });
-  </script>
+  <script src="js/navbar-effects.js"></script>
+  <script src="js/cta-handlers.js"></script>
+  <script src="js/exclusive-scroll.js"></script>
+  <script src="js/form-submit.js"></script>
+  <script src="js/nav-active.js"></script>
   <script src="js/pricing-toggle.js"></script>
 </body>
 </html>
