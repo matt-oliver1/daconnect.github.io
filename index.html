@@ -340,8 +340,7 @@
         </div>
       </div>
 
-
-
+ 
       <div class="row g-4">
         <!-- Step 1 -->
         <div class="col-md-6 col-lg-3">
@@ -589,7 +588,7 @@
         <h2 class="fw-bold mb-4">Simple, Transparent <span class="text-secondary">Pricing</span></h2>
         <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your business needs. No
           hidden fees, cancel anytime.</p>
-        <div class="pricing-toggle d-flex justify-content-center align-items-center my-4">
+        <div class="pricing-toggle d-flex justify-content-center align-items-center my-4 d-md-none">
           <span class="me-3 fw-medium pricing-period active" data-period="monthly">Monthly</span>
           <div class="form-check form-switch mx-2">
             <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
@@ -600,12 +599,14 @@
           style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
         </div>
       </div>
-
-      <div class="row g-4 justify-content-center">
+      
+      <!-- Mobile: Simple Cards -->
+      <div class="d-block d-md-none pricing-mobile">
+        <div class="row g-4 justify-content-center">
         <!-- Standard Plan -->
         <div class="col-md-6 col-lg-3 mb-4">
           <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
-            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
             <div class="card-body p-4 d-flex flex-column h-100">
               <div>
                 <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect List" style="height: 55px; display: block;">
@@ -613,10 +614,13 @@
                   <div class="price-banner">South Australia Only<br><span
                       style="font-size: 0.6rem; font-weight: 500;">(More states launching soon)</span></div>
                   <div class="price-container">
-                    <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$69"
-                      data-yearly="$750">$69</span>
+                    <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$69" data-yearly="$690">$69</span>
                     <span class="text-muted ms-2 period">/month</span>
+                    <span class="badge bg-success text-white ms-2 card-savings" style="display: none; vertical-align: middle; margin-bottom:8px;">Save $138/yr</span>
                   </div>
+                </div>
+                <div class="mb-2 d-flex align-items-center gap-2">
+                  <span class="subtle-badge">2 months free when you pay yearly</span>
                 </div>
                 <p class="text-muted mb-4">Ideal for individuals and businesses ready to tap into development opportunities.</p>
                 <ul class="list-unstyled mb-4">
@@ -638,7 +642,7 @@
                   </li>
                 </ul>
               </div>
-              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto"
+              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto subscription-link" data-plan="list"
                 style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
                 Started</a>
             </div>
@@ -661,9 +665,14 @@
                       <span class="text-muted ms-2">/year</span>
                     </div>
                   </div>
+                  <div class="mt-2"><span class="subtle-badge" style="visibility: hidden;">placeholder</span></div>
                 </div>
                 <p class="text-muted mb-0">Designed for growing businesses ready to get ahead of the competition.<br><br></p>
                 <ul class="list-unstyled mb-4">
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                    <span>Everything in <b>DAconnect</b></span>
+                  </li>
                   <li class="mb-3 d-flex align-items-start">
                     <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
                     <span><b>Direct exposure</b>: Your business marketed exclusively to DA applicants</span>
@@ -686,7 +695,7 @@
                   </li>
                 </ul>
               </div>
-              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto"
+              <a href="#contact" class="btn  btn-secondary w-100 mt-auto subscription-link" data-plan="exclusive"
                 style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
                 Started</a>
             </div>
@@ -696,7 +705,7 @@
         <!-- Enterprise Plan -->
         <div class="col-md-6 col-lg-3 mb-4">
           <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
-            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease;">
+            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
             <div class="card-body p-4 d-flex flex-column h-100">
               <div>
                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--primary-color);">Enterprise</h5>
@@ -704,6 +713,7 @@
                   <span class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary-color);">Corporate</span>
                   <span class="text-muted ms-2">pricing</span>
                 </div>
+                <div class="mb-2"><span class="subtle-badge" style="visibility: hidden;">placeholder</span></div>
                 <p class="text-muted" style="margin-bottom: 2.5rem;">For large organizations with custom needs</p>
                 <ul class="list-unstyled mb-4">
                   <li class="mb-3 d-flex align-items-start mt-4">
@@ -733,6 +743,165 @@
                 data-enquiry-type="Enterprise Pricing Enquiry">Contact Sales</a>
             </div>
           </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Desktop/Tablet: Comparison Table -->
+      <style>
+        .subtle-badge { background: rgba(42,157,143,.1); color: var(--secondary-color); border-radius: 999px; padding: 4px 10px; font-size: .8rem; font-weight: 600; }
+        .comparison-table th, .comparison-table td { padding: 1rem 1.25rem; vertical-align: middle; }
+        /* Highlight entire Exclusive column (3rd plan column) */
+        .comparison-table.highlight-first-col thead th:nth-child(3),
+        .comparison-table.highlight-first-col tbody td:nth-child(3) { background: rgba(42,157,143,0.06); }
+        .comparison-table.highlight-rows tbody tr:nth-child(odd) td:not(:nth-child(3)),
+        .comparison-table.highlight-rows tbody tr:nth-child(odd) th:not(:nth-child(3)) { background: #f9fbfc; }
+        .comparison-table i.fa-xmark { color: #c9d1d9 !important; opacity: 0.6; }
+        /* Prevent long/skinny mobile cards: enforce a min width and auto-wrap */
+        #pricing .pricing-mobile .row.g-4 {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+          gap: 1.5rem;
+          justify-content: center;
+        }
+        #pricing .pricing-mobile .row.g-4 > [class^="col-"],
+        #pricing .pricing-mobile .row.g-4 > [class*=" col-"] { width: 100%; }
+        #pricing .pricing-mobile .card.pricing-card { width: 100%; max-width: 560px; min-width: 520px; margin-inline: auto; }
+        @media (max-width: 520px) {
+          #pricing .pricing-mobile .row.g-4 { grid-template-columns: 1fr; }
+          #pricing .pricing-mobile .card.pricing-card { min-width: 0; }
+        }
+        /* Width-based switch: mobile cards below 1294px, table at/above 1294px */
+        @media (max-width: 1293.98px) {
+          #pricing .pricing-desktop { display: none !important; }
+          #pricing .pricing-mobile { display: block !important; }
+          #pricing .pricing-toggle.d-md-none { display: flex !important; }
+          #pricing .divider.d-md-none { display: block !important; }
+        }
+        @media (min-width: 1294px) {
+          #pricing .pricing-desktop { display: block !important; }
+          #pricing .pricing-mobile { display: none !important; }
+          #pricing .pricing-toggle.d-md-none { display: none !important; }
+          #pricing .divider.d-md-none { display: none !important; }
+        }
+        /* If viewport height is small, force mobile pricing to avoid scroll */
+        @media (max-height: 900px) {
+          #pricing .pricing-desktop { display: none !important; }
+          #pricing .pricing-mobile { display: block !important; }
+          #pricing .pricing-toggle.d-md-none { display: flex !important; }
+          #pricing .divider.d-md-none { display: block !important; }
+        }
+      </style>
+      <div class="d-none d-md-block pricing-desktop">
+        <div class="table-responsive shadow-sm rounded-3 bg-white">
+          <table class="table comparison-table highlight-first-col highlight-rows mb-0 align-middle">
+            <thead>
+              <tr>
+                <th scope="col" class="fw-bold text-start fs-3"></th>
+                <th scope="col" class="text-center">
+                  <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect List" style="height: 55px;">
+                  <div class="mt-2">
+                    <span class="table-list-price fw-bold" style="font-size: 1.5rem; color: var(--primary-color);" data-monthly="$69/mo" data-yearly="$690/yr">$69/mo</span>
+                    <span class="badge bg-success text-white ms-2 table-savings" style="display: none; vertical-align: middle; margin-bottom:8px;">Save $138/yr</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="subtle-badge table-two-months">2 months free when you pay yearly</span>
+                  </div>
+                  <div class="d-flex justify-content-center mt-2">
+                    <div class="pricing-toggle d-inline-flex align-items-center">
+                      <span class="me-2 fw-medium pricing-period" data-period="monthly">Monthly</span>
+                      <div class="form-check form-switch mx-2">
+                        <input class="form-check-input" type="checkbox" id="pricingToggleTable" style="width: 3rem; height: 1.5rem;">
+                      </div>
+                      <span class="ms-2 fw-medium pricing-period" data-period="yearly">Yearly</span>
+                    </div>
+                  </div>
+                </th>
+                <th scope="col" class="text-center" style="border-top: 3px solid var(--secondary-color);">
+                  <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 75px; margin-top: -115px;">
+                  <div style="color: var(--primary-color); font-size: 1.5rem; margin-top: -30px">$999/yr</div>
+                </th>
+                <th scope="col" class="text-center">
+                  <span class="fw-semibold">Enterprise</span>
+                  <div class="mt-2 small text-muted">Corporate pricing</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td class="text-center"><span class="small text-muted">Ideal for individuals and businesses ready to <br>tap into development opportunities.</span></td>
+                <td class="text-center"><span class="small text-muted">Designed for growing businesses ready to <br>get ahead of the competition.</span></td>
+                <td class="text-center"><span class="small text-muted">For large organizations with custom needs</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Unlimited councils of your choice</th>
+                <td class="text-center">South Australia Only<br><span class="small text-muted">(<i>more coming soon</i>)</span></td>
+                <td class="text-center">South Australia Only<br><span class="small text-muted">(<i>more coming soon</i>)</span></td>
+                <td class="text-center">Australia‑wide</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Weekly DA reports</th>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Analytics</th>
+                <td class="text-center">Essential</td>
+                <td class="text-center">Advanced</td>
+                <td class="text-center">Advanced</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Support</th>
+                <td class="text-center">Email</td>
+                <td class="text-center">Phone and Email</td>
+                <td class="text-center">Phone and Priority Email</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Direct exposure to DA Applicants</th>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Manage & update profile</th>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Custom integrations</th>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Custom reporting</th>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
+                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-semibold">Price</th>
+                <td class="text-center">
+                  <div class="fw-bold table-list-price-bottom" data-monthly="$69/mo" data-yearly="$690/yr">$69/mo</div>
+                </td>
+                <td class="text-center">
+                  <div class="fw-bold">$999/yr</div>
+                </td>
+                <td class="text-center">
+                  <div class="fw-bold">Contact sales</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="text-center"><a href="#contact" class="btn btn-outline-secondary subscription-link" data-plan="list">Get Started</a></td>
+                <td class="text-center"><a href="#contact" class="btn btn-secondary subscription-link" data-plan="exclusive">Get Started</a></td>
+                <td class="text-center"><a href="#contact" class="btn btn-outline-secondary">Contact Sales</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -1040,5 +1209,77 @@
   <script src="js/form-submit.js"></script>
   <script src="js/nav-active.js"></script>
   <script src="js/pricing-toggle.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('pricingToggle');
+      const cardSavings = document.querySelector('.card-savings');
+      function updateSavings() {
+        const show = !!(toggle && toggle.checked);
+        if (cardSavings) cardSavings.style.display = show ? 'inline-block' : 'none';
+      }
+      if (toggle) {
+        updateSavings();
+        toggle.addEventListener('change', updateSavings);
+        document.querySelectorAll('.pricing-period').forEach(p => p.addEventListener('click', () => {
+          setTimeout(updateSavings, 0);
+        }));
+      }
+
+      // Comparison table toggle sync with main toggle and table price text
+      const mainToggle = document.getElementById('pricingToggle');
+      const tableToggle = document.getElementById('pricingToggleTable');
+      const tablePrice = document.querySelector('.table-list-price');
+      const tablePriceBottom = document.querySelector('.table-list-price-bottom');
+      const tableTwoMonths = document.querySelector('.table-two-months');
+      const tableSavings = document.querySelector('.table-savings');
+
+      function updateTablePricing(isYearly) {
+        if (tablePrice) {
+          const monthlyTxt = tablePrice.dataset.monthly || '$69/mo';
+          const yearlyTxt = tablePrice.dataset.yearly || '$690/yr';
+          tablePrice.textContent = isYearly ? yearlyTxt : monthlyTxt;
+        }
+        if (tablePriceBottom) {
+          const monthlyTxtB = tablePriceBottom.dataset.monthly || '$69/mo';
+          const yearlyTxtB = tablePriceBottom.dataset.yearly || '$690/yr';
+          tablePriceBottom.textContent = isYearly ? yearlyTxtB : monthlyTxtB;
+        }
+        if (tableTwoMonths) {
+          tableTwoMonths.style.display = 'inline-block';
+        }
+        if (tableSavings) {
+          tableSavings.style.display = isYearly ? 'inline-block' : 'none';
+        }
+      }
+
+      function dispatchChange(el) {
+        if (!el) return;
+        const evt = new Event('change', { bubbles: true });
+        el.dispatchEvent(evt);
+      }
+
+      if (tableToggle && mainToggle) {
+        // Initialize table toggle to match main toggle
+        tableToggle.checked = !!mainToggle.checked;
+        updateTablePricing(!!mainToggle.checked);
+
+        // When main changes, mirror to table
+        mainToggle.addEventListener('change', function() {
+          tableToggle.checked = !!mainToggle.checked;
+          updateTablePricing(!!mainToggle.checked);
+        });
+
+        // When table changes, mirror to main and trigger pricing updates
+        tableToggle.addEventListener('change', function() {
+          const isYearly = !!tableToggle.checked;
+          if (mainToggle.checked !== isYearly) {
+            mainToggle.checked = isYearly;
+            dispatchChange(mainToggle);
+          }
+          updateTablePricing(isYearly);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
