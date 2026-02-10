@@ -53,6 +53,31 @@
     ]
   }
   </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vbmkr6j6f3");
+  </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '838312912574438');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDP7CQQF6R"></script>
   <script>
@@ -99,11 +124,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3 py-2 mx-1 position-relative" href="#theprocess">
-              The Process
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link px-3 py-2 mx-1 position-relative" href="#whychooseus">
               Why Choose Us
             </a>
@@ -122,6 +142,9 @@
 
         <!-- Right-aligned items -->
         <div class="d-flex align-items-center">
+          <a href="faq.html" class="nav-link px-2 me-1">
+            Q&A
+          </a>
           <a href="#contact" class="nav-link px-2 me-1">
             Contact
           </a>
@@ -131,9 +154,8 @@
         </a> -->
           <div class="d-flex gap-2">
             <a href="#" class="btn btn-primary px-3"
-              style="background-color: #cccccc; border-color: #bbbbbb; font-weight: 500; cursor: not-allowed; opacity: 0.7; padding: 0.4rem 0.8rem !important; font-size: 0.85rem !important; white-space: nowrap;"
-              disabled>
-              Sign In (Coming soon)
+              style="background-color: var(--secondary-color); border-color: #bbbbbb; font-weight: 500; padding: 0.4rem 0.8rem !important; font-size: 0.85rem !important; white-space: nowrap;">
+              Sign In
             </a>
           </div>
         </div>
@@ -141,303 +163,186 @@
     </div>
   </nav>
 
-
   <!-- Hero Section -->
-  <div class="hero-section" style="position: relative; min-height: 100vh; display: flex; overflow: hidden;">
-    <!-- Text Content -->
-    <div class="hero-content"
-      style="position: absolute; left: 10%; top: 40%; transform: translateY(-50%); max-width: 44%; z-index: 3; background: rgba(255, 255, 255, 0.95); padding: 3.5rem; border-radius: 16px; box-shadow: 0 15px 50px rgba(0,0,0,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
-      <div>
-        <h1 class="mb-4"
-          style="font-size: 3.75rem; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 1.5rem 0; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-          Development Applications <br>Delivered to Your Inbox - <span style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; text-decoration-color: var(--secondary-color);">Get the Work First!</span>
-        </h1>
-        <p class="mb-4" style="font-size: 1.25rem; line-height: 1.6; color: #4a5568; margin-bottom: 2rem !important;">
-          Stop searching. Start winning. We monitor Council websites 24/7 to bring you <strong>exclusive access</strong>
-          to new development applications in your area. Be the first to know and the first to quote.
-        </p>
-        <div class="d-flex flex-wrap gap-3 align-items-center">
-          <a href="#pricing" class="btn btn-primary btn-lg px-5"
-            style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 123, 91, 0.2);">
-            Get Started
-            <i class="fas fa-arrow-right ms-2" style="font-size: 0.9em; transition: transform 0.3s ease;"></i>
-          </a>
+  <!-- Hero Section -->
+  <div id="dastats" class="hero-section" style="position: relative; min-height: 100vh; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); overflow: hidden;">
+    <!-- Background Image (right side) -->
+    <div style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; z-index: 1;">
+      <img src="images/construction_looking_at_phone_banner.png" alt="DA Connect Service Interface" class="hero-bg"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%;">
+      <!-- Gradient overlay from left -->
+      <div style="position: absolute; top: 0; left: -1px; width: 70%; height: 100%; background: linear-gradient(to right, #f8f8f8 0%, #f8f8f8 15%, rgba(248,248,248,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);"></div>
+      <!-- Top fade -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 15%; background: linear-gradient(to bottom, #f5f5f5, transparent);"></div>
+      <!-- Bottom fade -->
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 20%; background: linear-gradient(to top, #ffffff, transparent);"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container position-relative" style="z-index: 3; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 60px;">
+      <div style="max-width: 60%; margin-top: -80px;">
+        <!-- Text Content -->
+        <div class="hero-content">
+          <h1 class="mb-4"
+            style="font-size: 3.75rem; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; color: #1a1a1a;">
+            <span class="hero-highlight" style="color: var(--primary-color);">Your Business Delivered <br>to Every Development — </span> <span class="hero-highlight" style="color: var(--secondary-color); font-weight: 800;">Get the Work First!</span>
+          </h1>
+          <p class="mb-4" style="font-size: 1.2rem; line-height: 1.7; color: #4a5568;">
+            Stop searching. Start winning. We monitor Council websites 24/7 to bring you <strong>exclusive access</strong>
+            to new development applications in your area. Be the first they see and the first they call.
+          </p>
+          <div class="d-flex flex-wrap gap-3 align-items-center">
+            <a href="#pricing" class="btn btn-lg px-5"
+              style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s ease; background: var(--secondary-color); color: white; border: none;">
+              Get Started
+              <i class="fas fa-arrow-right ms-2" style="font-size: 0.9em;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- DA Stats right under content - BIGGER -->
+        <div class="mt-5 pt-4 hero-stats">
+          <h6 class="fw-bold mb-4" style="color: var(--primary-color); font-size: 1rem; letter-spacing: 1.2px; text-transform: uppercase;">Development Applications in South Australia</h6>
+          <div class="row g-4">
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="12847">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Year</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="1071">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Month</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="268">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Week</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Image Section -->
-    <div class="hero-image"
-      style="position: absolute; top: 0; right: 0; width: 65%; height: 100%; z-index: 1; overflow: hidden;">
-      <div style="width: 100%; height: 100%; position: relative; overflow: hidden;">
-        <img src="images/construction_looking_at_phone_banner.png" alt="DA Connect Service Interface" class="hero-bg"
-          style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; min-width: 100%; min-height: 100%;">
-      </div>
-    </div>
-
-    <!-- Gradient Overlay -->
-    <div
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.3) 70%); z-index: 2;">
     </div>
   </div>
 
   <!-- How It Works -->
-  <section id="howitworks" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%); padding-bottom: 6rem;">
+  <section id="howitworks" class="py-5" style="background: #ffffff; padding: 6rem 0 8rem 0;">
     <div class="container py-5">
-      <div class="text-center mb-5">
-        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
-          style="font-weight: 500; letter-spacing: 1px;">HOW IT WORKS</span>
-        <img src="images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect"
-          style="height: 55px; display: block; margin: 0 auto 1.5rem;">
-        <p class="lead text-muted mx-auto" style="max-width: 700px;">
-          Your competitive edge with real-time development application tracking and lead generation.
-        </p>
-        <div class="divider mx-auto"
+      <!-- Header Section -->
+      <div class="text-center mb-5 pb-4">
+        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-4 scroll-animate animate-up"
+          style="font-weight: 600; letter-spacing: 1.5px; font-size: 0.75rem; text-transform: uppercase;">HOW IT WORKS FOR YOU</span>
+        <p class="lead text-muted mx-auto mb-4 scroll-animate animate-up delay-1" style="max-width: 750px; font-size: 1.15rem; line-height: 1.7;">All development data from every council in South Australia is received by DAconnect</p>
+        <div class="divider mx-auto scroll-animate animate-scale delay-2"
           style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
         </div>
-      </div>
-
-      <!-- Row 1: List section + Image -->
-      <div class="row align-items-center g-5 mb-5">
-        <div class="col-lg-6">
-          <div class="pe-lg-5">
-            <h3 class="fw-bold mb-4" style="font-size: 2rem; line-height: 1.2;">Never Miss an Opportunity Again</h3>
-            <p class="lead text-muted mb-4">
-              <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect" style="height: 55px; display: block;">
-              Keeps you ahead by tracking Council Development Applications (DAs) in your area. Get weekly updates of new
-              DAs straight to your inbox. No searching, No wasted time. Just early access to qualified leads so you can
-              quote first and win more work.
-            </p>
-            <div class="d-flex flex-column gap-3 mb-0">
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2"
-                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Receive only the Development Applications that match your preferred work or category</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2"
-                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Preferential rate available for 12-month upfront payment</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2"
-                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Easy to read format</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2"
-                  style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Cancel anytime</span>
-              </div>
-            </div>
-            <!-- Mobile-only image shown above the button (with iPhone scrollable mockup) -->
-            <div class="d-block d-lg-none my-3 position-relative">
-              <img src="images/example of weekly list.png" alt="DAconnect Dashboard mobile preview" class="img-fluid w-100" style="border-radius: 12px;">
-              <div class="iphone-overlay" style="position: absolute; top: 175px; right: -85px; z-index: 3;">
-                <div class="iphone-mockup auto-scroll-container" style="width: 120px; height: 220px;">
-                  <div class="iphone-screen auto-scroll-viewport">
-                    <img src="images/DAconnect_list_mobile.png" alt="DAconnect mobile list" class="auto-scroll-image">
-                  </div>
-                  <img src="images/iphone.png" alt="iPhone frame" class="iphone-frame" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <a href="#pricing" class="btn btn-primary btn-lg mt-4" style="border-radius: 8px; font-size: 1.1rem; padding: 0.7rem 2rem;">View Pricing Plans</a>
-          </div>
-        </div>
-        <div class="col-lg-6 d-none d-lg-flex align-items-center" style="overflow: visible;">
-          <div class="position-relative w-100" style="border-radius: 16px; overflow: visible; box-shadow: 0 20px 40px rgba(0,0,0,0.1); padding: 20px; z-index: 2;">
-            <img src="images/example of weekly list.png" alt="DAconnect Dashboard" class="img-fluid w-100"
-              style="padding-bottom: 10px; border-radius: 12px;">
-            <div class="iphone-overlay" style="position: absolute; top: 230px; right: -105px; z-index: 3;">
-              <div class="iphone-mockup auto-scroll-container" style="width: 195px; height: 260px;">
-                <div class="iphone-screen auto-scroll-viewport">
-                  <img src="images/DAconnect_list_mobile.png" alt="DAconnect mobile list" class="auto-scroll-image">
-                </div>
-                <img src="images/iphone.png" alt="iPhone frame" class="iphone-frame" loading="lazy">
-              </div>
-            </div>
+        
+        <!-- Hero Image with enhanced styling -->
+        <div class="mt-5 mb-5 position-relative scroll-animate animate-up delay-3">
+          <div style="max-width: 900px; margin: 0 auto; position: relative;">
+            <img src="images/how_it_works.png" alt="How It Works" class="img-fluid" 
+              style="width: 100%;">
+            <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, transparent, rgba(29, 53, 87, 0.05)); border-radius: 50%; z-index: -1;"></div>
           </div>
         </div>
       </div>
 
-  <!-- Row 2: Exclusive section + Image -->
-      <div class="row align-items-center g-5 mb-5">
-        <div class="col-lg-6 order-lg-1 order-2 d-flex align-items-center exclusive-image-col">
-          <div id="exclusiveImageContainer" class="position-relative w-100 scrolling-image-container" style="background: #f6f8fa; border: 1px solid #e9ecef; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 20px;">
-            <div id="exclusiveViewport" style="height: 100%; width: 100%; overflow: hidden; background: #ffffff; border-radius: 12px; display: flex; align-items: flex-start; justify-content: center;">
-              <img id="exclusiveImage" src="images/DAconnect-exclusive-list2.PNG" alt="DAconnect" class="img-fluid scrolling-image" style="width: 85% !important; max-width: 85% !important; margin: 0 auto; display: block; object-fit: contain; object-position: top center;">
+      <!-- 4 Step Process - Enhanced Professional Layout -->
+      <div class="position-relative" style="max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Step 1 - Image Left -->
+        <div class="row align-items-center g-5 mb-5 pb-5 position-relative">
+          <div class="col-lg-6 order-lg-1 order-2 scroll-animate animate-left">
+            <div class="position-relative" style="padding: 20px;">
+              <img src="images/how_it_works-step-1.png" alt="Step 1" class="img-fluid" 
+                style="width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease;">
             </div>
           </div>
-          
-          <!-- Mobile-only CTA below image -->
-          <div class="d-block d-lg-none w-100 mt-3">
-            <a href="#pricing" class="btn btn-primary btn-lg w-100" style="border-radius: 8px; font-size: 1.05rem; padding: 0.7rem 1rem;">View Pricing Plans</a>
+          <div class="col-lg-6 order-lg-2 order-1 scroll-animate animate-right delay-1">
+            <div class="ps-lg-4">
+              <div class="d-flex align-items-center mb-4">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #2a9d8f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3); font-size: 1.5rem; font-weight: 800; color: white; flex-shrink: 0; margin-right: 1.5rem;">1</div>
+                <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">Choose what Council (or Councils) you want to work in</h3>
+              </div>
+              <p class="text-muted mb-0" style="font-size: 1.15rem; line-height: 1.8;">Select the specific council areas where you want to receive development application alerts and opportunities.</p>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6 order-lg-2 order-1 exclusive-text">
-          <div class="ps-lg-5">
-            <h3 class="fw-bold mb-4" style="font-size: 2rem; line-height: 1.2;">Get in front before your competitors even hear about it</h3>
-          <p class="lead text-muted mb-4">
-            <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect" style="height: 75px; display: block;">
-            Be the first in line. On top of your weekly DA updates, we go one step further. When a new DA is lodged, the applicant receives a comprehensive, exclusive list of businesses, trades, and companies ready to take on the project. 
-            Your logo, details, and services are delivered directly to the decision-maker's inbox. No waiting. No guessing. Just your business in front of the right people—before your competitors even hear about it.
-            Your <u>Exclusive profile</u> is tailored to highlight the opportunities you want most. This is your chance to get in front first—before your competitors even know the project exists
+
+        <!-- Step 2 - Image Right -->
+        <div class="row align-items-center g-5 mb-5 pb-5 position-relative">
+          <div class="col-lg-6 order-lg-1 order-1 scroll-animate animate-left delay-1">
+            <div class="pe-lg-4">
+              <div class="d-flex align-items-center mb-4">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #2a9d8f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3); font-size: 1.5rem; font-weight: 800; color: white; flex-shrink: 0; margin-right: 1.5rem;">2</div>
+                <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">Enter your business details and create your digital business card</h3>
+              </div>
+              <p class="text-muted mb-2" style="font-size: 1.15rem; line-height: 1.8;">Build your professional profile with your logo, services, and contact information.</p>
+              <p class="text-muted fst-italic" style="font-size: 1rem;">(you can update and change your details anytime)</p>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 order-2 scroll-animate animate-right">
+            <div class="position-relative" style="padding: 20px;">
+              <img src="images/how_it_works-step-2.png" alt="Step 2" class="img-fluid" 
+                style="width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 - Image Left -->
+        <div class="row align-items-center g-5 mb-5 pb-5 position-relative">
+          <div class="col-lg-6 order-lg-1 order-2 scroll-animate animate-left">
+            <div class="position-relative" style="padding: 20px;">
+              <img src="images/how_it_works-step-3.png" alt="Step 3" class="img-fluid" 
+                style="width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 order-1 scroll-animate animate-right delay-1">
+            <div class="ps-lg-4">
+              <div class="d-flex align-items-center mb-4">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #2a9d8f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3); font-size: 1.5rem; font-weight: 800; color: white; flex-shrink: 0; margin-right: 1.5rem;">3</div>
+                <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">Your digital business card is sent to all publicly listed developments</h3>
+              </div>
+              <p class="text-muted mb-3" style="font-size: 1.15rem; line-height: 1.8;">Your profile reaches decision-makers in your chosen council area.</p>
+              <div class="d-inline-block px-4 py-2 rounded-pill" style="background: rgba(42, 157, 143, 0.1); border: 1px solid rgba(42, 157, 143, 0.2);">
+                <span style="color: var(--secondary-color); font-weight: 600; font-size: 0.95rem;">
+                  <i class="fas fa-users me-2"></i>Exclusive list of no more than 14 businesses
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 - Image Right -->
+        <div class="row align-items-center g-5 mb-5">
+          <div class="col-lg-6 order-lg-1 order-1 scroll-animate animate-left delay-1">
+            <div class="pe-lg-4">
+              <div class="d-flex align-items-center mb-4">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #2a9d8f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3); font-size: 1.5rem; font-weight: 800; color: white; flex-shrink: 0; margin-right: 1.5rem;">4</div>
+                <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">You receive a clear and full monthly report</h3>
+              </div>
+              <p class="text-muted mb-0" style="font-size: 1.15rem; line-height: 1.8;">Track your reach with detailed analytics showing exactly where your digital business card has been delivered.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-2 order-2 scroll-animate animate-right">
+            <div class="position-relative" style="padding: 20px;">
+              <img src="images/how_it_works-step-4.png" alt="Step 4" class="img-fluid" 
+                style="width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom tagline with enhanced styling -->
+      <div class="text-center mt-5 pt-5 scroll-animate animate-up">
+        <div class="d-inline-block px-5 py-4 rounded-3" style="background: linear-gradient(135deg, rgba(29, 53, 87, 0.03), rgba(42, 157, 143, 0.03)); border: 2px solid rgba(42, 157, 143, 0.1);">
+          <p class="lead fw-bold mb-0" style="color: var(--primary-color); font-size: 1.6rem; letter-spacing: -0.5px;">
+            This isn't advertising — <span style="color: var(--secondary-color);">it's early access to real work</span>
           </p>
-            <div class="d-flex flex-column gap-3">
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Manage and update your profile, logo, and content in real time</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>12-month upfront payment</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Real time monitoring</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-wrapper me-2" style="width: 36px; height: 36px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <i class="fas fa-check text-secondary" style="font-size: 0.8rem;"></i>
-                </div>
-                <span>Easy to read format</span>
-              </div>
-            </div>
-            <a href="#pricing" class="btn btn-primary btn-lg mt-4" style="border-radius: 8px; font-size: 1.1rem; padding: 0.7rem 2rem;">View Pricing Plans</a>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Process Section -->
-  <section id="theprocess" class="py-5"
-    style="scroll-margin-top: 100px; background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
-          style="font-weight: 500; letter-spacing: 1px;">THE PROCESS</span>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;">
-          Start in minutes. Weekly DA leads direct to your inbox — and with <u>Exclusive</u>, your business reaches decision-makers before your competitors.
-        </p>
-        <div class="divider mx-auto"
-          style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
-        </div>
-      </div>
-
- 
-      <div class="row g-4">
-        <!-- Step 1 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm process-card">
-            <div class="card-body p-4 text-center d-flex flex-column">
-              <div class="process-icon mb-3">
-                <i class="fas fa-map-marked-alt"></i>
-              </div>
-              <h5 class="fw-bold mb-3">Select your Council or Council areas</h5>
-              <div class="mb-4">
-                <img src="images/section1.PNG" alt="Select your Council or Council areas" class="process-image">
-              </div>
-              <p class="text-muted mb-0">Receive relevant Development Application Information.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm process-card">
-            <div class="card-body p-4 text-center d-flex flex-column">
-              <div class="process-icon mb-3">
-                <i class="fas fa-search"></i>
-              </div>
-              <h5 class="fw-bold mb-3">We Monitor Applications</h5>
-              <div class="mb-4">
-                <img src="images/section2.PNG" alt="Monitor Applications" class="process-image">
-              </div>
-              <p class="text-muted mb-0">Our system tracks new Development Applications as they're lodged with each
-                Council in your selected area.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm process-card">
-            <div class="card-body p-4 text-center d-flex flex-column">
-              <div class="process-icon mb-3">
-                <i class="fas fa-envelope-open-text"></i>
-              </div>
-              <h5 class="fw-bold mb-3">Weekly Updates</h5>
-              <div class="mb-4">
-                <img src="images/section3.PNG" alt="Weekly Updates" class="process-image">
-              </div>
-              <p class="text-muted mb-0">Receive a clear, up-to-date report of new Development Applications directly to
-                your inbox every week.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm process-card">
-            <div class="card-body p-4 text-center d-flex flex-column">
-              <div class="process-icon mb-3">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <h5 class="fw-bold mb-3">Win More Work</h5>
-              <div class="position-relative mb-4">
-                <img src="images/section4.PNG" alt="Win More Work" class="process-image">
-                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect" class="position-absolute"
-                  style="height: 75px; bottom: -25px; left: 50%; transform: translateX(-50%);">
-              </div>
-              <p class="text-muted mb-0">Puts you first with property owners and applicants — ahead of the competition.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-5 pt-3">
-        <div class="d-flex flex-wrap justify-content-center gap-4 mb-4">
-          <div class="d-flex align-items-center">
-            <div class="icon-wrapper me-2"
-              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <i class="fas fa-check text-secondary"></i>
-            </div>
-            <span>Comprehensive DA listings</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="icon-wrapper me-2"
-              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <i class="fas fa-check text-secondary"></i>
-            </div>
-            <span>Easy-to-read format</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="icon-wrapper me-2"
-              style="width: 40px; height: 40px; background-color: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <i class="fas fa-check text-secondary"></i>
-            </div>
-            <span>Delivered weekly to your inbox</span>
-          </div>
-        </div>
-        <a href="#pricing" class="btn btn-primary btn-lg mt-3 px-5" style="border-radius: 8px; font-size: 1.1rem;">
-          Get Started Today
-        </a>
       </div>
     </div>
   </section>
@@ -456,73 +361,78 @@
         </div>
       </div>
 
-      <div class="row g-4">
-        <!-- For Builders -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm-hover transition-all"
-            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-            <div class="card-body p-4 text-center">
-              <div class="icon-wrapper mb-4"
-                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                <i class="fas fa-hard-hat text-secondary" style="font-size: 1.75rem;"></i>
-              </div>
-              <h5 class="card-title fw-bold mb-3">For Builders</h5>
-              <p class="card-text text-muted">
-                Be first to quote. Start conversations with property owners before your competitors even hear about the
-                job.
-              </p>
+      <div class="row g-4 justify-content-center">
+        <!-- Industry 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-earthworks.png" alt="Earthworks | Civil | Demolition" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
             </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Earthworks | Civil | Demolition</h6>
           </div>
         </div>
 
-        <!-- For Tradies -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm-hover transition-all"
-            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-            <div class="card-body p-4 text-center">
-              <div class="icon-wrapper mb-4"
-                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                <i class="fas fa-tools text-secondary" style="font-size: 1.75rem;"></i>
-              </div>
-              <h5 class="card-title fw-bold mb-3">For Tradies</h5>
-              <p class="card-text text-muted">
-                Tap into upcoming builds and renovations. Reach out at the right time with the right services.
-              </p>
+        <!-- Industry 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-solar-electrical.png" alt="Solar & Electrical Companies" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
             </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Solar & Electrical Companies</h6>
           </div>
         </div>
 
-        <!-- For Town Planners -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm-hover transition-all"
-            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-            <div class="card-body p-4 text-center">
-              <div class="icon-wrapper mb-4"
-                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                <i class="fas fa-drafting-compass text-secondary" style="font-size: 1.75rem;"></i>
-              </div>
-              <h5 class="card-title fw-bold mb-3">Town Planners & Certifiers</h5>
-              <p class="card-text text-muted">
-                Get ahead of the approval curve and position your services exactly when they're needed most.
-              </p>
+        <!-- Industry 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-suppliers.png" alt="Independent Suppliers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
             </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Independent Suppliers</h6>
+            <p class="text-muted small mb-0">(flooring, tiles, kitchens, bathrooms, electrical merchants)</p>
           </div>
         </div>
 
-        <!-- For Suppliers -->
-        <div class="col-md-6 col-lg-3">
-          <div class="card h-100 border-0 shadow-sm-hover transition-all"
-            style="border-radius: 12px; overflow: hidden; transition: all 0.3s ease;">
-            <div class="card-body p-4 text-center">
-              <div class="icon-wrapper mb-4"
-                style="width: 70px; height: 70px; background: rgba(42, 157, 143, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                <i class="fas fa-truck-loading text-secondary" style="font-size: 1.75rem;"></i>
-              </div>
-              <h5 class="card-title fw-bold mb-3">Suppliers & Contractors</h5>
-              <p class="card-text text-muted">
-                Stay informed about upcoming projects to align your resources and secure business opportunities early.
-              </p>
+        <!-- Industry 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-tradies.png" alt="Trades & Builders" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
             </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Trades & Builders</h6>
+            <p class="text-muted small mb-0">(plumbers, painters, concreters, carpenters, etc.)</p>
+          </div>
+        </div>
+
+        <!-- Industry 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-certifiers.png" alt="Building Certifiers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
+            </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Building Certifiers</h6>
+          </div>
+        </div>
+
+        <!-- Industry 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-additions.png" alt="Additional Suppliers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
+            </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Additional Suppliers</h6>
+            <p class="text-muted small mb-0">(pools, garage doors, pergolas, outdoor living)</p>
+          </div>
+        </div>
+
+        <!-- Industry 7 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="text-center">
+            <div class="mb-3">
+              <img src="images/industry-manufacturers.png" alt="Independent Manufacturers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
+            </div>
+            <h6 class="fw-bold mb-2" style="color: var(--primary-color);">Independent Manufacturers</h6>
+            <p class="text-muted small mb-0">(windows, doors, stone, brickworks, etc.)</p>
           </div>
         </div>
       </div>
@@ -537,35 +447,35 @@
                   <div class="carousel-item active">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-                      <p class="lead mb-0">"We picked up two renovation jobs in the first month. It's a no-brainer."</p>
+                      <p class="lead mb-0">"Two homeowners called me directly after seeing my business card. Picked up a renovation and a deck job in the first month."</p>
                     </div>
                     <p class="text-end mb-0 fw-bold">— Paul M., Builder, SA</p>
                   </div>
                   <div class="carousel-item">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-                      <p class="lead mb-0">"DA alerts put us in before demolition. We're quoting rough-ins and stormwater early and winning more jobs."</p>
+                      <p class="lead mb-0">"Having my details land in front of applicants before anyone else is huge. I'm getting calls from people who just lodged their DA."</p>
                     </div>
                     <p class="text-end mb-0 fw-bold">— Alex P., Plumber, SA</p>
                   </div>
                   <div class="carousel-item">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-                      <p class="lead mb-0">"The weekly DA emails mean we're quoting first, not chasing. It's been a steady flow of landscaping leads."</p>
+                      <p class="lead mb-0">"Applicants are reaching out to me now instead of the other way around. It's completely changed how I find new landscaping work."</p>
                     </div>
                     <p class="text-end mb-0 fw-bold">— Sarah L., Landscaper, SA</p>
                   </div>
                   <div class="carousel-item">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-                      <p class="lead mb-0">"Early visibility on new builds means we're scheduling switchboards and rough-ins weeks sooner. It's added steady fit-out work."</p>
+                      <p class="lead mb-0">"My digital business card goes straight to the decision-makers. I've booked three electrical fit-outs from people who saw my details on their DA."</p>
                     </div>
                     <p class="text-end mb-0 fw-bold">— Mia W., Electrician, SA</p>
                   </div>
                   <div class="carousel-item">
                     <div class="d-flex align-items-center mb-3">
                       <i class="fas fa-quote-left fa-2x me-3" style="color: var(--secondary-color);"></i>
-                      <p class="lead mb-0">"Exclusive got our name in front of applicants on day one. We secured two extensions this month from it."</p>
+                      <p class="lead mb-0">"Being on the exclusive list means I'm one of only 14 businesses they see. Two extension projects came from that this month alone."</p>
                     </div>
                     <p class="text-end mb-0 fw-bold">— Ben H., Builder, SA</p>
                   </div>
@@ -586,327 +496,75 @@
         <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3"
           style="font-weight: 500; letter-spacing: 1px;">PRICING</span>
         <h2 class="fw-bold mb-4">Simple, Transparent <span class="text-secondary">Pricing</span></h2>
-        <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your business needs. No
-          hidden fees, cancel anytime.</p>
-        <div class="pricing-toggle d-flex justify-content-center align-items-center my-4 d-md-none">
-          <span class="me-3 fw-medium pricing-period active" data-period="monthly">Monthly</span>
-          <div class="form-check form-switch mx-2">
-            <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
-          </div>
-          <span class="ms-3 fw-medium pricing-period" data-period="yearly">Yearly</span>
-        </div>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">Get ahead of the competition with DAconnect Exclusive. No hidden fees, cancel anytime.</p>
         <div class="divider mx-auto"
           style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
         </div>
       </div>
-      
-      <!-- Mobile: Simple Cards -->
-      <div class="d-block d-md-none pricing-mobile">
-        <div class="row g-4 justify-content-center">
-        <!-- Standard Plan -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
-            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
-            <div class="card-body p-4 d-flex flex-column h-100">
-              <div>
-                <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect List" style="height: 55px; display: block;">
-                <div class="d-flex align-items-end mb-4 position-relative">
-                  <div class="price-banner">South Australia Only<br><span
-                      style="font-size: 0.6rem; font-weight: 500;">(More states launching soon)</span></div>
-                  <div class="price-container">
-                    <span class="display-5 fw-bold price" style="color: var(--primary-color);" data-monthly="$69" data-yearly="$690">$69</span>
-                    <span class="text-muted ms-2 period">/month</span>
-                    <span class="badge bg-success text-white ms-2 card-savings" style="display: none; vertical-align: middle; margin-bottom:8px;">Save $138/yr</span>
-                  </div>
-                </div>
-                <div class="mb-2 d-flex align-items-center gap-2">
-                  <span class="subtle-badge">2 months free when you pay yearly</span>
-                </div>
-                <p class="text-muted mb-4">Ideal for individuals and businesses ready to tap into development opportunities.</p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Access <b>unlimited Councils</b> of your choice (Currently within South Australia Only)</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Receive <b>weekly DA reports</b> straight to your inbox</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Email support</b> whenever you need help</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Essential analytics</b> to track and grow your leads</span>
-                  </li>
-                </ul>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7 col-sm-10">
+          <div class="card border-0 shadow-sm pricing-card" style="border-radius: 16px; overflow: hidden; position: relative; border-top: 4px solid var(--secondary-color) !important;">
+            <div class="card-body p-4 p-md-5">
+              <div class="text-center mb-4">
+                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 70px; display: block; margin: 0 auto;">
               </div>
-              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto subscription-link" data-plan="list"
-                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
-                Started</a>
+
+              <!-- Pricing Toggle -->
+              <div class="d-flex justify-content-center align-items-center mb-4">
+                <span class="me-3 fw-medium pricing-period active" data-period="monthly" style="cursor: pointer;">Monthly</span>
+                <div class="form-check form-switch mx-2">
+                  <input class="form-check-input" type="checkbox" id="pricingToggle" style="width: 3rem; height: 1.5rem;">
+                </div>
+                <span class="ms-3 fw-medium pricing-period" data-period="yearly" style="cursor: pointer;">Yearly</span>
+              </div>
+
+              <!-- Price Display -->
+              <div class="text-center mb-4 position-relative">
+                <span class="display-4 fw-bold price" style="color: var(--primary-color);" data-monthly="$99" data-yearly="$990">$99</span>
+                <span class="text-muted ms-2 period" style="font-size: 1.25rem;">/month</span>
+                <div class="mt-2">
+                  <span class="fw-bold text-uppercase" style="color: var(--secondary-color); font-size: 0.9rem; letter-spacing: 0.5px;">PER COUNCIL</span>
+                </div>
+                <div class="mt-2">
+                  <span class="badge bg-success text-white pricing-savings" style="display: none; font-size: 0.85rem; padding: 6px 12px;">Save $198/yr</span>
+                </div>
+              </div>
+
+              <p class="text-muted text-center mb-4">Get in front of decision-makers before your competitors even hear about the project.</p>
+
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                  <span>Target the council areas you want to work in</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                  <span>Your digital business card delivered directly to real developments</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                  <span>Exclusive placement within a capped list of up to 14 businesses per council</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                  <span>Transparent monthly reporting with full visibility of every delivery</span>
+                </li>
+                <li class="mb-3 d-flex align-items-start">
+                  <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
+                  <span>Cancel anytime</span>
+                </li>
+              </ul>
+
+              <a href="#contact" class="btn btn-secondary w-100 btn-lg subscription-link" data-plan="exclusive"
+                style="border-radius: 8px; padding: 12px 20px; font-size: 1.1rem;">Get Started</a>
             </div>
           </div>
-        </div>
-
-        <!-- Exclusive Plan -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
-            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
-            <div class="card-body p-4 d-flex flex-column h-100 position-relative">
-              <div>
-                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 65px; display: block; margin-top:-10px">
-                <div class="d-flex flex-column mb-4 position-relative">
-                  <div class="d-flex align-items-end position-relative">
-                    <div class="price-banner">South Australia Only<br><span
-                        style="font-size: 0.6rem; font-weight: 500;">(More states launching soon)</span></div>
-                    <div class="price-container">
-                      <span class="display-5 fw-bold" style="color: var(--primary-color);">$999</span>
-                      <span class="text-muted ms-2">/year</span>
-                    </div>
-                  </div>
-                  <div class="mt-2"><span class="subtle-badge" style="visibility: hidden;">placeholder</span></div>
-                </div>
-                <p class="text-muted mb-0">Designed for growing businesses ready to get ahead of the competition.<br><br></p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Everything in <b>DAconnect</b></span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Direct exposure</b>: Your business marketed exclusively to DA applicants</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Manage & update</b> your profile, logo, and content in real time (with a copy sent to you for records)</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Priority email support</b></span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Advanced analytics</b> for deeper insights</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span><b>Powerful filters</b> to target the opportunities you want most</span>
-                  </li>
-                </ul>
-              </div>
-              <a href="#contact" class="btn  btn-secondary w-100 mt-auto subscription-link" data-plan="exclusive"
-                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;">Get
-                Started</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Enterprise Plan -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card h-100 border-0 shadow-sm d-flex flex-column pricing-card"
-            style="border-radius: 16px; overflow: hidden; transition: all 0.3s ease; position: relative;">
-            <div class="card-body p-4 d-flex flex-column h-100">
-              <div>
-                <h5 class="fw-bold mt-2 mb-2" style="color: var(--primary-color);">Enterprise</h5>
-                <div class="d-flex align-items-end mb-4">
-                  <span class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary-color);">Corporate</span>
-                  <span class="text-muted ms-2">pricing</span>
-                </div>
-                <div class="mb-2"><span class="subtle-badge" style="visibility: hidden;">placeholder</span></div>
-                <p class="text-muted" style="margin-bottom: 2.5rem;">For large organizations with custom needs</p>
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-3 d-flex align-items-start mt-4">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Australia-wide coverage (All states coming soon)</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Priority email & phone support</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Custom integrations</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Dedicated account manager</span>
-                  </li>
-                  <li class="mb-3 d-flex align-items-start">
-                    <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
-                    <span>Custom reporting</span>
-                  </li>
-                </ul>
-              </div>
-              <a href="#contact" class="btn btn-outline-secondary w-100 mt-auto enterprise-contact-btn"
-                style="border-radius: 8px; padding: 10px 20px; transition: all 0.3s ease; margin-top: auto;"
-                data-enquiry-type="Enterprise Pricing Enquiry">Contact Sales</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <!-- Desktop/Tablet: Comparison Table -->
-      <style>
-        .subtle-badge { background: rgba(42,157,143,.1); color: var(--secondary-color); border-radius: 999px; padding: 4px 10px; font-size: .8rem; font-weight: 600; }
-        .comparison-table th, .comparison-table td { padding: 1rem 1.25rem; vertical-align: middle; }
-        /* Highlight entire Exclusive column (3rd plan column) */
-        .comparison-table.highlight-first-col thead th:nth-child(3),
-        .comparison-table.highlight-first-col tbody td:nth-child(3) { background: rgba(42,157,143,0.06); }
-        .comparison-table.highlight-rows tbody tr:nth-child(odd) td:not(:nth-child(3)),
-        .comparison-table.highlight-rows tbody tr:nth-child(odd) th:not(:nth-child(3)) { background: #f9fbfc; }
-        .comparison-table i.fa-xmark { color: #c9d1d9 !important; opacity: 0.6; }
-        /* Prevent long/skinny mobile cards: enforce a min width and auto-wrap */
-        #pricing .pricing-mobile .row.g-4 {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
-          gap: 1.5rem;
-          justify-content: center;
-        }
-        #pricing .pricing-mobile .row.g-4 > [class^="col-"],
-        #pricing .pricing-mobile .row.g-4 > [class*=" col-"] { width: 100%; }
-        #pricing .pricing-mobile .card.pricing-card { width: 100%; max-width: 560px; min-width: 520px; margin-inline: auto; }
-        @media (max-width: 520px) {
-          #pricing .pricing-mobile .row.g-4 { grid-template-columns: 1fr; }
-          #pricing .pricing-mobile .card.pricing-card { min-width: 0; }
-        }
-        /* Width-based switch: mobile cards below 1294px, table at/above 1294px */
-        @media (max-width: 1293.98px) {
-          #pricing .pricing-desktop { display: none !important; }
-          #pricing .pricing-mobile { display: block !important; }
-          #pricing .pricing-toggle.d-md-none { display: flex !important; }
-          #pricing .divider.d-md-none { display: block !important; }
-        }
-        @media (min-width: 1294px) {
-          #pricing .pricing-desktop { display: block !important; }
-          #pricing .pricing-mobile { display: none !important; }
-          #pricing .pricing-toggle.d-md-none { display: none !important; }
-          #pricing .divider.d-md-none { display: none !important; }
-        }
-        /* If viewport height is small, force mobile pricing to avoid scroll */
-        @media (max-height: 900px) {
-          #pricing .pricing-desktop { display: none !important; }
-          #pricing .pricing-mobile { display: block !important; }
-          #pricing .pricing-toggle.d-md-none { display: flex !important; }
-          #pricing .divider.d-md-none { display: block !important; }
-        }
-      </style>
-      <div class="d-none d-md-block pricing-desktop">
-        <div class="table-responsive shadow-sm rounded-3 bg-white">
-          <table class="table comparison-table highlight-first-col highlight-rows mb-0 align-middle">
-            <thead>
-              <tr>
-                <th scope="col" class="fw-bold text-start fs-3"></th>
-                <th scope="col" class="text-center">
-                  <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect List" style="height: 55px;">
-                  <div class="mt-2">
-                    <span class="table-list-price fw-bold" style="font-size: 1.5rem; color: var(--primary-color);" data-monthly="$69/mo" data-yearly="$690/yr">$69/mo</span>
-                    <span class="badge bg-success text-white ms-2 table-savings" style="display: none; vertical-align: middle; margin-bottom:8px;">Save $138/yr</span>
-                  </div>
-                  <div class="mt-1">
-                    <span class="subtle-badge table-two-months">2 months free when you pay yearly</span>
-                  </div>
-                  <div class="d-flex justify-content-center mt-2">
-                    <div class="pricing-toggle d-inline-flex align-items-center">
-                      <span class="me-2 fw-medium pricing-period" data-period="monthly">Monthly</span>
-                      <div class="form-check form-switch mx-2">
-                        <input class="form-check-input" type="checkbox" id="pricingToggleTable" style="width: 3rem; height: 1.5rem;">
-                      </div>
-                      <span class="ms-2 fw-medium pricing-period" data-period="yearly">Yearly</span>
-                    </div>
-                  </div>
-                </th>
-                <th scope="col" class="text-center" style="border-top: 3px solid var(--secondary-color);">
-                  <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 75px; margin-top: -115px;">
-                  <div style="color: var(--primary-color); font-size: 1.5rem; margin-top: -30px">$999/yr</div>
-                </th>
-                <th scope="col" class="text-center">
-                  <span class="fw-semibold">Enterprise</span>
-                  <div class="mt-2 small text-muted">Corporate pricing</div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td class="text-center"><span class="small text-muted">Ideal for individuals and businesses ready to <br>tap into development opportunities.</span></td>
-                <td class="text-center"><span class="small text-muted">Designed for growing businesses ready to <br>get ahead of the competition.</span></td>
-                <td class="text-center"><span class="small text-muted">For large organizations with custom needs</span></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Unlimited councils of your choice</th>
-                <td class="text-center">South Australia Only<br><span class="small text-muted">(<i>more coming soon</i>)</span></td>
-                <td class="text-center">South Australia Only<br><span class="small text-muted">(<i>more coming soon</i>)</span></td>
-                <td class="text-center">Australia‑wide</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Weekly DA reports</th>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Analytics</th>
-                <td class="text-center">Essential</td>
-                <td class="text-center">Advanced</td>
-                <td class="text-center">Advanced</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Support</th>
-                <td class="text-center">Email</td>
-                <td class="text-center">Phone and Email</td>
-                <td class="text-center">Phone and Priority Email</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Direct exposure to DA Applicants</th>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Manage & update profile</th>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Custom integrations</th>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Custom reporting</th>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-xmark text-muted"></i></td>
-                <td class="text-center"><i class="fas fa-check text-secondary"></i></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fw-semibold">Price</th>
-                <td class="text-center">
-                  <div class="fw-bold table-list-price-bottom" data-monthly="$69/mo" data-yearly="$690/yr">$69/mo</div>
-                </td>
-                <td class="text-center">
-                  <div class="fw-bold">$999/yr</div>
-                </td>
-                <td class="text-center">
-                  <div class="fw-bold">Contact sales</div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td class="text-center"><a href="#contact" class="btn btn-outline-secondary subscription-link" data-plan="list">Get Started</a></td>
-                <td class="text-center"><a href="#contact" class="btn btn-secondary subscription-link" data-plan="exclusive">Get Started</a></td>
-                <td class="text-center"><a href="#contact" class="btn btn-outline-secondary">Contact Sales</a></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
 
       <div class="text-center mt-5 pt-4">
-        <p class="text-muted mb-0">Need help choosing the right plan? <a href="#contact"
+        <p class="text-muted mb-0">Need a custom solution? <a href="#contact"
             class="text-secondary text-decoration-underline">Contact our team</a></p>
       </div>
     </div>
@@ -917,14 +575,11 @@
     <div class="container py-5" style="max-width: 1100px;">
       <div class="text-center mb-4">
         <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-3" style="font-weight: 500; letter-spacing: 1px;">FREE SAMPLE</span>
-        <h2 class="fw-bold mb-3">Want a look at the business you’re missing out on?</h2>
-        <p class="lead text-muted mx-auto" style="max-width: 720px;">We'll send you a free sample of our weekly DA lists so you can try DAconnect before you subscribe.</p>
+        <h2 class="fw-bold mb-3">See What You'll Receive</h2>
+        <p class="lead text-muted mx-auto" style="max-width: 720px;">We'll send you a free sample so you can see DAconnect Exclusive in action before you subscribe.</p>
         <div class="divider mx-auto" style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.25rem auto 0; border-radius: 2px;"></div>
       </div>
       <div class="row justify-content-center align-items-center g-4 mb-2">
-        <div class="col-auto">
-          <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect" style="height: 55px;">
-        </div>
         <div class="col-auto">
           <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 65px;">
         </div>
@@ -940,8 +595,8 @@
         </div>
         <a href="#contact" class="btn btn-primary btn-lg free-sample-btn mt-3" style="border-radius: 10px; padding: 0.85rem 2rem;"
            data-enquiry-type="Free Sample Request"
-           data-message="I'd like to receive free sample lists. Please email me samples of DAconnect and DAconnect Exclusive.">
-          Get Free Samples
+           data-message="I'd like to receive a free sample of DAconnect Exclusive.">
+          Get Free Sample
         </a>
         <p class="text-muted mt-3 mb-0">Prefer email? Contact us at
           <a href="mailto:council@daconnect.com.au" class="text-secondary text-decoration-underline">council@daconnect.com.au</a>
@@ -1139,7 +794,7 @@
         <!-- Brand Column -->
         <div class="col-lg-4">
           <h5 class="mb-4">DAconnect</h5>
-          <p class="mb-4">Get real-time council Development Application data delivered to your inbox every week.</p>
+          <p class="mb-4">Get your business in front of real decision-makers before your competitor does.</p>
           <div class="social-links">
             <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer"
               class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
@@ -1156,10 +811,10 @@
           <ul class="list-unstyled">
             <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
             <li class="mb-2"><a href="#howitworks" class="text-light text-decoration-none">How It Works</a></li>
-            <li class="mb-2"><a href="#theprocess" class="text-light text-decoration-none">The Process</a></li>
             <li class="mb-2"><a href="#whychooseus" class="text-light text-decoration-none">Why Choose Us</a></li>
             <li class="mb-2"><a href="#pricing" class="text-light text-decoration-none">Pricing</a></li>
             <li class="mb-2"><a href="#freesample" class="text-light text-decoration-none">Free Sample</a></li>
+            <li class="mb-2"><a href="faq.html" class="text-light text-decoration-none">Q&A</a></li>
             <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
           </ul>
         </div>
@@ -1193,7 +848,7 @@
       <!-- Copyright -->
       <div class="row">
         <div class="col-md-6">
-          <p class="mb-0">&copy; 2025 DAconnect. All rights reserved.</p>
+          <p class="mb-0">&copy; 2026 DAconnect. All rights reserved.</p>
           <small class="text-white-50">ABN: 74 168 911 402</small>
         </div>
       </div>
@@ -1203,83 +858,13 @@
   <!-- Bootstrap JS and dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script src="js/scroll-animations.js"></script>
+  <script src="js/da-stats-counter.js"></script>
   <script src="js/navbar-effects.js"></script>
   <script src="js/cta-handlers.js"></script>
   <script src="js/exclusive-scroll.js"></script>
   <script src="js/form-submit.js"></script>
   <script src="js/nav-active.js"></script>
   <script src="js/pricing-toggle.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggle = document.getElementById('pricingToggle');
-      const cardSavings = document.querySelector('.card-savings');
-      function updateSavings() {
-        const show = !!(toggle && toggle.checked);
-        if (cardSavings) cardSavings.style.display = show ? 'inline-block' : 'none';
-      }
-      if (toggle) {
-        updateSavings();
-        toggle.addEventListener('change', updateSavings);
-        document.querySelectorAll('.pricing-period').forEach(p => p.addEventListener('click', () => {
-          setTimeout(updateSavings, 0);
-        }));
-      }
-
-      // Comparison table toggle sync with main toggle and table price text
-      const mainToggle = document.getElementById('pricingToggle');
-      const tableToggle = document.getElementById('pricingToggleTable');
-      const tablePrice = document.querySelector('.table-list-price');
-      const tablePriceBottom = document.querySelector('.table-list-price-bottom');
-      const tableTwoMonths = document.querySelector('.table-two-months');
-      const tableSavings = document.querySelector('.table-savings');
-
-      function updateTablePricing(isYearly) {
-        if (tablePrice) {
-          const monthlyTxt = tablePrice.dataset.monthly || '$69/mo';
-          const yearlyTxt = tablePrice.dataset.yearly || '$690/yr';
-          tablePrice.textContent = isYearly ? yearlyTxt : monthlyTxt;
-        }
-        if (tablePriceBottom) {
-          const monthlyTxtB = tablePriceBottom.dataset.monthly || '$69/mo';
-          const yearlyTxtB = tablePriceBottom.dataset.yearly || '$690/yr';
-          tablePriceBottom.textContent = isYearly ? yearlyTxtB : monthlyTxtB;
-        }
-        if (tableTwoMonths) {
-          tableTwoMonths.style.display = 'inline-block';
-        }
-        if (tableSavings) {
-          tableSavings.style.display = isYearly ? 'inline-block' : 'none';
-        }
-      }
-
-      function dispatchChange(el) {
-        if (!el) return;
-        const evt = new Event('change', { bubbles: true });
-        el.dispatchEvent(evt);
-      }
-
-      if (tableToggle && mainToggle) {
-        // Initialize table toggle to match main toggle
-        tableToggle.checked = !!mainToggle.checked;
-        updateTablePricing(!!mainToggle.checked);
-
-        // When main changes, mirror to table
-        mainToggle.addEventListener('change', function() {
-          tableToggle.checked = !!mainToggle.checked;
-          updateTablePricing(!!mainToggle.checked);
-        });
-
-        // When table changes, mirror to main and trigger pricing updates
-        tableToggle.addEventListener('change', function() {
-          const isYearly = !!tableToggle.checked;
-          if (mainToggle.checked !== isYearly) {
-            mainToggle.checked = isYearly;
-            dispatchChange(mainToggle);
-          }
-          updateTablePricing(isYearly);
-        });
-      }
-    });
-  </script>
 </body>
 </html>

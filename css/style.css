@@ -51,8 +51,7 @@ body {
 
 #pricing .card:hover {
   transform: translateY(-8px) !important;
-  border: 2px solid var(--secondary-color) !important;
-  margin: -2px;
+  border: 1px solid var(--secondary-color) !important;
 }
 
 .pricing-card .badge.bg-secondary {
@@ -272,7 +271,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
 .price-banner { position: absolute; top: 65px; right: -95px; width: 290px; padding: 12px 0; text-align: center; background-color: rgba(200, 200, 200, 0.5); color: #333; font-size: 0.7rem; font-weight: 600; transform: rotate(45deg); transform-origin: right top; z-index: 1; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); pointer-events: none; line-height: 1.4; display: flex; flex-direction: column; justify-content: center; min-height: 60px; }
 .price-container { position: relative; display: inline-block; width: 100%; }
 #pricing .card { transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; border: 1px solid rgba(0, 0, 0, 0.05) !important; }
-#pricing .card:hover { transform: translateY(-8px) !important; border: 2px solid var(--secondary-color) !important; margin: -2px; }
+#pricing .card:hover { transform: translateY(-8px) !important; border: 1px solid var(--secondary-color) !important; }
 .pricing-card .badge.bg-secondary { background-color: var(--secondary-color) !important; transition: all 0.3s ease; }
 .pricing-card .btn, #pricing .card .btn { transition: all 0.3s ease !important; }
 #pricing .card:hover .btn { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
@@ -290,9 +289,123 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
 #exclusiveImageContainer.test-tall { height: 600px !important; }
 @media (max-width: 1199.98px) { .hero-content { max-width: 55% !important; padding: 2.5rem !important; } .hero-content h1 { font-size: 3rem !important; } }
 @media (max-width: 991.98px) { .hero-content { max-width: 65% !important; padding: 2rem !important; left: 5% !important; } .hero-content h1 { font-size: 2.5rem !important; } .hero-content p { font-size: 1.1rem !important; } }
-@media (max-width: 767.98px) { .hero-section { min-height: 80vh !important; display: flex !important; align-items: flex-end !important; padding-bottom: 0px !important; padding-top: 0 !important; } .hero-content { position: relative !important; max-width: 100% !important; width: 100% !important; left: 0 !important; top: auto !important; transform: none !important; margin: 2rem auto !important; padding: 1.5rem !important; border-radius: 12px !important; background: rgba(255, 255, 255, 0.98) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important; } .hero-content h1 { font-size: 2.25rem !important; text-align: center; } .hero-content p { text-align: center; font-size: 1.1rem !important; } .hero-content .d-flex { justify-content: center; } .hero-image { position: absolute !important; top: 0; right: 0; width: 100% !important; height: 100% !important; z-index: 1 !important; opacity: 0.2 !important; } .hero-image img { object-position: center top !important; } .hero-section>div:last-child { display: none !important; } }
-@media (max-width: 767.98px) { .hero-content .btn { padding: 0.5rem 1rem !important; font-size: 0.9rem !important; margin: 0 0.2rem 0.2rem !important; } .hero-content .btn i { font-size: 0.8em !important; } }
-@media (max-width: 575.98px) { .hero-content { margin: 1rem auto !important; padding: 1.25rem !important; } .hero-content h1 { font-size: 2rem !important; margin-bottom: 1rem !important; } .hero-content p { font-size: 1rem !important; margin-bottom: 1.5rem !important; } .hero-content .btn { width: 100%; margin-bottom: 0.5rem; } }
+@media (max-width: 767.98px) { 
+  .hero-section { 
+    min-height: 75vh !important; 
+    background: linear-gradient(135deg, rgba(245,245,245,0.95) 0%, rgba(255,255,255,0.95) 100%) !important;
+    display: block !important; 
+    align-items: flex-start !important; 
+    padding-bottom: 2rem !important; 
+    padding-top: 60px !important; 
+  }
+  /* Show background image on mobile with opacity */
+  .hero-section > div:first-child {
+    display: block !important;
+    opacity: 0.15 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .hero-section > div:first-child img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+  .hero-section .container {
+    min-height: auto !important;
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+    position: relative;
+    z-index: 10;
+  }
+  .hero-section .container > div {
+    margin-top: 0 !important;
+    max-width: 100% !important;
+  }
+  .hero-content { 
+    position: relative !important; 
+    max-width: 100% !important; 
+    width: 100% !important; 
+    left: 0 !important; 
+    top: auto !important; 
+    transform: none !important; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+    border-radius: 0 !important; 
+    background: transparent !important; 
+    box-shadow: none !important; 
+  } 
+  .hero-content h1 { 
+    font-size: 1.75rem !important; 
+    text-align: left !important;
+    line-height: 1.3 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 1rem !important;
+  }
+  .hero-content h1 .hero-highlight::before {
+    content: "\A";
+    white-space: pre;
+  }
+  .hero-content p { 
+    text-align: left !important; 
+    font-size: 0.95rem !important; 
+    color: #4a5568 !important;
+    margin-bottom: 1.25rem !important;
+  } 
+  .hero-content .d-flex { 
+    justify-content: flex-start !important; 
+    margin-bottom: 1.5rem !important;
+  } 
+  .hero-stats { 
+    display: block !important; 
+    margin-top: 1.5rem !important; 
+    padding-top: 0 !important; 
+  }
+  .hero-stats h6 {
+    font-size: 0.6rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: left !important;
+    color: var(--primary-color) !important;
+    line-height: 1.2 !important;
+  }
+  /* Force stats into single row using flexbox */
+  .hero-stats .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hero-stats .col-4 {
+    flex: 1 1 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .hero-section .da-stat-number {
+    font-size: 1.5rem !important;
+    color: var(--secondary-color) !important;
+    line-height: 1.1 !important;
+  }
+  .hero-section .col-4 > div {
+    padding: 0.5rem 0.25rem !important;
+    background: white !important;
+  }
+  .hero-stats .col-4 > div div:last-child {
+    font-size: 0.65rem !important;
+    color: #6c757d !important;
+    line-height: 1.1 !important;
+  }
+}
+@media (max-width: 767.98px) { .hero-content .btn { padding: 0.75rem 1.5rem !important; font-size: 1rem !important; margin: 0 !important; width: 100% !important; } .hero-content .btn i { font-size: 0.8em !important; } }
+@media (max-width: 575.98px) { .hero-content { margin: 0 !important; padding: 0 !important; } .hero-content h1 { font-size: 1.5rem !important; margin-bottom: 1rem !important; } .hero-content p { font-size: 0.95rem !important; margin-bottom: 1.5rem !important; } .hero-content .btn { width: 100%; margin-bottom: 0.5rem; } }
+/* Mobile hero fixes - override negative margin */
+@media (max-width: 767.98px) {
+  .hero-section .container > div {
+    margin-top: 0 !important;
+    max-width: 100% !important;
+  }
+}
 #howitworks .card { transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; border: 2px solid transparent !important; cursor: default; background-color: #fff; }
 #howitworks .card:hover { transform: translateY(-8px) !important; box-shadow: 0 15px 30px rgba(42, 157, 143, 0.1) !important; border-color: var(--secondary-color) !important; }
 #howitworks .card .icon-wrapper { transition: all 0.3s ease; background: rgba(42, 157, 143, 0.1); }
@@ -350,3 +463,97 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
 .process-card:hover .process-icon { background: linear-gradient(135deg, rgba(42, 157, 143, 0.2) 0%, rgba(42, 157, 143, 0.3) 100%); transform: scale(1.1); }
 .process-card:hover .process-icon i { color: var(--secondary-color); transform: scale(1.1) rotate(5deg); }
 .process-image { height: 200px; object-fit: contain; margin: 0 auto 1.5rem; display: block; max-width: 100%; }
+
+/* ================================
+   DA Stats Counter Section
+   ================================ */
+.da-stat-number {
+  transition: color 0.3s ease;
+}
+
+/* ================================
+   How It Works Section - Consistent Image Sizes
+   ================================ */
+#howitworks .row .col-lg-6 img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 991.98px) {
+  #howitworks .row .col-lg-6 img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #howitworks .row .col-lg-6 img {
+    height: 250px;
+  }
+}
+
+/* ================================
+   Pricing Toggle & Badge
+   ================================ */
+.pricing-period {
+  opacity: 0.5;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.pricing-period.active {
+  opacity: 1;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+.subtle-badge {
+  background: rgba(42,157,143,.1);
+  color: var(--secondary-color);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* ================================
+   Scroll Animations
+   ================================ */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.scroll-animate.animate-left {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+.scroll-animate.animate-right {
+  transform: translateX(60px);
+  opacity: 0;
+}
+.scroll-animate.animate-up {
+  transform: translateY(40px);
+  opacity: 0;
+}
+.scroll-animate.animate-scale {
+  transform: scale(0.9);
+  opacity: 0;
+}
+.scroll-animate.visible {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
+}
+/* Stagger delays for children */
+.scroll-animate.delay-1 { transition-delay: 0.1s; }
+.scroll-animate.delay-2 { transition-delay: 0.25s; }
+.scroll-animate.delay-3 { transition-delay: 0.4s; }
+.scroll-animate.delay-4 { transition-delay: 0.55s; }
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

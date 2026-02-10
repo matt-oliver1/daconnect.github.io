@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   navLinks.forEach(link => {
     if (link.getAttribute('onclick')) return; // Skip if already has inline onclick
+    const href = link.getAttribute('href');
+    // Skip external links (links to other pages)
+    if (!href || !href.startsWith('#')) return;
     link.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
