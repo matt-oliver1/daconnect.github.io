@@ -164,7 +164,6 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
   </nav>
 
   <!-- Hero Section -->
-  <!-- Hero Section -->
   <div id="dastats" class="hero-section" style="position: relative; min-height: 100vh; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); overflow: hidden;">
     <!-- Background Image (right side) -->
     <div style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; z-index: 1;">
@@ -200,7 +199,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
           </div>
         </div>
 
-        <!-- DA Stats right under content - BIGGER -->
+        <!-- DA Stats right under content -->
         <div class="mt-5 pt-4 hero-stats">
           <h6 class="fw-bold mb-4" style="color: var(--primary-color); font-size: 1rem; letter-spacing: 1.2px; text-transform: uppercase;">Development Applications in South Australia</h6>
           <div class="row g-4">
@@ -229,7 +228,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
   </div>
 
   <!-- How It Works -->
-  <section id="howitworks" class="py-5" style="background: #ffffff; padding: 6rem 0 8rem 0;">
+  <section id="howitworks" class="py-5" style="background: #ffffff; padding: 6rem 0 8rem 0; overflow-x: hidden;">
     <div class="container py-5">
       <!-- Header Section -->
       <div class="text-center mb-5 pb-4">
@@ -242,7 +241,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         
         <!-- Hero Image with enhanced styling -->
         <div class="mt-5 mb-5 position-relative scroll-animate animate-up delay-3">
-          <div style="max-width: 900px; margin: 0 auto; position: relative;">
+          <div style="max-width: 900px; margin: 0 auto; position: relative; overflow: hidden;">
             <img src="images/how_it_works.png" alt="How It Works" class="img-fluid" 
               style="width: 100%;">
             <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: linear-gradient(135deg, transparent, rgba(29, 53, 87, 0.05)); border-radius: 50%; z-index: -1;"></div>
@@ -267,7 +266,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
                 <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #2a9d8f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(42, 157, 143, 0.3); font-size: 1.5rem; font-weight: 800; color: white; flex-shrink: 0; margin-right: 1.5rem;">1</div>
                 <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">Choose what Council (or Councils) you want to work in</h3>
               </div>
-              <p class="text-muted mb-0" style="font-size: 1.15rem; line-height: 1.8;">Select the specific council areas where you want to receive development application alerts and opportunities.</p>
+              <p class="text-muted mb-0" style="font-size: 1.15rem; line-height: 1.8;">Choose the council areas you want — and get early access to every development opportunity before the rest of the market.</p>
             </div>
           </div>
         </div>
@@ -292,12 +291,23 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
           </div>
         </div>
 
+        <!-- Banner between Step 2 and Step 3 -->
+        <div class="text-center mb-5 pb-5 scroll-animate animate-up">
+          <div class="d-inline-flex align-items-center flex-wrap justify-content-center" style="padding: 0.75rem 2.5rem; background: rgba(42, 157, 143, 0.08); border: 2px solid rgba(42, 157, 143, 0.2); border-radius: 999px; gap: 0.5rem; max-width: 100%;">
+            <span class="fw-bold" style="font-size: 1.4rem; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;">From now,</span>
+            <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect" style="height: 52px;">
+            <span class="fw-bold" style="font-size: 1.4rem; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;">does the heavy lifting</span>
+          </div>
+        </div>
+
         <!-- Step 3 - Image Left -->
         <div class="row align-items-center g-5 mb-5 pb-5 position-relative">
           <div class="col-lg-6 order-lg-1 order-2 scroll-animate animate-left">
-            <div class="position-relative" style="padding: 20px;">
-              <img src="images/how_it_works-step-3.png" alt="Step 3" class="img-fluid" 
-                style="width: 100%; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+            <div class="position-relative auto-scroll-container" style="padding: 20px;">
+              <div class="auto-scroll-viewport" style="height: 420px; overflow: hidden; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05);">
+                <img src="images/DAconnect-exclusive-list2.PNG" alt="Step 3" class="auto-scroll-image"
+                  style="width: 100%; display: block;">
+              </div>
             </div>
           </div>
           <div class="col-lg-6 order-lg-2 order-1 scroll-animate animate-right delay-1">
@@ -307,9 +317,9 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
                 <h3 class="fw-bold mb-0" style="font-size: 2rem; line-height: 1.3; color: var(--primary-color);">Your digital business card is sent to all publicly listed developments</h3>
               </div>
               <p class="text-muted mb-3" style="font-size: 1.15rem; line-height: 1.8;">Your profile reaches decision-makers in your chosen council area.</p>
-              <div class="d-inline-block px-4 py-2 rounded-pill" style="background: rgba(42, 157, 143, 0.1); border: 1px solid rgba(42, 157, 143, 0.2);">
+              <div class="d-inline-block px-4 py-2 rounded-3" style="background: rgba(42, 157, 143, 0.1); border: 1px solid rgba(42, 157, 143, 0.2); max-width: 100%;">
                 <span style="color: var(--secondary-color); font-weight: 600; font-size: 0.95rem;">
-                  <i class="fas fa-users me-2"></i>Exclusive list of no more than 14 businesses
+                  <i class="fas fa-users me-2"></i>Exclusive list of no more than 14 businesses per Council
                 </span>
               </div>
             </div>
@@ -340,7 +350,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
       <div class="text-center mt-5 pt-5 scroll-animate animate-up">
         <div class="d-inline-block px-5 py-4 rounded-3" style="background: linear-gradient(135deg, rgba(29, 53, 87, 0.03), rgba(42, 157, 143, 0.03)); border: 2px solid rgba(42, 157, 143, 0.1);">
           <p class="lead fw-bold mb-0" style="color: var(--primary-color); font-size: 1.6rem; letter-spacing: -0.5px;">
-            This isn't advertising — <span style="color: var(--secondary-color);">it's early access to real work</span>
+            This isn't just advertising — <span style="color: var(--secondary-color);">it’s early access to real work</span>
           </p>
         </div>
       </div>
@@ -363,7 +373,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
 
       <div class="row g-4 justify-content-center">
         <!-- Industry 1 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-earthworks.png" alt="Earthworks | Civil | Demolition" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -373,7 +383,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 2 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-solar-electrical.png" alt="Solar & Electrical Companies" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -383,7 +393,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 3 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-suppliers.png" alt="Independent Suppliers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -394,7 +404,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 4 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-tradies.png" alt="Trades & Builders" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -405,7 +415,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 5 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-certifiers.png" alt="Building Certifiers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -415,7 +425,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 6 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-additions.png" alt="Additional Suppliers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -426,7 +436,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
         </div>
 
         <!-- Industry 7 -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 industry-card">
           <div class="text-center">
             <div class="mb-3">
               <img src="images/industry-manufacturers.png" alt="Independent Manufacturers" class="img-fluid" style="max-width: 180px; border-radius: 16px;">
@@ -507,7 +517,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
           <div class="card border-0 shadow-sm pricing-card" style="border-radius: 16px; overflow: hidden; position: relative; border-top: 4px solid var(--secondary-color) !important;">
             <div class="card-body p-4 p-md-5">
               <div class="text-center mb-4">
-                <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 70px; display: block; margin: 0 auto;">
+                <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect Exclusive" style="height: 70px; display: block; margin: 0 auto;">
               </div>
 
               <!-- Pricing Toggle -->
@@ -550,7 +560,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
                   <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
                   <span>Transparent monthly reporting with full visibility of every delivery</span>
                 </li>
-                <li class="mb-3 d-flex align-items-start">
+                <li id="cancelAnytime" class="mb-3 d-flex align-items-start">
                   <i class="fas fa-check-circle text-secondary mt-1 me-2"></i>
                   <span>Cancel anytime</span>
                 </li>
@@ -581,7 +591,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
       </div>
       <div class="row justify-content-center align-items-center g-4 mb-2">
         <div class="col-auto">
-          <img src="images/Daconnect_exclusive_transparent.png" alt="DAconnect Exclusive" style="height: 65px;">
+          <img src="images/DA-Connect_logo_title_transparent.png" alt="DAconnect Exclusive" style="height: 55px;">
         </div>
       </div>
       <div class="text-center">

@@ -474,7 +474,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
 /* ================================
    How It Works Section - Consistent Image Sizes
    ================================ */
-#howitworks .row .col-lg-6 img {
+#howitworks .row .col-lg-6 img:not(.auto-scroll-image) {
   width: 100%;
   height: 400px;
   object-fit: contain;
@@ -482,13 +482,13 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
 }
 
 @media (max-width: 991.98px) {
-  #howitworks .row .col-lg-6 img {
+  #howitworks .row .col-lg-6 img:not(.auto-scroll-image) {
     height: 300px;
   }
 }
 
 @media (max-width: 767.98px) {
-  #howitworks .row .col-lg-6 img {
+  #howitworks .row .col-lg-6 img:not(.auto-scroll-image) {
     height: 250px;
   }
 }
@@ -548,6 +548,53 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
 .scroll-animate.delay-2 { transition-delay: 0.25s; }
 .scroll-animate.delay-3 { transition-delay: 0.4s; }
 .scroll-animate.delay-4 { transition-delay: 0.55s; }
+
+/* Why Choose Us - staggered scale-in animation */
+#whychooseus .industry-card {
+  opacity: 0;
+  transform: scale(0.85) translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#whychooseus .industry-card.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+#whychooseus .industry-card:nth-child(1) { transition-delay: 0s; }
+#whychooseus .industry-card:nth-child(2) { transition-delay: 0.1s; }
+#whychooseus .industry-card:nth-child(3) { transition-delay: 0.2s; }
+#whychooseus .industry-card:nth-child(4) { transition-delay: 0.3s; }
+#whychooseus .industry-card:nth-child(5) { transition-delay: 0.4s; }
+#whychooseus .industry-card:nth-child(6) { transition-delay: 0.5s; }
+#whychooseus .industry-card:nth-child(7) { transition-delay: 0.6s; }
+
+/* Why Choose Us - hover effects */
+#whychooseus .industry-card .text-center {
+  transition: transform 0.3s ease;
+}
+#whychooseus .industry-card:hover .text-center {
+  transform: translateY(-6px);
+}
+#whychooseus .industry-card img {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+#whychooseus .industry-card:hover img {
+  box-shadow: 0 8px 20px rgba(42, 157, 143, 0.2);
+  transform: scale(1.05);
+}
+#whychooseus .industry-card h6 {
+  transition: color 0.3s ease;
+}
+#whychooseus .industry-card:hover h6 {
+  color: var(--secondary-color) !important;
+}
+
+/* Mobile: slower animation, no stagger (each card observed individually) */
+@media (max-width: 767.98px) {
+  #whychooseus .industry-card {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  #whychooseus .industry-card:nth-child(n) { transition-delay: 0s; }
+}
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
