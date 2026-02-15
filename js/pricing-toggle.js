@@ -77,24 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateSubscriptionLinks(isYearly) {
+    var sandboxUrl = 'https://app.daconnect.com.au/sandbox/subscription';
     subscriptionLinks.forEach(function(link) {
-      var plan = link.dataset.plan;
       var occurrence = isYearly ? 'yearly' : 'monthly';
 
       if (!link.dataset.subscriptionBound) {
         link.addEventListener('click', function(e) {
           e.preventDefault();
           var currentOccurrence = pricingToggle.checked ? 'yearly' : 'monthly';
-          if (typeof window.redirectToSubscription === 'function') {
-            window.redirectToSubscription({ plan: plan, occurrence: currentOccurrence });
-          } else {
-            window.location.href = appBaseUrl + '/subscription?plan=' + plan + '&occurrence=' + currentOccurrence;
-          }
+          window.location.href = sandboxUrl + '?exclusive&occurrence=' + currentOccurrence;
         });
         link.dataset.subscriptionBound = '1';
       }
 
-      link.href = appBaseUrl + '/subscription?plan=' + plan + '&occurrence=' + occurrence;
+      link.href = sandboxUrl + '?exclusive&occurrence=' + occurrence;
     });
   }
 });
