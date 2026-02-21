@@ -22,28 +22,55 @@ document.addEventListener('DOMContentLoaded', function () {
   const freeSampleButtons = document.querySelectorAll('.free-sample-btn');
   if (freeSampleButtons && freeSampleButtons.length) {
     freeSampleButtons.forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        if (enquiryTypeField) {
-          enquiryTypeField.value = this.getAttribute('data-enquiry-type') || 'Free Sample Request';
+      btn.addEventListener('click', async function (e) {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('freeSampleName');
+        const emailInput = document.getElementById('freeSampleEmail');
+        const feedback = document.getElementById('freeSampleFeedback');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+
+        if (!name || !email) {
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.className = 'mt-3 text-danger';
+            feedback.textContent = 'Please enter both your name and email.';
+          }
+          return;
         }
-        if (messageField && !messageField.value.trim()) {
-          const preset = this.getAttribute('data-message') || "I'd like to receive free sample lists.";
-          messageField.value = preset;
-        }
-        const fsName = document.getElementById('freeSampleName');
-        const fsEmail = document.getElementById('freeSampleEmail');
-        const contactName = document.getElementById('name');
-        const contactEmail = document.getElementById('email');
-        if (fsName && contactName && fsName.value.trim()) {
-          contactName.value = fsName.value.trim();
-        }
-        if (fsEmail && contactEmail && fsEmail.value.trim()) {
-          contactEmail.value = fsEmail.value.trim();
-        }
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          e.preventDefault();
-          contactSection.scrollIntoView({ behavior: 'smooth' });
+
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+          const response = await fetch('https://app.daconnect.com.au/api/public/exclusive/request-sample', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email })
+          });
+
+          if (response.ok) {
+            if (feedback) {
+              feedback.style.display = 'block';
+              feedback.className = 'mt-3 text-success fw-semibold';
+              feedback.textContent = 'Your free sample has been requested! Check your inbox shortly.';
+            }
+            if (nameInput) nameInput.value = '';
+            if (emailInput) emailInput.value = '';
+          } else {
+            throw new Error('Request failed');
+          }
+        } catch (err) {
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.className = 'mt-3 text-danger';
+            feedback.textContent = 'Something went wrong. Please try again or email council@daconnect.com.au.';
+          }
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Get Free Sample';
         }
       });
     });
