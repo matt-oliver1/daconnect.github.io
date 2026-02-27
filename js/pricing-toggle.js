@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateSubscriptionLinks(isYearly) {
-    var sandboxUrl = 'https://app.daconnect.com.au/sandbox/subscription';
+    var sandboxUrl = 'https://app.daconnect.com.au/subscription';
     subscriptionLinks.forEach(function(link) {
       var occurrence = isYearly ? 'yearly' : 'monthly';
 
