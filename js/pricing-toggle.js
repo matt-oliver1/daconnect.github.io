@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var periods = document.querySelectorAll('.period');
   var savings = document.querySelector('.pricing-savings');
   var cancelAnytime = document.getElementById('cancelAnytime');
+  var cancelAnytimeText = document.getElementById('cancelAnytimeText');
 
   // Build app.<root-domain> dynamically from current hostname
   function getRootDomain(hostname) {
@@ -71,6 +72,10 @@ document.addEventListener('DOMContentLoaded', function() {
         cancelAnytime.classList.remove('d-none');
         cancelAnytime.classList.add('d-flex');
       }
+    }
+
+    if (cancelAnytimeText) {
+      cancelAnytimeText.style.display = isYearly ? 'none' : '';
     }
 
     updateSubscriptionLinks(isYearly);
