@@ -594,6 +594,9 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   #whychooseus .industry-card:nth-child(n) { transition-delay: 0s; }
+  #whychooseus .industry-card img {
+    max-width: 140px;
+  }
 }
 
 /* Reduce motion for accessibility */
