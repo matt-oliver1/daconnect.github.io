@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
   .navbar-collapse { background: white; padding: 1rem; margin: 0 -1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-radius: 0 0 12px 12px; }
   .nav-link { padding: 0.6rem 1rem !important; margin: 0.15rem 0; }
   .nav-link:after { display: none; }
-  .btn { width: 100%; margin: 0.5rem 0; }
+  .navbar-collapse .btn { width: 100%; margin: 0.5rem 0; }
   .vr { display: none; }
 }
 
@@ -249,8 +249,8 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
    Applies to body and Bootstrap containers to avoid full-bleed content */
 @media (max-width: 767.98px) {
   body {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .container, .container-fluid {
     padding-left: 12px !important;
@@ -451,7 +451,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
 .btn-outline-secondary:hover { background-color: #f8f9fa; border-color: #dee2e6; color: var(--primary-color); }
 .navbar-toggler:focus { box-shadow: none; outline: none; }
 @media (max-width: 1399.98px) { .navbar { padding: 0.5rem 0; } .nav-link { padding: 0.5rem 0.6rem !important; } .navbar-brand img { height: 38px !important; } .btn { padding: 0.4rem 1rem !important; } }
-@media (max-width: 991.98px) { .navbar-collapse { background: white; padding: 1rem; margin: 0 -1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-radius: 0 0 12px 12px; } .nav-link { padding: 0.6rem 1rem !important; margin: 0.15rem 0; } .nav-link:after { display: none; } .btn { width: 100%; margin: 0.5rem 0; } .vr { display: none; } }
+@media (max-width: 991.98px) { .navbar-collapse { background: white; padding: 1rem; margin: 0 -1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); border-radius: 0 0 12px 12px; } .nav-link { padding: 0.6rem 1rem !important; margin: 0.15rem 0; } .nav-link:after { display: none; } .navbar-collapse .btn { width: 100%; margin: 0.5rem 0; } .vr { display: none; } }
 
 /* ================================
    Appended from index.html <style> (Process Section)
@@ -596,6 +596,47 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333
   #whychooseus .industry-card:nth-child(n) { transition-delay: 0s; }
   #whychooseus .industry-card img {
     max-width: 120px !important;
+  }
+}
+
+/* ================================
+   Tablet Hero Fixes (768px - 1199px)
+   ================================ */
+/* Smaller tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-section .container > div {
+    max-width: 85% !important;
+  }
+  .hero-content .btn {
+    padding: 1.1rem 2.5rem !important;
+    font-size: 1.15rem !important;
+  }
+  .hero-stats h6 {
+    font-size: 0.85rem !important;
+    letter-spacing: 1px !important;
+  }
+  .hero-stats .da-stat-number {
+    font-size: 2.5rem !important;
+  }
+}
+/* Larger tablets like iPad Pro (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-section .container > div {
+    max-width: 75% !important;
+  }
+  .hero-content {
+    max-width: 100% !important;
+  }
+  .hero-content .btn {
+    padding: 1.1rem 2.5rem !important;
+    font-size: 1.15rem !important;
+  }
+  .hero-stats h6 {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+  }
+  .hero-stats .da-stat-number {
+    font-size: 2.75rem !important;
   }
 }
 
