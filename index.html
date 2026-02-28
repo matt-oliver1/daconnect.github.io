@@ -657,7 +657,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
             <div class="col-lg-8">
               <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
                 <div class="card-body p-4 p-md-5">
-                  <form id="contactForm" action="https://formspree.io/f/xovwdzwy" method="POST">
+                  <form id="contactForm">
                     <div class="row">
                       <div class="col-md-6 mb-4">
                         <label for="name" class="form-label fw-medium">Full Name <span
@@ -696,8 +696,8 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
                         style="padding: 12px 16px; border-radius: 8px;" placeholder="How can we help you?"></textarea>
                     </div>
 
-                    <!-- Hidden field for enquiry type -->
-                    <input type="hidden" id="enquiryType" name="enquiryType" value="">
+                    <!-- Hidden field for enquiry category -->
+                    <input type="hidden" id="enquiryCategory" name="enquiryCategory" value="">
 
                     <div class="d-grid">
                       <button type="submit" class="btn btn-primary btn-lg"
@@ -708,15 +708,7 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
                       </button>
                     </div>
 
-                    <div id="formSuccess" class="alert alert-success mt-4 d-none" role="alert">
-                      <i class="fas fa-check-circle me-2"></i> Your message has been sent successfully! We'll get back
-                      to you soon.
-                    </div>
-
-                    <div id="formError" class="alert alert-danger mt-4 d-none" role="alert">
-                      <i class="fas fa-exclamation-circle me-2"></i> There was an error sending your message. Please try
-                      again later.
-                    </div>
+                    <div id="contactFeedback" class="mt-3" style="display: none;"></div>
                   </form>
                 </div>
               </div>
@@ -902,9 +894,9 @@ src="https://www.facebook.com/tr?id=838312912574438&ev=PageView&noscript=1"
   <script src="js/scroll-animations.js?v=2"></script>
   <script src="js/da-stats-counter.js?v=2"></script>
   <script src="js/navbar-effects.js?v=2"></script>
-  <script src="js/cta-handlers.js?v=2"></script>
+  <script src="js/cta-handlers.js?v=3"></script>
   <script src="js/exclusive-scroll.js?v=2"></script>
-  <script src="js/form-submit.js?v=2"></script>
+  <!-- form-submit.js removed: contact form now handled by cta-handlers.js -->
   <script src="js/nav-active.js?v=2"></script>
   <script src="js/pricing-toggle.js?v=2"></script>
 </body>
