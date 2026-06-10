@@ -2,17 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
   var statNumbers = document.querySelectorAll('.da-stat-number');
   if (!statNumbers.length) return;
 
-  // Fetch live stats from the API, fall back to hardcoded defaults on failure
+  // Fetch live stats from the API, fall back to hardcoded defaults on failure.
+  // Response is backward-compatible: legacy top-level lastYear/lastMonth/lastWeek
+  // are South Australia; an optional `regions` object carries each region.
   fetch('https://app.daconnect.com.au/api/public/stats/development-applications')
     .then(function(res) { return res.json(); })
     .then(function(data) {
-      var lastYear = document.getElementById('lastYear');
-      var lastMonth = document.getElementById('lastMonth');
-      var lastWeek = document.getElementById('lastWeek');
+      var regions = data.regions || {};
 
-      if (lastYear && data.lastYear != null) lastYear.dataset.target = data.lastYear;
-      if (lastMonth && data.lastMonth != null) lastMonth.dataset.target = data.lastMonth;
-      if (lastWeek && data.lastWeek != null) lastWeek.dataset.target = data.lastWeek;
+      // South Australia: prefer regions.southAustralia, else legacy top-level fields.
+      applyRegion('sa', regions.southAustralia || {
+        lastYear: data.lastYear,
+        lastMonth: data.lastMonth,
+        lastWeek: data.lastWeek
+      });
+
+      // Gold Coast: only if present; otherwise the HTML placeholder defaults remain.
+      applyRegion('gc', regions.goldCoast || {});
     })
     .catch(function() {
       // Keep the default data-target values from the HTML
@@ -20,6 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
     .finally(function() {
       initCounterObserver();
     });
+
+  // Apply a {lastYear,lastMonth,lastWeek} object to one region's counters.
+  // Only overrides data-target when the value is non-null/undefined, so a
+  // missing field leaves the HTML default in place.
+  function applyRegion(prefix, stats) {
+    setTarget(prefix + '-lastYear', stats.lastYear);
+    setTarget(prefix + '-lastMonth', stats.lastMonth);
+    setTarget(prefix + '-lastWeek', stats.lastWeek);
+  }
+
+  function setTarget(id, value) {
+    if (value == null) return;
+    var el = document.getElementById(id);
+    if (el) el.dataset.target = value;
+  }
 
   function animateCounters() {
     statNumbers.forEach(function(el) {

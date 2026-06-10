@@ -46,7 +46,7 @@
     "name": "DAconnect",
     "url": "https://daconnect.com.au",
     "logo": "https://daconnect.com.au/images/DA-Connect_logo_title_transparent_white_logo.png",
-    "description": "Track development applications in South Australia. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.",
+    "description": "Track development applications in South Australia and the Gold Coast. Get real-time DA alerts for builders, landscapers, and trades to win more jobs.",
     "email": "council@daconnect.com.au",
     "telephone": "+61872286805",
     "sameAs": [
@@ -54,10 +54,16 @@
       "https://www.instagram.com/da.connect.au",
       "https://www.linkedin.com/company/daconnectau"
     ],
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "South Australia"
-    }
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "South Australia"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Gold Coast"
+      }
+    ]
   }
   </script>
 
@@ -188,23 +194,49 @@
 
         <!-- DA Stats right under content -->
         <div class="mt-5 pt-4 hero-stats">
-          <h6 class="fw-bold mb-4" style="color: var(--primary-color); font-size: 1rem; letter-spacing: 1.2px; text-transform: uppercase;">Development Applications in South Australia</h6>
-          <div class="row g-4">
+          <h6 class="fw-bold mb-4" style="color: var(--primary-color); font-size: 1rem; letter-spacing: 1.2px; text-transform: uppercase;">Development Applications We Track</h6>
+
+          <!-- South Australia -->
+          <div class="mb-2" style="color: var(--secondary-color); font-weight: 700; font-size: 1.05rem;">South Australia</div>
+          <div class="row g-4 mb-4">
             <div class="col-4">
               <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
-                <div id="lastYear" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="36911">0</div>
+                <div id="sa-lastYear" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="36911">0</div>
                 <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Year</div>
               </div>
             </div>
             <div class="col-4">
               <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
-                <div id="lastMonth" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="1548">0</div>
+                <div id="sa-lastMonth" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="1548">0</div>
                 <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Month</div>
               </div>
             </div>
             <div class="col-4">
               <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
-                <div id="lastWeek" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="119">0</div>
+                <div id="sa-lastWeek" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="119">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Week</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gold Coast -->
+          <div class="mb-2" style="color: var(--secondary-color); font-weight: 700; font-size: 1.05rem;">Gold Coast</div>
+          <div class="row g-4">
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div id="gc-lastYear" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="18000">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Year</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div id="gc-lastMonth" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="750">0</div>
+                <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Month</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-4 rounded-3 bg-white shadow text-center" style="border: 1px solid rgba(0,0,0,0.08);">
+                <div id="gc-lastWeek" class="da-stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color); font-family: 'Plus Jakarta Sans', sans-serif;" data-target="60">0</div>
                 <div style="font-size: 0.95rem; color: #6c757d; letter-spacing: 0.5px; font-weight: 500;">The Past Week</div>
               </div>
             </div>
@@ -221,7 +253,7 @@
       <div class="text-center mb-5 pb-4">
         <span class="badge bg-secondary bg-opacity-10 text-secondary px-4 py-2 mb-4 scroll-animate animate-up"
           style="font-weight: 600; letter-spacing: 1.5px; font-size: 0.75rem; text-transform: uppercase;">HOW IT WORKS FOR YOU</span>
-        <p class="lead text-muted mx-auto mb-4 scroll-animate animate-up delay-1" style="max-width: 750px; font-size: 1.15rem; line-height: 1.7;">All development data from every council in South Australia is received by DAconnect</p>
+        <p class="lead text-muted mx-auto mb-4 scroll-animate animate-up delay-1" style="max-width: 750px; font-size: 1.15rem; line-height: 1.7;">All development data from every council in South Australia and the Gold Coast is received by DAconnect</p>
         <div class="divider mx-auto scroll-animate animate-scale delay-2"
           style="width: 80px; height: 4px; background-color: var(--secondary-color); margin: 1.5rem auto 0; border-radius: 2px;">
         </div>
@@ -862,7 +894,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="js/scroll-animations.js?v=2"></script>
-  <script src="js/da-stats-counter.js?v=2"></script>
+  <script src="js/da-stats-counter.js?v=3"></script>
   <script src="js/navbar-effects.js?v=2"></script>
   <script src="js/cta-handlers.js?v=3"></script>
   <script src="js/exclusive-scroll.js?v=2"></script>
