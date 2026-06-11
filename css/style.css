@@ -382,19 +382,29 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
     width: auto !important;
     padding: 0 !important;
   }
-  .hero-section .da-stat-number {
-    font-size: 1.5rem !important;
-    color: var(--secondary-color) !important;
-    line-height: 1.1 !important;
-  }
   .hero-section .col-4 > div {
-    padding: 0.5rem 0.25rem !important;
+    padding: 0.6rem 0.35rem !important;
     background: white !important;
   }
-  .hero-stats .col-4 > div div:last-child {
-    font-size: 0.65rem !important;
-    color: #6c757d !important;
-    line-height: 1.1 !important;
+  /* Period header (THE PAST YEAR / MONTH / WEEK) */
+  .hero-stats .da-period {
+    font-size: 0.55rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.2 !important;
+  }
+  /* Region labels (South Australia / Gold Coast) */
+  .hero-stats .da-region {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2px !important;
+    margin-top: 0.4rem !important;
+    line-height: 1.15 !important;
+  }
+  /* Both SA and GC numbers, styled identically */
+  .hero-section .da-stat-number {
+    font-size: 1.35rem !important;
+    color: var(--secondary-color) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.1rem !important;
   }
 }
 @media (max-width: 767.98px) { .hero-content .btn { padding: 0.75rem 1.5rem !important; font-size: 1rem !important; margin: 0 !important; width: 100% !important; } .hero-content .btn i { font-size: 0.8em !important; } }

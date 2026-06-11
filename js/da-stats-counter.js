@@ -3,22 +3,21 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!statNumbers.length) return;
 
   // Fetch live stats from the API, fall back to hardcoded defaults on failure.
-  // Response is backward-compatible: legacy top-level lastYear/lastMonth/lastWeek
-  // are South Australia; an optional `regions` object carries each region.
+  // Response splits by region (council group): top-level southAustralia / goldCoast,
+  // each { total, lastYear, lastMonth, lastWeek }. Falls back to legacy flat
+  // top-level fields (= South Australia) if the region object is absent.
   fetch('https://app.daconnect.com.au/api/public/stats/development-applications')
     .then(function(res) { return res.json(); })
     .then(function(data) {
-      var regions = data.regions || {};
-
-      // South Australia: prefer regions.southAustralia, else legacy top-level fields.
-      applyRegion('sa', regions.southAustralia || {
+      // South Australia: prefer the region object, else legacy top-level fields.
+      applyRegion('sa', data.southAustralia || {
         lastYear: data.lastYear,
         lastMonth: data.lastMonth,
         lastWeek: data.lastWeek
       });
 
       // Gold Coast: only if present; otherwise the HTML placeholder defaults remain.
-      applyRegion('gc', regions.goldCoast || {});
+      applyRegion('gc', data.goldCoast || {});
     })
     .catch(function() {
       // Keep the default data-target values from the HTML
