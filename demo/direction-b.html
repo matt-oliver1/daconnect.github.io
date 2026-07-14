@@ -208,6 +208,33 @@
   .dirb-see:hover{border-bottom-color:var(--dirb-ink)}
   .dirb-see:hover svg{transform:translateX(3px)}
 
+  /* ---- free trial: hero signage plate ---- */
+  .dirb-trial{
+    display:inline-flex;align-items:stretch;
+    max-width:100%;
+    margin-top:clamp(20px,2.6vw,28px);
+    background:var(--dirb-panel);
+    border:2px solid var(--dirb-ink);
+    box-shadow:5px 5px 0 var(--dirb-ink);
+  }
+  .dirb-trial::before{
+    content:"";flex:none;width:14px;align-self:stretch;
+    background:repeating-linear-gradient(-45deg,var(--dirb-orange) 0 10px,var(--dirb-ink) 10px 20px);
+    border-right:2px solid var(--dirb-ink);
+  }
+  .dirb-trial-body{
+    display:flex;flex-direction:column;gap:5px;
+    padding:12px 16px 13px;min-width:0;
+  }
+  .dirb-trial-lead{
+    font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:.02em;
+    font-size:clamp(1.05rem,.7vw + .9rem,1.35rem);line-height:1.15;
+  }
+  .dirb-trial-sub{
+    font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--dirb-muted);line-height:1.45;
+  }
+
   /* ---- hero photo ---- */
   .dirb-photo{position:relative;margin:0;max-width:640px}
   .dirb-photo img{
@@ -531,6 +558,28 @@
     background:var(--dirb-panel);border:2px solid var(--dirb-ink);
     box-shadow:8px 8px 0 var(--dirb-ink);
   }
+  /* trial ribbon fused to the top of the plan plate */
+  .dirb-trial-ribbon{
+    background:var(--dirb-orange);color:var(--dirb-ink);
+    border-bottom:2px solid var(--dirb-ink);
+  }
+  .dirb-trial-ribbon-txt{
+    display:flex;flex-direction:column;gap:6px;
+    padding:clamp(14px,2vw,18px) clamp(20px,3vw,32px);
+  }
+  .dirb-trial-ribbon-txt b{
+    font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:.02em;
+    font-size:clamp(1.15rem,1.1vw + .9rem,1.6rem);line-height:1.1;
+    text-wrap:balance;
+  }
+  .dirb-trial-ribbon-txt span{
+    font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    line-height:1.45;
+  }
+  .dirb-trial-ribbon-strip{
+    height:10px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-ink) 0 12px,transparent 12px 24px);
+  }
   .dirb-price-head{
     padding:clamp(22px,3vw,32px) clamp(20px,3vw,32px) 0;
   }
@@ -572,6 +621,11 @@
   }
   .dirb-price-cta{padding:14px clamp(20px,3vw,32px) clamp(24px,3vw,32px)}
   .dirb-price-cta .dirb-cta{width:100%}
+  .dirb-price-reassure{
+    margin-top:14px;text-align:center;text-wrap:balance;
+    font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--dirb-muted);line-height:1.5;
+  }
   .dirb-custom{margin-top:clamp(22px,3vw,30px);font-weight:500;color:var(--dirb-muted)}
   .dirb-price-side .dirb-custom{margin-top:0}
   .dirb-custom a{color:var(--dirb-ink);font-weight:800;text-decoration:none;border-bottom:3px solid var(--dirb-orange)}
@@ -644,6 +698,24 @@
   .dirb-loud-cta:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 #FFFFFF}
   .dirb-loud-cta:active{transform:translate(6px,6px);box-shadow:0 0 0 #FFFFFF}
   .dirb-loud-cta:focus-visible{outline-color:var(--dirb-ink)}
+  /* trial plate on the orange field — dark ink only, never white text */
+  .dirb-loud-trial{
+    display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;
+    max-width:100%;
+    padding:12px 18px 12px 12px;
+    border:2px solid var(--dirb-ink);
+    box-shadow:6px 6px 0 var(--dirb-ink);
+    color:var(--dirb-ink);
+    font-weight:800;text-transform:uppercase;letter-spacing:.07em;
+    font-size:clamp(.82rem,.35vw + .75rem,1rem);line-height:1.4;
+  }
+  .dirb-loud-trial b{
+    display:inline-block;
+    background:var(--dirb-ink);color:#FFFFFF;
+    padding:9px 14px;
+    font-weight:900;font-stretch:125%;letter-spacing:.08em;
+    font-size:clamp(.95rem,.6vw + .82rem,1.2rem);line-height:1.2;
+  }
   .dirb-aus{
     display:flex;align-items:center;gap:12px;
     font-weight:700;font-size:.95rem;color:var(--dirb-ink);
@@ -779,6 +851,12 @@
           <a class="dirb-cta" href="#freesample">Get a free sample list</a>
           <a class="dirb-see" href="#pricing">See pricing<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></a>
         </div>
+        <p class="dirb-trial">
+          <span class="dirb-trial-body">
+            <span class="dirb-trial-lead"><span class="dirb-mark">Free 14-day trial</span></span>
+            <span class="dirb-trial-sub">No obligation &middot; No credit card required</span>
+          </span>
+        </p>
       </div>
       <figure class="dirb-photo">
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=75&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Workers in orange hi-vis tying rebar on a construction site" loading="lazy" width="1600" height="1067" />
@@ -1012,6 +1090,13 @@
               <button type="button" id="bill-yearly" aria-pressed="false">Yearly</button>
             </div>
             <article class="dirb-price-card">
+              <div class="dirb-trial-ribbon">
+                <p class="dirb-trial-ribbon-txt">
+                  <b>Start with a free 14-day trial</b>
+                  <span>No obligation &middot; No credit card required</span>
+                </p>
+                <div class="dirb-trial-ribbon-strip" aria-hidden="true"></div>
+              </div>
               <div class="dirb-price-head">
                 <span class="dirb-save" id="save-badge" hidden>Save $198/yr</span>
                 <p class="dirb-price-line">
@@ -1021,6 +1106,7 @@
                 <span class="dirb-percouncil">Per Council</span>
               </div>
               <ul class="dirb-features">
+                <li>14-day free trial — no credit card required</li>
                 <li>Target the council areas you want to work in</li>
                 <li>Your digital business card delivered directly to real developments</li>
                 <li>Exclusive placement within a capped list of up to 14 businesses per council</li>
@@ -1028,7 +1114,8 @@
                 <li class="js-cancel">Cancel anytime</li>
               </ul>
               <div class="dirb-price-cta">
-                <a class="dirb-cta" id="plan-cta" href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly">Get Started</a>
+                <a class="dirb-cta" id="plan-cta" href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly">Start your free 14-day trial</a>
+                <p class="dirb-price-reassure">No obligation. No credit card required. Cancel anytime.</p>
               </div>
             </article>
           </div>
@@ -1118,6 +1205,10 @@
       <div class="dirb-loud-strip" aria-hidden="true"></div>
       <div class="dirb-loud-inner">
         <h2>Ready to get the work first?</h2>
+        <p class="dirb-loud-trial">
+          <b>Free 14-day trial</b>
+          <span>No obligation &middot; No credit card required</span>
+        </p>
         <a class="dirb-loud-cta" href="#freesample">Get a free sample list</a>
         <p class="dirb-aus">
           <img src="https://flagcdn.com/28x21/au.png" alt="" width="28" height="21" />

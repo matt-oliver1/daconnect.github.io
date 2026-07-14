@@ -213,6 +213,26 @@ section{ scroll-margin-top:76px; }
 .dc-link:hover{ color:var(--green-ink); text-decoration-color:var(--green); }
 .dc-link:hover svg{ transform:translateX(3px); }
 
+/* ---------- Free-trial signal (hero strip / plan ribbon / band pill) ---------- */
+.dc-trial{
+  display:inline-flex; align-items:center; flex-wrap:wrap; gap:10px 14px;
+  margin-top:clamp(18px,2.4vh,24px); padding:7px 20px 7px 7px;
+  background:var(--green-soft); border:1px solid rgba(47,125,91,.3); border-radius:999px;
+  animation:dirc-rise .55s var(--ease) .28s both;
+}
+.dc-trial-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:9px 15px; border-radius:999px;
+  background:var(--cta); color:#fff;
+  font-size:.87rem; font-weight:700; letter-spacing:.01em; white-space:nowrap;
+  box-shadow:0 1px 2px rgba(20,35,58,.18);
+}
+.dc-trial-badge svg{ flex:none; }
+.dc-trial-copy{ color:var(--green-ink); font-weight:600; font-size:.93rem; line-height:1.4; }
+@media (max-width:639px){
+  .dc-trial{ border-radius:14px; padding:8px 14px 10px 8px; }
+}
+
 /* hero photo — offset-frame composition on the ice ground */
 .dc-photo{ position:relative; animation:dirc-rise .65s var(--ease) .16s both; }
 .dc-photo::before{
@@ -441,14 +461,26 @@ section{ scroll-margin-top:76px; }
 .dc-toggle button[aria-pressed="true"]{ background:var(--cta); color:#fff; box-shadow:0 1px 2px rgba(20,35,58,.2); }
 .dc-toggle button:not([aria-pressed="true"]):hover{ color:var(--cta-deep); }
 .dc-plan{
-  position:relative;
+  --plan-pad:clamp(28px,4vw,40px);
+  position:relative; overflow:hidden;
   background:var(--surface); border:1px solid var(--line); border-radius:16px;
-  padding:clamp(28px,4vw,40px); box-shadow:var(--shadow-lg);
+  padding:var(--plan-pad); box-shadow:var(--shadow-lg);
 }
 .dc-plan::before{
   content:""; position:absolute; top:0; left:24px; right:24px; height:3px;
   background:linear-gradient(90deg, var(--green), rgba(47,125,91,0)); border-radius:0 0 3px 3px;
 }
+/* the trial ribbon becomes the card's top accent, so retire the hairline */
+.dc-plan--trial::before{ content:none; }
+.dc-plan-ribbon{
+  display:flex; align-items:center; justify-content:center; gap:11px;
+  margin:calc(var(--plan-pad) * -1) calc(var(--plan-pad) * -1) clamp(24px,3vw,30px);
+  padding:15px 20px;
+  background:linear-gradient(90deg, var(--cta-deep), var(--cta));
+  color:#fff; text-align:center; text-wrap:balance;
+  font-size:clamp(.94rem,.9rem + .2vw,1.02rem); font-weight:700; letter-spacing:.01em; line-height:1.35;
+}
+.dc-plan-ribbon svg{ flex:none; }
 .dc-price-row{ display:flex; align-items:baseline; flex-wrap:wrap; gap:8px 12px; }
 .dc-price{
   font-family:var(--display); font-weight:700;
@@ -475,6 +507,11 @@ section{ scroll-margin-top:76px; }
 .dc-features li[hidden]{ display:none; }
 .dc-features svg{ flex:none; margin-top:3px; }
 .dc-plan .dc-btn{ width:100%; }
+.dc-plan-reassure{
+  margin-top:13px; text-align:center; text-wrap:balance;
+  font-size:.9rem; font-weight:600; line-height:1.5; color:var(--green-ink);
+}
+.dc-plan-reassure [hidden]{ display:none; }
 .dc-plan-foot{ margin-top:18px; text-align:center; font-size:.9rem; color:var(--muted); }
 .dc-plan-foot a{ color:var(--navy); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(29,53,87,.3); transition:text-decoration-color .18s var(--ease); }
 .dc-plan-foot a:hover{ text-decoration-color:var(--green); }
@@ -532,6 +569,15 @@ section{ scroll-margin-top:76px; }
 }
 .dc-btn--light:hover{ background:var(--ice); color:var(--navy-deep); }
 .dc-band .dc-btn:focus-visible{ outline-color:#fff; }
+.dc-band-trialrow{ margin-top:22px; }
+.dc-band-trial{
+  display:inline-flex; align-items:center; gap:11px;
+  padding:11px 20px; border-radius:999px;
+  background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.38);
+  color:#fff; font-weight:600; text-wrap:balance;
+  font-size:clamp(.93rem,.89rem + .2vw,1.02rem); line-height:1.4;
+}
+.dc-band-trial svg{ flex:none; }
 .dc-aussie{
   /* block-level flex: keeps the CTA button alone on its own centred line,
      with the flag + tagline centred on the line beneath it */
@@ -706,6 +752,13 @@ section{ scroll-margin-top:76px; }
         <a class="dc-btn" href="#freesample">Get a free sample list</a>
         <a class="dc-link" href="#pricing">See pricing<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
+      <p class="dc-trial">
+        <span class="dc-trial-badge">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19 6v5.2c0 4.3-2.9 8.1-7 9.3-4.1-1.2-7-5-7-9.3V6l7-2.8Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="m8.8 12.1 2.2 2.2 4.3-4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Free 14-day trial
+        </span>
+        <span class="dc-trial-copy">No obligation. No credit card required.</span>
+      </p>
     </div>
     <figure class="dc-photo">
       <img class="dc-photo-main" src="https://images.unsplash.com/photo-1621905253185-95614217f357?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Tradesperson in a hard hat checking a new development application alert on his phone">
@@ -998,7 +1051,11 @@ section{ scroll-margin-top:76px; }
         </div>
       </div>
 
-      <div class="dc-plan">
+      <div class="dc-plan dc-plan--trial">
+        <p class="dc-plan-ribbon">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19 6v5.2c0 4.3-2.9 8.1-7 9.3-4.1-1.2-7-5-7-9.3V6l7-2.8Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="m8.8 12.1 2.2 2.2 4.3-4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Free 14-day trial — no credit card required</span>
+        </p>
         <div class="dc-price-row">
           <span class="dc-price" id="priceAmount">$99</span>
           <span class="dc-price-per" id="pricePer">/month</span>
@@ -1006,13 +1063,15 @@ section{ scroll-margin-top:76px; }
         </div>
         <p class="dc-percouncil">Per Council</p>
         <ul class="dc-features">
+          <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>14-day free trial — no credit card required</li>
           <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Target the council areas you want to work in</li>
           <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Your digital business card delivered directly to real developments</li>
           <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Exclusive placement within a capped list of up to 14 businesses per council</li>
           <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Transparent monthly reporting with full visibility of every delivery</li>
           <li id="cancelFeature"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5 7 13.5 15 4.5" fill="none" stroke="#2F7D5B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel anytime</li>
         </ul>
-        <a class="dc-btn" id="planCta" href="https://app.daconnect.com.au/subscription?exclusive&occurrence=monthly">Get Started</a>
+        <a class="dc-btn" id="planCta" href="https://app.daconnect.com.au/subscription?exclusive&occurrence=monthly">Start your free 14-day trial</a>
+        <p class="dc-plan-reassure">No obligation. No credit card required. <span id="trialCancel">Cancel anytime.</span></p>
         <p class="dc-plan-foot">Need a custom solution? <a href="#contact">Contact our team</a></p>
       </div>
     </div>
@@ -1104,6 +1163,12 @@ section{ scroll-margin-top:76px; }
   <div class="dc-wrap">
     <h2>Ready to get the work first?</h2>
     <a class="dc-btn dc-btn--light" href="#freesample">Get a free sample list</a>
+    <p class="dc-band-trialrow">
+      <span class="dc-band-trial">
+        <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 19 6v5.2c0 4.3-2.9 8.1-7 9.3-4.1-1.2-7-5-7-9.3V6l7-2.8Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="m8.8 12.1 2.2 2.2 4.3-4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Free 14-day trial — no obligation, no credit card required
+      </span>
+    </p>
     <p class="dc-aussie">
       <img src="https://flagcdn.com/28x21/au.png" width="28" height="21" alt="Australian flag">
       <span>Proudly Australian-owned and powered by Australian-developed technology</span>
@@ -1251,6 +1316,7 @@ section{ scroll-margin-top:76px; }
   var saveBadge = document.getElementById('saveBadge');
   var cancelInline = document.getElementById('cancelInline');
   var cancelFeature = document.getElementById('cancelFeature');
+  var trialCancel = document.getElementById('trialCancel');
   var planCta = document.getElementById('planCta');
   function setPeriod(yearly) {
     btnMonthly.setAttribute('aria-pressed', String(!yearly));
@@ -1260,6 +1326,8 @@ section{ scroll-margin-top:76px; }
     saveBadge.hidden = !yearly;
     cancelInline.hidden = yearly;
     cancelFeature.hidden = yearly;
+    /* keep the trial reassurance consistent with the cancel-anytime claim above */
+    if (trialCancel) trialCancel.hidden = yearly;
     planCta.href = 'https://app.daconnect.com.au/subscription?exclusive&occurrence=' + (yearly ? 'yearly' : 'monthly');
   }
   if (btnMonthly && btnYearly) {
