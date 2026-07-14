@@ -23,6 +23,8 @@
   --green:#2F7D5B;
   --green-ink:#25624A;
   --green-soft:#E6F2EC;
+  --cta:#2C7A5B;
+  --cta-deep:#226047;
   --r:8px;
   --shadow:0 1px 2px rgba(20,35,58,.06),0 8px 24px rgba(20,35,58,.08);
   --shadow-lg:0 2px 4px rgba(20,35,58,.08),0 18px 44px rgba(20,35,58,.14);
@@ -125,12 +127,12 @@ section{ scroll-margin-top:76px; }
 .dc-nav-cta{
   display:inline-flex; align-items:center; justify-content:center;
   min-height:44px; padding:0 20px; margin-left:6px;
-  background:var(--navy); color:#fff; border-radius:var(--r);
+  background:var(--cta); color:#fff; border-radius:var(--r);
   font-weight:600; font-size:.92rem; text-decoration:none;
   box-shadow:0 1px 2px rgba(20,35,58,.15);
   transition:background .2s var(--ease), box-shadow .2s var(--ease);
 }
-.dc-nav-cta:hover{ background:var(--navy-deep); box-shadow:0 4px 12px rgba(29,53,87,.28); }
+.dc-nav-cta:hover{ background:var(--cta-deep); box-shadow:0 4px 12px rgba(44,122,91,.30); }
 
 /* ---------- Hero ---------- */
 .dc-hero-sec{ position:relative; overflow:hidden; }
@@ -188,17 +190,17 @@ section{ scroll-margin-top:76px; }
 .dc-btn{
   display:inline-flex; align-items:center; justify-content:center;
   min-height:54px; padding:0 30px; border:0; cursor:pointer;
-  background:var(--navy); color:#fff; border-radius:var(--r);
+  background:var(--cta); color:#fff; border-radius:var(--r);
   font-family:inherit; font-weight:600; font-size:1.02rem; text-decoration:none;
-  box-shadow:0 1px 2px rgba(20,35,58,.18),0 10px 24px rgba(29,53,87,.22);
+  box-shadow:0 1px 2px rgba(20,35,58,.18),0 10px 24px rgba(44,122,91,.24);
   transition:background .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
 }
 .dc-btn:hover{
-  background:var(--navy-deep); transform:translateY(-2px);
-  box-shadow:0 2px 4px rgba(20,35,58,.16),0 14px 32px rgba(29,53,87,.3);
+  background:var(--cta-deep); transform:translateY(-2px);
+  box-shadow:0 2px 4px rgba(20,35,58,.16),0 14px 32px rgba(44,122,91,.32);
 }
 .dc-btn:active{ transform:translateY(0); }
-.dc-btn:focus-visible{ outline:2px solid var(--navy-deep); outline-offset:3px; }
+.dc-btn:focus-visible{ outline:2px solid var(--cta-deep); outline-offset:3px; }
 .dc-link{
   display:inline-flex; align-items:center; gap:8px; min-height:54px; padding:0 6px;
   color:var(--navy); font-weight:600; font-size:1rem;
@@ -226,6 +228,7 @@ section{ scroll-margin-top:76px; }
 }
 .dc-photo-main{
   position:relative; z-index:1; width:100%; aspect-ratio:4/3; object-fit:cover;
+  object-position:50% 28%;
   border-radius:12px; box-shadow:var(--shadow-lg);
 }
 .dc-photo-mini{ display:none; }
@@ -435,8 +438,8 @@ section{ scroll-margin-top:76px; }
   font-family:inherit; font-size:.92rem; font-weight:600;
   transition:background .2s var(--ease), color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.dc-toggle button[aria-pressed="true"]{ background:var(--navy); color:#fff; box-shadow:0 1px 2px rgba(20,35,58,.2); }
-.dc-toggle button:not([aria-pressed="true"]):hover{ color:var(--navy); }
+.dc-toggle button[aria-pressed="true"]{ background:var(--cta); color:#fff; box-shadow:0 1px 2px rgba(20,35,58,.2); }
+.dc-toggle button:not([aria-pressed="true"]):hover{ color:var(--cta-deep); }
 .dc-plan{
   position:relative;
   background:var(--surface); border:1px solid var(--line); border-radius:16px;
@@ -705,7 +708,7 @@ section{ scroll-margin-top:76px; }
       </div>
     </div>
     <figure class="dc-photo">
-      <img class="dc-photo-main" src="../images/construction_looking_at_phone_banner.png" alt="Builder on site checking a new development application alert on his phone">
+      <img class="dc-photo-main" src="https://images.unsplash.com/photo-1621905253185-95614217f357?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Tradesperson in a hard hat checking a new development application alert on his phone">
       <img class="dc-photo-mini" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=75&w=1600&auto=format&fit=crop" alt="" loading="lazy">
       <span class="dc-pinchip" aria-hidden="true">
         <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#2F7D5B" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
