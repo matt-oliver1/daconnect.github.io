@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DAconnect — Worksite direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+<style>
+  /* ============ Direction B — "Worksite" (industrial bold, light) ============ */
+  :root{
+    --dirb-bg:#F2F1EE;
+    --dirb-panel:#FFFFFF;
+    --dirb-ink:#191919;
+    --dirb-muted:#55534E;
+    --dirb-orange:#E8600A;
+    --dirb-hair:rgba(25,25,25,.22);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{overflow-x:clip}
+  @media (prefers-reduced-motion:no-preference){
+    html{scroll-behavior:smooth}
+  }
+  body{
+    background:var(--dirb-bg);
+    color:var(--dirb-ink);
+    font-family:"Archivo",ui-sans-serif,system-ui,Arial,sans-serif;
+    font-weight:400;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+    overflow-x:clip;
+  }
+  img{display:block;max-width:100%}
+  [hidden]{display:none !important}
+  a{
+    transition:background-color .15s ease,color .15s ease,border-color .15s ease,
+               box-shadow .15s ease,transform .15s ease;
+  }
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+    outline:3px solid var(--dirb-orange);outline-offset:2px;
+  }
+  [id]{scroll-margin-top:84px}
+  .dirb-wrap{max-width:1280px;margin-inline:auto;padding-inline:clamp(16px,4vw,56px)}
+  .dirb-sr{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+  }
+
+  /* ---- section heading device (from the stats sign) ---- */
+  .dirb-sign{
+    display:flex;align-items:center;gap:14px;
+    font-weight:900;font-stretch:125%;text-transform:uppercase;
+    font-size:clamp(1.45rem,1.6vw + 1rem,2.25rem);line-height:1.12;
+    text-wrap:balance;
+  }
+  .dirb-sign::before{
+    content:"";width:16px;height:16px;flex:none;
+    background:var(--dirb-orange);border:2px solid var(--dirb-ink);
+  }
+  .dirb-lead{
+    font-size:clamp(1rem,.3vw + .95rem,1.125rem);font-weight:500;line-height:1.65;
+    color:var(--dirb-muted);max-width:62ch;
+    margin-top:14px;
+  }
+
+  /* ---- hazard strip ---- */
+  .dirb-hazard{
+    height:10px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-ink) 0 14px,var(--dirb-orange) 14px 28px);
+  }
+
+  /* ---- nav strip ---- */
+  .dirb-nav{
+    background:var(--dirb-panel);border-bottom:2px solid var(--dirb-ink);
+    position:sticky;top:0;z-index:40;
+  }
+  .dirb-nav-inner{
+    max-width:1280px;margin-inline:auto;
+    padding:10px clamp(16px,4vw,56px);
+    display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;
+  }
+  .dirb-logo{display:inline-flex;align-items:center;min-height:44px;padding:4px 2px;flex:none}
+  .dirb-logo img{height:38px;width:auto}
+  .dirb-links{display:flex;flex-wrap:wrap;align-items:center;order:1;margin-left:auto;margin-right:6px}
+  .dirb-links a{
+    display:inline-flex;align-items:center;min-height:44px;padding:4px 13px;
+    color:var(--dirb-ink);text-decoration:none;
+    font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    border-bottom:3px solid transparent;
+  }
+  .dirb-links a:hover{border-bottom-color:var(--dirb-orange)}
+  .dirb-nav-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:44px;padding:10px 20px;flex:none;order:2;
+    background:var(--dirb-ink);color:#FFFFFF;border:2px solid var(--dirb-ink);
+    font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+    text-decoration:none;
+  }
+  .dirb-nav-cta:hover{background:var(--dirb-orange);color:var(--dirb-ink)}
+  /* checkbox-disclosure menu (no JS required); collapsed to a single 44px row on mobile */
+  .dirb-menu-check{position:absolute;width:1px;height:1px;opacity:0}
+  .dirb-menu-btn{display:none}
+  @media (max-width:879px){
+    .dirb-menu-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      order:2;margin-left:auto;flex:none;
+      min-width:44px;min-height:44px;padding:10px 12px;
+      background:var(--dirb-panel);color:var(--dirb-ink);border:2px solid var(--dirb-ink);
+      font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+      cursor:pointer;user-select:none;
+      transition:background-color .15s ease,color .15s ease;
+    }
+    .dirb-menu-btn svg{flex:none}
+    .dirb-menu-check:focus-visible ~ .dirb-menu-btn{outline:3px solid var(--dirb-orange);outline-offset:2px}
+    .dirb-menu-check:checked ~ .dirb-menu-btn{background:var(--dirb-ink);color:#FFFFFF}
+    .dirb-menu-check:checked ~ .dirb-menu-btn .dirb-menu-ico-open,
+    .dirb-menu-btn .dirb-menu-ico-close{display:none}
+    .dirb-menu-check:checked ~ .dirb-menu-btn .dirb-menu-ico-close{display:block}
+    .dirb-nav-cta{order:3;margin-left:8px;padding:10px 14px;font-size:.74rem}
+    .dirb-links{
+      display:none;order:4;width:100%;
+      flex-direction:column;align-items:stretch;
+      margin:10px 0 4px;border-top:2px solid var(--dirb-ink);
+    }
+    .dirb-menu-check:checked ~ .dirb-links{display:flex}
+    .dirb-links a{
+      min-height:48px;padding:4px 2px;margin:0;
+      border-bottom:1px solid var(--dirb-hair);
+    }
+    .dirb-links a:hover{background:var(--dirb-bg);border-bottom-color:var(--dirb-hair)}
+  }
+  @media (max-width:479px){
+    .dirb-logo img{height:30px}
+    .dirb-nav-cta{padding:10px 11px;font-size:.7rem;letter-spacing:.07em}
+    .dirb-menu-btn{padding:10px}
+    .dirb-menu-txt{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+    }
+  }
+
+  /* ---- hero ---- */
+  .dirb-hero{
+    max-width:1280px;margin-inline:auto;
+    display:grid;grid-template-columns:minmax(0,1fr);align-items:center;
+    gap:clamp(32px,4.5vw,64px);
+    padding:clamp(32px,4.5vw,56px) clamp(16px,4vw,56px) clamp(40px,5vw,72px);
+  }
+  @media (min-width:960px){
+    .dirb-hero{grid-template-columns:minmax(0,8fr) minmax(0,5fr)}
+  }
+  @media (min-width:1024px){
+    .dirb-hero{min-height:min(calc(100vh - 280px),680px)}
+  }
+  .dirb-kicker{
+    display:inline-block;
+    background:var(--dirb-ink);color:#FFFFFF;
+    border-left:6px solid var(--dirb-orange);
+    font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:9px 14px 9px 12px;
+    margin-bottom:clamp(16px,2.2vw,24px);
+  }
+  .dirb-h1{
+    font-weight:900;font-stretch:125%;text-transform:uppercase;
+    font-size:clamp(1.7rem,2.5vw + .55rem,2.8rem);
+    line-height:1.06;letter-spacing:-.005em;
+    text-wrap:balance;
+    margin-bottom:clamp(14px,2vw,22px);
+  }
+  .dirb-mark{
+    background:var(--dirb-orange);color:var(--dirb-ink);
+    padding:.02em .16em;
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  }
+  .dirb-sub{
+    font-size:clamp(1rem,.3vw + .95rem,1.125rem);font-weight:500;line-height:1.65;
+    color:var(--dirb-muted);max-width:56ch;
+    margin-bottom:clamp(22px,2.8vw,32px);
+  }
+  .dirb-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
+  .dirb-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:56px;padding:16px 30px;
+    background:var(--dirb-orange);color:var(--dirb-ink);
+    border:2px solid var(--dirb-ink);box-shadow:5px 5px 0 var(--dirb-ink);
+    font-size:.95rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    text-decoration:none;cursor:pointer;
+    font-family:inherit;
+    transition:background-color .15s ease,color .15s ease,border-color .15s ease,
+               box-shadow .15s ease,transform .15s ease;
+  }
+  .dirb-cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--dirb-ink)}
+  .dirb-cta:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--dirb-ink)}
+  .dirb-cta:focus-visible{outline-color:var(--dirb-ink)}
+  .dirb-see{
+    display:inline-flex;align-items:center;gap:9px;
+    min-height:44px;padding:4px 2px;
+    color:var(--dirb-ink);text-decoration:none;
+    font-size:.9rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+    border-bottom:3px solid var(--dirb-orange);
+  }
+  .dirb-see svg{flex:none;transition:transform .15s ease}
+  .dirb-see:hover{border-bottom-color:var(--dirb-ink)}
+  .dirb-see:hover svg{transform:translateX(3px)}
+
+  /* ---- hero photo ---- */
+  .dirb-photo{position:relative;margin:0;max-width:640px}
+  .dirb-photo img{
+    width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+    border:3px solid var(--dirb-ink);
+    box-shadow:10px 10px 0 var(--dirb-ink);
+  }
+  .dirb-photo::after{
+    content:"";position:absolute;left:3px;right:3px;bottom:3px;height:12px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-ink) 0 12px,var(--dirb-orange) 12px 24px);
+  }
+  @media (min-width:960px){
+    .dirb-photo{max-width:none}
+    .dirb-photo img{aspect-ratio:10/11}
+  }
+
+  /* ---- stats: stencilled signage plates ---- */
+  .dirb-stats{border-top:2px solid var(--dirb-ink)}
+  .dirb-stats-inner{
+    max-width:1280px;margin-inline:auto;
+    padding:clamp(36px,5vw,64px) clamp(16px,4vw,56px) clamp(48px,5.5vw,76px);
+  }
+  .dirb-stats-inner .dirb-sign{margin-bottom:clamp(22px,3vw,34px)}
+  .dirb-plates{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:clamp(14px,2vw,24px);
+  }
+  @media (max-width:879px){
+    .dirb-plates{grid-template-columns:minmax(0,1fr)}
+  }
+  .dirb-plate{background:var(--dirb-panel);border:2px solid var(--dirb-ink)}
+  .dirb-period{
+    background:var(--dirb-ink);color:#FFFFFF;
+    font-size:.82rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    padding:11px 16px;
+  }
+  .dirb-rows{padding:6px 16px 10px}
+  .dirb-row{
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+    padding:14px 0;
+  }
+  .dirb-row + .dirb-row{border-top:1px solid var(--dirb-hair)}
+  .dirb-row dt{
+    font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--dirb-muted);
+  }
+  .dirb-row dd .num{
+    font-weight:900;font-stretch:125%;line-height:1;
+    font-size:clamp(1.75rem,1.3vw + 1.25rem,2.4rem);
+    font-variant-numeric:tabular-nums;
+  }
+  .dirb-foot{margin-top:20px;font-size:.85rem;color:var(--dirb-muted)}
+
+  /* ---- band rhythm: white panel bands between concrete ---- */
+  .dirb-band{padding-block:clamp(48px,7vw,96px)}
+  .dirb-band--panel{background:var(--dirb-panel);border-block:2px solid var(--dirb-ink)}
+
+  /* ---- section 3: what you receive ---- */
+  .dirb-receive-grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(32px,4vw,60px);
+    margin-top:clamp(28px,4vw,48px);
+  }
+  @media (min-width:960px){
+    .dirb-receive-grid{grid-template-columns:minmax(0,6fr) minmax(0,6fr);align-items:start}
+    .dirb-receive-shots{grid-column:2;grid-row:1}
+    .dirb-receive-act{grid-column:1;grid-row:1}
+  }
+  .dirb-shot{margin:0}
+  .dirb-shot-window{
+    border:3px solid var(--dirb-ink);
+    box-shadow:8px 8px 0 var(--dirb-ink);
+    background:var(--dirb-panel);
+    overflow:hidden;
+  }
+  .dirb-shot-window img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .dirb-shot--exclusive .dirb-shot-window{height:clamp(340px,42vw,520px)}
+  .dirb-shot--weekly{max-width:82%;margin-left:auto;margin-top:clamp(20px,2.6vw,32px)}
+  .dirb-shot--weekly .dirb-shot-window{height:clamp(220px,28vw,320px)}
+  .dirb-shot figcaption{
+    display:inline-block;
+    background:var(--dirb-ink);color:#FFFFFF;
+    font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:8px 12px;margin-top:14px;
+    border-left:6px solid var(--dirb-orange);
+  }
+  .dirb-callout{
+    display:flex;align-items:center;gap:14px;
+    background:var(--dirb-ink);color:#FFFFFF;
+    border:2px solid var(--dirb-ink);
+    padding:16px 18px;
+    margin-block:clamp(22px,3vw,32px);
+    font-weight:800;font-stretch:110%;text-transform:uppercase;letter-spacing:.05em;
+    font-size:clamp(.9rem,.4vw + .8rem,1.05rem);line-height:1.4;
+  }
+  .dirb-callout::before{
+    content:"";flex:none;width:14px;align-self:stretch;min-height:44px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-orange) 0 10px,var(--dirb-ink) 10px 20px);
+    border:1px solid var(--dirb-orange);
+  }
+
+  /* ---- forms ---- */
+  .dirb-form{
+    background:var(--dirb-bg);
+    border:2px solid var(--dirb-ink);
+    padding:clamp(18px,2.6vw,28px);
+  }
+  .dirb-band--panel .dirb-form{background:var(--dirb-bg)}
+  .dirb-form--onconcrete{background:var(--dirb-panel)}
+  .dirb-field{margin-bottom:16px}
+  .dirb-field label{
+    display:block;
+    font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:7px;
+  }
+  .dirb-field label small{
+    font-weight:600;letter-spacing:.06em;color:var(--dirb-muted);text-transform:none;
+    font-size:.72rem;
+  }
+  .dirb-field input,.dirb-field textarea{
+    width:100%;
+    border:2px solid var(--dirb-ink);border-radius:0;
+    background:var(--dirb-panel);color:var(--dirb-ink);
+    font-family:inherit;font-size:1rem;font-weight:500;
+    padding:12px 14px;min-height:48px;
+  }
+  .dirb-field textarea{resize:vertical;min-height:120px}
+  .dirb-required-note{
+    font-size:.8rem;color:var(--dirb-muted);margin-bottom:16px;
+  }
+  .dirb-form-msg{
+    margin-top:16px;padding:12px 14px;
+    border-left:6px solid var(--dirb-orange);
+    background:var(--dirb-panel);
+    border-top:1px solid var(--dirb-hair);border-right:1px solid var(--dirb-hair);border-bottom:1px solid var(--dirb-hair);
+    font-weight:700;font-size:.9rem;
+  }
+  .dirb-form .dirb-cta{width:100%}
+  .dirb-mailto{margin-top:16px;font-size:.9rem;color:var(--dirb-muted)}
+  .dirb-mailto a{color:var(--dirb-ink);font-weight:800;text-decoration:none;border-bottom:3px solid var(--dirb-orange)}
+  .dirb-mailto a:hover{border-bottom-color:var(--dirb-ink)}
+
+  /* ---- section 4: how it works ---- */
+  .dirb-steps{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(16px,2.4vw,28px);
+    margin-top:clamp(28px,4vw,48px);
+  }
+  @media (min-width:820px){
+    .dirb-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .dirb-beat{grid-column:1/-1}
+  }
+  .dirb-step{
+    background:var(--dirb-panel);border:2px solid var(--dirb-ink);
+    display:flex;flex-direction:column;
+  }
+  .dirb-step-head{
+    display:flex;align-items:stretch;gap:0;
+    border-bottom:2px solid var(--dirb-ink);
+  }
+  .dirb-step-num{
+    flex:none;display:flex;align-items:center;justify-content:center;
+    width:clamp(58px,7vw,76px);
+    background:var(--dirb-orange);color:var(--dirb-ink);
+    border-right:2px solid var(--dirb-ink);
+    font-weight:900;font-stretch:125%;
+    font-size:clamp(1.5rem,1.4vw + 1.1rem,2.1rem);
+    font-variant-numeric:tabular-nums;
+  }
+  .dirb-step-head h3{
+    padding:14px 18px;
+    font-weight:900;font-stretch:118%;text-transform:uppercase;
+    font-size:clamp(.98rem,.5vw + .85rem,1.2rem);line-height:1.25;
+  }
+  .dirb-step-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .dirb-step-body p{color:var(--dirb-muted);font-weight:500;line-height:1.6}
+  .dirb-step-body p.dirb-step-note{
+    display:inline-block;align-self:flex-start;
+    border-left:6px solid var(--dirb-orange);
+    background:var(--dirb-bg);color:var(--dirb-ink);
+    font-size:.8rem;font-weight:700;letter-spacing:.04em;
+    padding:7px 12px 7px 10px;
+  }
+  .dirb-step-body p.dirb-step-tag{
+    display:inline-block;align-self:flex-start;
+    background:var(--dirb-ink);color:#FFFFFF;
+    border-left:6px solid var(--dirb-orange);
+    font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    padding:8px 12px 8px 10px;line-height:1.45;
+  }
+  .dirb-step-shot{
+    position:relative;
+    margin-top:auto;
+    border-top:2px solid var(--dirb-ink);
+    overflow:hidden;height:clamp(180px,24vw,240px);
+    background:var(--dirb-bg);
+  }
+  .dirb-step-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  /* fade the windowed crop out at the bottom edge so the crop reads intentional
+     (same treatment as direction-d's step frames) */
+  .dirb-step-shot::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:56px;
+    background:linear-gradient(rgba(255,255,255,0),var(--dirb-panel));
+    pointer-events:none;
+  }
+  .dirb-beat{
+    display:flex;align-items:center;justify-content:center;gap:18px;
+    background:var(--dirb-ink);color:#FFFFFF;
+    border:2px solid var(--dirb-ink);
+    padding:18px 20px;
+    text-align:center;
+    font-weight:900;font-stretch:125%;text-transform:uppercase;letter-spacing:.06em;
+    font-size:clamp(1rem,1vw + .8rem,1.4rem);
+  }
+  .dirb-beat::before,.dirb-beat::after{
+    content:"";flex:1;max-width:120px;height:10px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-orange) 0 12px,var(--dirb-ink) 12px 24px);
+  }
+  .dirb-closing{
+    margin-top:clamp(32px,4.5vw,56px);
+    font-weight:900;font-stretch:125%;text-transform:uppercase;
+    font-size:clamp(1.3rem,2.4vw + .7rem,2.4rem);line-height:1.18;
+    text-wrap:balance;max-width:26ch;
+  }
+
+  /* ---- section 5: who it's for ---- */
+  .dirb-aud{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(14px,2vw,22px);
+    margin-top:clamp(28px,4vw,48px);
+  }
+  @media (min-width:640px){
+    .dirb-aud{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (min-width:1024px){
+    .dirb-aud{grid-template-columns:repeat(4,minmax(0,1fr))}
+  }
+  .dirb-aud-tile{
+    background:var(--dirb-panel);border:2px solid var(--dirb-ink);
+    padding:18px 18px 20px;
+    display:flex;flex-direction:column;gap:8px;min-height:132px;
+  }
+  .dirb-aud-tile::before{
+    content:"";width:14px;height:14px;
+    background:var(--dirb-orange);border:2px solid var(--dirb-ink);
+    margin-bottom:4px;
+  }
+  .dirb-aud-tile h3{
+    font-weight:900;font-stretch:118%;text-transform:uppercase;
+    font-size:clamp(.95rem,.4vw + .85rem,1.1rem);line-height:1.25;
+  }
+  .dirb-aud-tile p{font-size:.86rem;font-weight:500;color:var(--dirb-muted);line-height:1.5}
+  .dirb-aud-photo{
+    margin:0;border:2px solid var(--dirb-ink);overflow:hidden;min-height:132px;position:relative;
+  }
+  .dirb-aud-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+  /* ---- section 6: proof ---- */
+  .dirb-quotes{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(16px,2.4vw,26px);
+  }
+  @media (min-width:880px){
+    .dirb-quotes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
+  .dirb-quote{
+    margin:0;background:var(--dirb-panel);border:2px solid var(--dirb-ink);
+    display:flex;flex-direction:column;
+  }
+  .dirb-quote blockquote{
+    padding:22px 20px 24px;flex:1;position:relative;
+  }
+  .dirb-quote blockquote::before{
+    content:"“";display:block;
+    font-weight:900;font-stretch:125%;line-height:.6;
+    font-size:3rem;color:var(--dirb-orange);
+    margin-bottom:10px;
+  }
+  .dirb-quote blockquote p{font-weight:600;font-size:1rem;line-height:1.6}
+  .dirb-quote figcaption{
+    background:var(--dirb-ink);color:#FFFFFF;
+    border-top:2px solid var(--dirb-ink);
+    font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:11px 20px;
+  }
+
+  /* ---- section 7: pricing ---- */
+  .dirb-price-grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(28px,4vw,56px);
+    margin-top:clamp(28px,4vw,44px);
+  }
+  @media (min-width:960px){
+    .dirb-price-grid{grid-template-columns:minmax(0,6fr) minmax(0,5fr);align-items:start}
+  }
+  .dirb-price-side{display:flex;flex-direction:column;gap:clamp(20px,2.8vw,30px)}
+  .dirb-price-pitch{
+    background:var(--dirb-ink);color:#FFFFFF;
+    border-left:8px solid var(--dirb-orange);
+    padding:clamp(18px,2.4vw,26px) clamp(18px,2.4vw,26px) clamp(18px,2.4vw,26px) clamp(16px,2.2vw,24px);
+    font-weight:800;font-stretch:118%;text-transform:uppercase;letter-spacing:.03em;
+    font-size:clamp(1rem,.8vw + .8rem,1.35rem);line-height:1.4;
+    text-wrap:balance;
+  }
+  .dirb-shot--report .dirb-shot-window{height:auto;aspect-ratio:1531/861}
+  .dirb-toggle{
+    display:inline-flex;border:2px solid var(--dirb-ink);background:var(--dirb-panel);
+    margin-bottom:clamp(20px,2.6vw,28px);
+  }
+  .dirb-toggle button{
+    appearance:none;border:0;border-radius:0;cursor:pointer;
+    background:var(--dirb-panel);color:var(--dirb-ink);
+    font-family:inherit;font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    min-height:48px;padding:12px 26px;
+    transition:background-color .15s ease,color .15s ease;
+  }
+  .dirb-toggle button + button{border-left:2px solid var(--dirb-ink)}
+  .dirb-toggle button[aria-pressed="true"]{background:var(--dirb-ink);color:#FFFFFF}
+  .dirb-toggle button[aria-pressed="false"]:hover{background:var(--dirb-bg)}
+  .dirb-price-card{
+    background:var(--dirb-panel);border:2px solid var(--dirb-ink);
+    box-shadow:8px 8px 0 var(--dirb-ink);
+  }
+  .dirb-price-head{
+    padding:clamp(22px,3vw,32px) clamp(20px,3vw,32px) 0;
+  }
+  .dirb-save{
+    display:inline-block;
+    background:var(--dirb-orange);color:var(--dirb-ink);
+    border:2px solid var(--dirb-ink);
+    font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    padding:6px 12px;margin-bottom:14px;
+  }
+  .dirb-price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .dirb-amount{
+    font-weight:900;font-stretch:125%;line-height:1;
+    font-size:clamp(3rem,5vw + 1.4rem,4.6rem);
+    font-variant-numeric:tabular-nums;
+  }
+  .dirb-per{
+    font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--dirb-muted);
+  }
+  .dirb-percouncil{
+    display:inline-block;
+    background:var(--dirb-ink);color:#FFFFFF;
+    font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+    padding:7px 12px;margin-top:14px;
+  }
+  .dirb-features{
+    list-style:none;
+    padding:22px clamp(20px,3vw,32px) 6px;
+  }
+  .dirb-features li{
+    display:flex;align-items:baseline;gap:12px;
+    padding:11px 0;font-weight:600;font-size:.95rem;line-height:1.5;
+  }
+  .dirb-features li + li{border-top:1px solid var(--dirb-hair)}
+  .dirb-features li::before{
+    content:"";flex:none;width:12px;height:12px;transform:translateY(1px);
+    background:var(--dirb-orange);border:2px solid var(--dirb-ink);
+  }
+  .dirb-price-cta{padding:14px clamp(20px,3vw,32px) clamp(24px,3vw,32px)}
+  .dirb-price-cta .dirb-cta{width:100%}
+  .dirb-custom{margin-top:clamp(22px,3vw,30px);font-weight:500;color:var(--dirb-muted)}
+  .dirb-price-side .dirb-custom{margin-top:0}
+  .dirb-custom a{color:var(--dirb-ink);font-weight:800;text-decoration:none;border-bottom:3px solid var(--dirb-orange)}
+  .dirb-custom a:hover{border-bottom-color:var(--dirb-ink)}
+
+  /* ---- section 8: contact ---- */
+  .dirb-contact-grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(24px,3.4vw,44px);
+    margin-top:clamp(28px,4vw,48px);
+  }
+  @media (min-width:960px){
+    .dirb-contact-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:start}
+  }
+  .dirb-info{
+    background:var(--dirb-panel);border:2px solid var(--dirb-ink);
+  }
+  .dirb-info-head{
+    background:var(--dirb-ink);color:#FFFFFF;
+    font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    padding:11px 18px;
+  }
+  .dirb-info dl{padding:8px 18px 14px}
+  .dirb-info .dirb-info-row{padding:12px 0}
+  .dirb-info .dirb-info-row + .dirb-info-row{border-top:1px solid var(--dirb-hair)}
+  .dirb-info dt{
+    font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dirb-muted);margin-bottom:3px;
+  }
+  .dirb-info dd{font-weight:600;font-size:.95rem;line-height:1.5}
+  .dirb-info dd a{color:var(--dirb-ink);text-decoration:none;border-bottom:3px solid var(--dirb-orange)}
+  .dirb-info dd a:hover{border-bottom-color:var(--dirb-ink)}
+  .dirb-socials{display:flex;gap:10px;padding:4px 18px 18px}
+  .dirb-socials a{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;
+    border:2px solid var(--dirb-ink);color:var(--dirb-ink);background:var(--dirb-panel);
+  }
+  .dirb-socials a:hover{background:var(--dirb-orange)}
+  .dirb-socials svg{width:20px;height:20px}
+
+  /* ---- section 9: closing CTA band (the loud moment) ---- */
+  .dirb-loud{
+    background:var(--dirb-orange);
+    border-block:3px solid var(--dirb-ink);
+  }
+  .dirb-loud-strip{
+    height:12px;
+    background:repeating-linear-gradient(-45deg,var(--dirb-ink) 0 14px,transparent 14px 28px);
+  }
+  .dirb-loud-inner{
+    max-width:1280px;margin-inline:auto;
+    padding:clamp(52px,8vw,110px) clamp(16px,4vw,56px);
+    display:flex;flex-direction:column;align-items:flex-start;gap:clamp(24px,3.4vw,38px);
+  }
+  .dirb-loud h2{
+    font-weight:900;font-stretch:125%;text-transform:uppercase;
+    font-size:clamp(2.1rem,6vw + .6rem,5rem);
+    line-height:1.02;letter-spacing:-.005em;text-wrap:balance;
+    color:var(--dirb-ink);
+  }
+  .dirb-loud-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:60px;padding:18px 34px;
+    background:var(--dirb-ink);color:#FFFFFF;border:2px solid var(--dirb-ink);
+    box-shadow:6px 6px 0 #FFFFFF;
+    font-size:1rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;
+  }
+  .dirb-loud-cta:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 #FFFFFF}
+  .dirb-loud-cta:active{transform:translate(6px,6px);box-shadow:0 0 0 #FFFFFF}
+  .dirb-loud-cta:focus-visible{outline-color:var(--dirb-ink)}
+  .dirb-aus{
+    display:flex;align-items:center;gap:12px;
+    font-weight:700;font-size:.95rem;color:var(--dirb-ink);
+  }
+  .dirb-aus img{border:1px solid var(--dirb-ink);flex:none}
+
+  /* ---- section 10: footer ---- */
+  .dirb-footer{background:var(--dirb-ink);color:#FFFFFF}
+  .dirb-footer-inner{
+    max-width:1280px;margin-inline:auto;
+    padding:clamp(44px,6vw,72px) clamp(16px,4vw,56px) 28px;
+  }
+  .dirb-footer-grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:clamp(30px,4vw,52px);
+    padding-bottom:clamp(30px,4vw,44px);
+    border-bottom:1px solid rgba(255,255,255,.25);
+  }
+  @media (min-width:820px){
+    .dirb-footer-grid{grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr)}
+  }
+  .dirb-footer h2{
+    font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--dirb-orange);
+    margin-bottom:16px;
+  }
+  .dirb-footer-brand img{height:40px;width:auto;margin-bottom:16px}
+  .dirb-footer-brand p{color:rgba(255,255,255,.78);font-weight:500;line-height:1.6;max-width:38ch;margin-bottom:18px}
+  .dirb-footer .dirb-socials{padding:0}
+  .dirb-footer .dirb-socials a{
+    border-color:rgba(255,255,255,.4);color:#FFFFFF;background:transparent;
+  }
+  .dirb-footer .dirb-socials a:hover{background:var(--dirb-orange);border-color:var(--dirb-orange);color:var(--dirb-ink)}
+  .dirb-footer-links{list-style:none}
+  .dirb-footer-links a{
+    display:inline-flex;align-items:center;min-height:38px;padding:2px 0;
+    color:rgba(255,255,255,.85);text-decoration:none;
+    font-size:.9rem;font-weight:600;
+    border-bottom:2px solid transparent;
+  }
+  .dirb-footer-links a:hover{color:#FFFFFF;border-bottom-color:var(--dirb-orange)}
+  .dirb-footer-contact p{
+    color:rgba(255,255,255,.85);font-size:.92rem;font-weight:500;line-height:1.6;
+    padding:6px 0;
+  }
+  .dirb-footer-contact strong{
+    display:block;
+    font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.55);
+  }
+  .dirb-footer-contact a{color:#FFFFFF;text-decoration:none;border-bottom:2px solid var(--dirb-orange)}
+  .dirb-footer-contact a:hover{border-bottom-color:#FFFFFF}
+  .dirb-disclaimer{padding-top:clamp(26px,3.4vw,36px)}
+  .dirb-disclaimer p{
+    color:rgba(255,255,255,.72);
+    font-size:.8rem;font-weight:400;line-height:1.65;
+    max-width:110ch;
+    margin-bottom:12px;
+  }
+  .dirb-copyright{
+    display:flex;flex-wrap:wrap;gap:8px 24px;
+    /* bottom padding keeps the legal text clear of the fixed switcher pill even without JS */
+    padding-top:22px;padding-bottom:56px;margin-top:10px;
+    border-top:1px solid rgba(255,255,255,.25);
+    color:rgba(255,255,255,.72);font-size:.8rem;font-weight:500;
+  }
+
+  /* ---- cross-page switcher pill ---- */
+  .dirb-switch{
+    position:fixed;bottom:14px;right:14px;z-index:60;
+    display:flex;
+    background:#FFFFFF;border:1px solid rgba(25,25,25,.35);border-radius:999px;
+    box-shadow:0 2px 10px rgba(25,25,25,.18);
+    overflow:hidden;
+    transition:opacity .2s ease,visibility .2s ease;
+  }
+  .dirb-switch.is-hidden{opacity:0;visibility:hidden}
+  .dirb-switch a{
+    display:inline-flex;align-items:center;
+    min-height:44px;padding:10px 14px;
+    font-size:.72rem;font-weight:700;letter-spacing:.04em;
+    color:#3A3934;text-decoration:none;
+  }
+  .dirb-switch a + a{border-left:1px solid rgba(25,25,25,.18)}
+  .dirb-switch a:hover{background:#F2F1EE;color:#191919}
+  .dirb-switch a[aria-current="page"]{background:#191919;color:#FFFFFF}
+
+  /* ---- reduced motion: zero it out ---- */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition:none !important;animation:none !important}
+    .dirb-cta:hover,.dirb-cta:active{transform:none;box-shadow:5px 5px 0 var(--dirb-ink)}
+    .dirb-loud-cta:hover,.dirb-loud-cta:active{transform:none;box-shadow:6px 6px 0 #FFFFFF}
+    .dirb-see:hover svg{transform:none}
+  }
+</style>
+</head>
+<body id="top">
+
+  <div class="dirb-hazard" aria-hidden="true"></div>
+
+  <!-- ======== 1. Nav ======== -->
+  <header class="dirb-nav">
+    <div class="dirb-nav-inner">
+      <a class="dirb-logo" href="#top" aria-label="DAconnect — home">
+        <img src="../images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect" width="139" height="38" />
+      </a>
+      <input type="checkbox" id="dirb-menu-check" class="dirb-menu-check" />
+      <label class="dirb-menu-btn" for="dirb-menu-check">
+        <svg class="dirb-menu-ico-open" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 1h16M0 7h16M0 13h16" stroke="currentColor" stroke-width="2.4"/></svg>
+        <svg class="dirb-menu-ico-close" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2.4"/></svg>
+        <span class="dirb-menu-txt">Menu</span>
+      </label>
+      <a class="dirb-nav-cta" href="#freesample">Free Sample</a>
+      <nav class="dirb-links" aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#howitworks">How It Works</a>
+        <a href="#whoitsfor">Who It's For</a>
+        <a href="#pricing">Pricing</a>
+        <a href="../faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======== 2. Hero + stats ======== -->
+    <div class="dirb-hero">
+      <div class="dirb-copy">
+        <p class="dirb-kicker">Development application lead alerts — SA &amp; Gold Coast</p>
+        <h1 class="dirb-h1">Your business delivered to every development — <span class="dirb-mark">get the work first.</span></h1>
+        <p class="dirb-sub">Stop searching. Start winning. We monitor council websites 24/7 and give you exclusive access to new development applications in your area — so you're the first they see and the first they call.</p>
+        <div class="dirb-cta-row">
+          <a class="dirb-cta" href="#freesample">Get a free sample list</a>
+          <a class="dirb-see" href="#pricing">See pricing<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg></a>
+        </div>
+      </div>
+      <figure class="dirb-photo">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=75&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Workers in orange hi-vis tying rebar on a construction site" loading="lazy" width="1600" height="1067" />
+      </figure>
+    </div>
+
+    <section class="dirb-stats" aria-label="Development applications we track">
+      <div class="dirb-stats-inner">
+        <h2 class="dirb-sign">Development applications we track</h2>
+        <div class="dirb-plates">
+          <article class="dirb-plate">
+            <h3 class="dirb-period">Past week</h3>
+            <dl class="dirb-rows">
+              <div class="dirb-row">
+                <dt>South Australia</dt>
+                <dd><span class="num" data-count data-target="119">119</span></dd>
+              </div>
+              <div class="dirb-row">
+                <dt>Gold Coast</dt>
+                <dd><span class="num" data-count data-target="94">94</span></dd>
+              </div>
+            </dl>
+          </article>
+          <article class="dirb-plate">
+            <h3 class="dirb-period">Past month</h3>
+            <dl class="dirb-rows">
+              <div class="dirb-row">
+                <dt>South Australia</dt>
+                <dd><span class="num" data-count data-target="1548">1,548</span></dd>
+              </div>
+              <div class="dirb-row">
+                <dt>Gold Coast</dt>
+                <dd><span class="num" data-count data-target="410">410</span></dd>
+              </div>
+            </dl>
+          </article>
+          <article class="dirb-plate">
+            <h3 class="dirb-period">Past year</h3>
+            <dl class="dirb-rows">
+              <div class="dirb-row">
+                <dt>South Australia</dt>
+                <dd><span class="num" data-count data-target="36911">36,911</span></dd>
+              </div>
+              <div class="dirb-row">
+                <dt>Gold Coast</dt>
+                <dd><span class="num" data-count data-target="3930">3,930</span></dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+        <p class="dirb-foot">Counts update from live council data.</p>
+      </div>
+    </section>
+
+    <!-- ======== 3. What you receive ======== -->
+    <section id="freesample" class="dirb-band dirb-band--panel">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sign">See what you'll receive</h2>
+        <p class="dirb-lead">We'll send you a free sample so you can see DAconnect in action before you subscribe.</p>
+        <div class="dirb-receive-grid">
+          <div class="dirb-receive-shots">
+            <figure class="dirb-shot dirb-shot--exclusive">
+              <div class="dirb-shot-window">
+                <img src="../images/DAconnect-exclusive-list2.png" alt="The exclusive DAconnect business list a development applicant receives, showing a capped list of local businesses" loading="lazy" />
+              </div>
+              <figcaption>Actual exclusive list sent to a DA applicant</figcaption>
+            </figure>
+            <figure class="dirb-shot dirb-shot--weekly">
+              <div class="dirb-shot-window">
+                <img src="../images/example%20of%20weekly%20list.png" alt="Example of the weekly development application list subscribers receive" loading="lazy" />
+              </div>
+              <figcaption>Example weekly DA list</figcaption>
+            </figure>
+          </div>
+          <div class="dirb-receive-act">
+            <p class="dirb-callout">Exclusive list of no more than 14 businesses per Council</p>
+            <form class="dirb-form" data-mock novalidate>
+              <div class="dirb-field">
+                <label for="sample-name">Your Name</label>
+                <input type="text" id="sample-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="dirb-field">
+                <label for="sample-email">Your Email</label>
+                <input type="email" id="sample-email" name="email" autocomplete="email" required />
+              </div>
+              <button type="submit" class="dirb-cta">Get Free Sample</button>
+              <p class="dirb-form-msg" role="status" hidden></p>
+            </form>
+            <p class="dirb-mailto">Prefer email? Contact us at <a href="mailto:council@daconnect.com.au">council@daconnect.com.au</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 4. How it works ======== -->
+    <section id="howitworks" class="dirb-band">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sign">How it works</h2>
+        <p class="dirb-lead">All development data from every council in South Australia and the Gold Coast is received by DAconnect</p>
+        <div class="dirb-steps">
+          <article class="dirb-step">
+            <div class="dirb-step-head">
+              <span class="dirb-step-num" aria-hidden="true">01</span>
+              <h3>Choose what Council (or Councils) you want to work in</h3>
+            </div>
+            <div class="dirb-step-body">
+              <p>Choose the council areas you want — and get early access to every development opportunity before the rest of the market.</p>
+              <div class="dirb-step-shot">
+                <img src="../images/how_it_works-step-1.png" alt="DAconnect screen for selecting the council areas you want to work in" loading="lazy" />
+              </div>
+            </div>
+          </article>
+          <article class="dirb-step">
+            <div class="dirb-step-head">
+              <span class="dirb-step-num" aria-hidden="true">02</span>
+              <h3>Enter your business details and create your digital business card</h3>
+            </div>
+            <div class="dirb-step-body">
+              <p>Build your professional profile with your logo, services, and contact information.</p>
+              <p class="dirb-step-note">you can update and change your details anytime</p>
+              <div class="dirb-step-shot">
+                <img src="../images/how_it_works-step-2.png" alt="DAconnect screen for entering business details and creating a digital business card" loading="lazy" />
+              </div>
+            </div>
+          </article>
+          <p class="dirb-beat">From now, DAconnect does the heavy lifting</p>
+          <article class="dirb-step">
+            <div class="dirb-step-head">
+              <span class="dirb-step-num" aria-hidden="true">03</span>
+              <h3>Your digital business card is sent to all publicly listed developments</h3>
+            </div>
+            <div class="dirb-step-body">
+              <p>Your profile reaches decision-makers in your chosen council area.</p>
+              <p class="dirb-step-tag">Exclusive list of no more than 14 businesses per Council</p>
+              <div class="dirb-step-shot">
+                <img src="../images/how_it_works-step-3.png" alt="DAconnect screen showing a digital business card being sent to publicly listed developments" loading="lazy" />
+              </div>
+            </div>
+          </article>
+          <article class="dirb-step">
+            <div class="dirb-step-head">
+              <span class="dirb-step-num" aria-hidden="true">04</span>
+              <h3>You receive a clear and full monthly report</h3>
+            </div>
+            <div class="dirb-step-body">
+              <p>Track your reach with detailed analytics showing exactly where your digital business card has been delivered.</p>
+              <div class="dirb-step-shot">
+                <img src="../images/how_it_works-step-4.png" alt="DAconnect monthly report screen with delivery analytics" loading="lazy" />
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="dirb-closing">This isn't just advertising — <span class="dirb-mark">it's early access to real work</span></p>
+      </div>
+    </section>
+
+    <!-- ======== 5. Who it's for ======== -->
+    <section id="whoitsfor" class="dirb-band dirb-band--panel">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sign">Who it's for</h2>
+        <p class="dirb-lead">Empowering your business with real-time development application data to gain a competitive edge in the construction industry.</p>
+        <div class="dirb-aud">
+          <div class="dirb-aud-tile">
+            <h3>Earthworks | Civil | Demolition</h3>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Solar &amp; Electrical Companies</h3>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Independent Suppliers</h3>
+            <p>flooring, tiles, kitchens, bathrooms, electrical merchants</p>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Trades &amp; Builders</h3>
+            <p>plumbers, painters, concreters, carpenters, etc.</p>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Building Certifiers</h3>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Additional Suppliers</h3>
+            <p>pools, garage doors, pergolas, outdoor living</p>
+          </div>
+          <div class="dirb-aud-tile">
+            <h3>Independent Manufacturers</h3>
+            <p>windows, doors, stone, brickworks, etc.</p>
+          </div>
+          <figure class="dirb-aud-photo">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=75&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Site crew in hi-vis overlooking a concrete pour" loading="lazy" width="1600" height="1067" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 6. Proof ======== -->
+    <section class="dirb-band" aria-label="What subscribers say">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sr">Proof</h2>
+        <div class="dirb-quotes">
+          <figure class="dirb-quote">
+            <blockquote>
+              <p>Two homeowners called me directly after seeing my business card. Picked up a renovation and a deck job in the first month.</p>
+            </blockquote>
+            <figcaption>Paul M. — Builder, SA</figcaption>
+          </figure>
+          <figure class="dirb-quote">
+            <blockquote>
+              <p>Having my details land in front of applicants before anyone else is huge. I'm getting calls from people who just lodged their DA.</p>
+            </blockquote>
+            <figcaption>Alex P. — Plumber, SA</figcaption>
+          </figure>
+          <figure class="dirb-quote">
+            <blockquote>
+              <p>Applicants are reaching out to me now instead of the other way around. It's completely changed how I find new landscaping work.</p>
+            </blockquote>
+            <figcaption>Sarah L. — Landscaper, SA</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 7. Pricing ======== -->
+    <section id="pricing" class="dirb-band dirb-band--panel">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sign">Simple, transparent pricing</h2>
+        <p class="dirb-lead">Get ahead of the competition with DAconnect. No hidden fees<span class="js-cancel">, cancel anytime</span>.</p>
+        <div class="dirb-price-grid">
+          <div class="dirb-price-main">
+            <div class="dirb-toggle" role="group" aria-label="Billing period">
+              <button type="button" id="bill-monthly" aria-pressed="true">Monthly</button>
+              <button type="button" id="bill-yearly" aria-pressed="false">Yearly</button>
+            </div>
+            <article class="dirb-price-card">
+              <div class="dirb-price-head">
+                <span class="dirb-save" id="save-badge" hidden>Save $198/yr</span>
+                <p class="dirb-price-line">
+                  <span class="dirb-amount" id="price-amount">$99</span>
+                  <span class="dirb-per" id="price-per">/month</span>
+                </p>
+                <span class="dirb-percouncil">Per Council</span>
+              </div>
+              <ul class="dirb-features">
+                <li>Target the council areas you want to work in</li>
+                <li>Your digital business card delivered directly to real developments</li>
+                <li>Exclusive placement within a capped list of up to 14 businesses per council</li>
+                <li>Transparent monthly reporting with full visibility of every delivery</li>
+                <li class="js-cancel">Cancel anytime</li>
+              </ul>
+              <div class="dirb-price-cta">
+                <a class="dirb-cta" id="plan-cta" href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly">Get Started</a>
+              </div>
+            </article>
+          </div>
+          <aside class="dirb-price-side" aria-label="What your subscription delivers">
+            <p class="dirb-price-pitch">Get in front of decision-makers before your competitors even hear about the project.</p>
+            <figure class="dirb-shot dirb-shot--report">
+              <div class="dirb-shot-window">
+                <img src="../images/sample-exclusive-outreach.png" alt="DAconnect outreach activity report listing the development applications where a subscriber's business details were sent, with delivery status for each" loading="lazy" />
+              </div>
+              <figcaption>Transparent monthly reporting with full visibility of every delivery</figcaption>
+            </figure>
+            <p class="dirb-custom">Need a custom solution? <a href="#contact">Contact our team</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 8. Contact ======== -->
+    <section id="contact" class="dirb-band">
+      <div class="dirb-wrap">
+        <h2 class="dirb-sign">Contact our team</h2>
+        <p class="dirb-lead">Have questions or need more information? Send us a message and we'll get back to you as soon as possible.</p>
+        <div class="dirb-contact-grid">
+          <form class="dirb-form dirb-form--onconcrete" data-mock novalidate>
+            <p class="dirb-required-note">Fields marked * are required.</p>
+            <div class="dirb-field">
+              <label for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="dirb-field">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required />
+            </div>
+            <div class="dirb-field">
+              <label for="contact-phone">Contact Phone <small>(Optional)</small></label>
+              <input type="tel" id="contact-phone" name="phone" autocomplete="tel" />
+            </div>
+            <div class="dirb-field">
+              <label for="contact-business">Business Name <small>(If applicable)</small></label>
+              <input type="text" id="contact-business" name="business" autocomplete="organization" />
+            </div>
+            <div class="dirb-field">
+              <label for="contact-message">Your Message *</label>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="dirb-cta">Send Message</button>
+            <p class="dirb-form-msg" role="status" hidden></p>
+          </form>
+          <div class="dirb-info">
+            <p class="dirb-info-head">DAconnect</p>
+            <dl>
+              <div class="dirb-info-row">
+                <dt>Email</dt>
+                <dd><a href="mailto:council@daconnect.com.au">council@daconnect.com.au</a></dd>
+              </div>
+              <div class="dirb-info-row">
+                <dt>Phone</dt>
+                <dd><a href="tel:+61872286805">(08) 7228 6805</a></dd>
+              </div>
+              <div class="dirb-info-row">
+                <dt>Business Hours</dt>
+                <dd>Monday – Friday: 9:00 AM – 5:00 PM AEST</dd>
+              </div>
+              <div class="dirb-info-row">
+                <dt>ABN</dt>
+                <dd>74 168 911 402</dd>
+              </div>
+            </dl>
+            <div class="dirb-socials">
+              <a href="https://www.facebook.com/da.connect.au" aria-label="DAconnect on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21.9v-7.8h2.6l.4-3h-3V9.2c0-.9.3-1.5 1.6-1.5h1.5V5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6v7.8z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/da.connect.au" aria-label="DAconnect on Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/daconnectau" aria-label="DAconnect on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 8.8H3.4v11.7h3.2zM5 7.4a1.9 1.9 0 1 0 0-3.8 1.9 1.9 0 0 0 0 3.8zM13 12.3c0-1 .6-1.7 1.7-1.7 1 0 1.5.7 1.5 1.9v6h3.2v-6.4c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5 1-2.9 1.6h-.1V8.8H9.8v11.7H13z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== 9. Closing CTA band ======== -->
+    <section class="dirb-loud" aria-label="Get started with DAconnect">
+      <div class="dirb-loud-strip" aria-hidden="true"></div>
+      <div class="dirb-loud-inner">
+        <h2>Ready to get the work first?</h2>
+        <a class="dirb-loud-cta" href="#freesample">Get a free sample list</a>
+        <p class="dirb-aus">
+          <img src="https://flagcdn.com/28x21/au.png" alt="" width="28" height="21" />
+          Proudly Australian-owned and powered by Australian-developed technology
+        </p>
+      </div>
+      <div class="dirb-loud-strip" aria-hidden="true"></div>
+    </section>
+
+  </main>
+
+  <!-- ======== 10. Footer ======== -->
+  <footer class="dirb-footer">
+    <div class="dirb-footer-inner">
+      <div class="dirb-footer-grid">
+        <div class="dirb-footer-brand">
+          <img src="../images/DA-Connect_logo_title_transparent_dark_logo.png" alt="DAconnect" width="146" height="40" />
+          <p>Get your business in front of real decision-makers before your competitor does.</p>
+          <div class="dirb-socials">
+            <a href="https://www.facebook.com/da.connect.au" aria-label="DAconnect on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21.9v-7.8h2.6l.4-3h-3V9.2c0-.9.3-1.5 1.6-1.5h1.5V5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.6v7.8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/da.connect.au" aria-label="DAconnect on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/daconnectau" aria-label="DAconnect on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 8.8H3.4v11.7h3.2zM5 7.4a1.9 1.9 0 1 0 0-3.8 1.9 1.9 0 0 0 0 3.8zM13 12.3c0-1 .6-1.7 1.7-1.7 1 0 1.5.7 1.5 1.9v6h3.2v-6.4c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5 1-2.9 1.6h-.1V8.8H9.8v11.7H13z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav aria-label="Footer">
+          <h2>Quick Links</h2>
+          <ul class="dirb-footer-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#howitworks">How It Works</a></li>
+            <li><a href="#whoitsfor">Who It's For</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#freesample">Free Sample</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="../compliance.html">Compliance &amp; Privacy</a></li>
+          </ul>
+        </nav>
+        <div class="dirb-footer-contact">
+          <h2>Contact</h2>
+          <p><strong>Email</strong> <a href="mailto:council@daconnect.com.au">council@daconnect.com.au</a></p>
+          <p><strong>Phone</strong> <a href="tel:+61872286805">(08) 7228 6805</a></p>
+          <p><strong>Business Hours</strong> Monday – Friday: 9:00 AM – 5:00 PM AEST</p>
+          <p><strong>ABN</strong> 74 168 911 402</p>
+        </div>
+      </div>
+      <div class="dirb-disclaimer">
+        <h2>Disclaimer and Compliance</h2>
+        <p>DAconnect is an independent service and is not affiliated with, endorsed by, or connected to any local council, government department, or regulatory authority. Nothing within this service should be interpreted as preferential treatment or official endorsement from any government body.</p>
+        <p>DAconnect operates in compliance with the Australian Spam Act 2003 (Cth). All correspondence sent through DAconnect—whether directly to subscribers or issued on behalf of subscribers in relation to specific Development Applications—is distributed in accordance with applicable consent requirements and includes clear sender identification.</p>
+        <p>All information provided by DAconnect is derived from publicly available records and is supplied on an "as available" basis. While reasonable care is taken in compiling and presenting this information, DAconnect makes no representations or warranties, express or implied, regarding its completeness, accuracy, currency, reliability, or suitability for any particular purpose. Users rely on such information at their own discretion.</p>
+      </div>
+      <div class="dirb-copyright">
+        <span>© 2026 DAconnect. All rights reserved.</span>
+        <span>ABN 74 168 911 402</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== cross-page switcher ======== -->
+  <nav class="dirb-switch" aria-label="Design direction switcher">
+    <a href="direction-c.html">Civic Tech</a>
+    <a href="direction-b.html" aria-current="page">Worksite</a>
+    <a href="direction-d.html">Dispatch</a>
+  </nav>
+
+<script>
+(function () {
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- counter animation ---- */
+  var fmt = function (n) { return n.toLocaleString("en-AU"); };
+  var nums = document.querySelectorAll("[data-count]");
+  if ("IntersectionObserver" in window && nums.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        var target = parseInt(entry.target.getAttribute("data-target"), 10) || 0;
+        if (reduced) { entry.target.textContent = fmt(target); return; }
+        var start = null, dur = 1200;
+        var tick = function (now) {
+          if (start === null) start = now;
+          var p = Math.min((now - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3); /* easeOutCubic */
+          entry.target.textContent = fmt(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    nums.forEach(function (n) { io.observe(n); });
+  }
+
+  /* ---- pricing toggle ---- */
+  var monthlyBtn = document.getElementById("bill-monthly");
+  var yearlyBtn = document.getElementById("bill-yearly");
+  var amount = document.getElementById("price-amount");
+  var per = document.getElementById("price-per");
+  var badge = document.getElementById("save-badge");
+  var cancelBits = document.querySelectorAll(".js-cancel");
+  var planCta = document.getElementById("plan-cta");
+  function setBilling(yearly) {
+    monthlyBtn.setAttribute("aria-pressed", String(!yearly));
+    yearlyBtn.setAttribute("aria-pressed", String(yearly));
+    amount.textContent = yearly ? "$990" : "$99";
+    per.textContent = yearly ? "/year" : "/month";
+    badge.hidden = !yearly;
+    cancelBits.forEach(function (el) { el.hidden = yearly; });
+    planCta.href = "https://app.daconnect.com.au/subscription?exclusive&occurrence=" + (yearly ? "yearly" : "monthly");
+  }
+  monthlyBtn.addEventListener("click", function () { setBilling(false); });
+  yearlyBtn.addEventListener("click", function () { setBilling(true); });
+
+  /* ---- collapse mobile menu after choosing a link (progressive enhancement) ---- */
+  var menuCheck = document.getElementById("dirb-menu-check");
+  if (menuCheck) {
+    document.querySelectorAll(".dirb-links a").forEach(function (link) {
+      link.addEventListener("click", function () { menuCheck.checked = false; });
+    });
+  }
+
+  /* ---- mock form feedback ---- */
+  var emailOk = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+  document.querySelectorAll("form[data-mock]").forEach(function (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var msg = form.querySelector(".dirb-form-msg");
+      var invalid = Array.prototype.slice.call(form.querySelectorAll("[required]")).some(function (field) {
+        var v = field.value.trim();
+        if (!v) return true;
+        if (field.type === "email") return !emailOk(v);
+        return false;
+      });
+      msg.hidden = false;
+      msg.textContent = invalid
+        ? "Please fill in the required fields with a valid email address."
+        : "This is a design preview — the form isn't wired up yet.";
+    });
+  });
+
+  /* ---- direction switcher: fade out while the footer is in view ---- */
+  var switcher = document.querySelector(".dirb-switch");
+  var pageFooter = document.querySelector(".dirb-footer");
+  if (switcher && pageFooter && "IntersectionObserver" in window) {
+    var footIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        switcher.classList.toggle("is-hidden", entry.isIntersecting);
+      });
+    });
+    footIo.observe(pageFooter);
+  }
+})();
+</script>
+</body>
+</html>

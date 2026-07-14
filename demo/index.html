@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAconnect — Design Directions (Preview)</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Albert+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ground: #F7F9FB;
+      --surface: #FFFFFF;
+      --ink: #14233A;
+      --muted: #5B6B80;
+      --hairline: #E3E9F0;
+      --navy: #1D3557;
+      --navy-dark: #15294A;
+      --green: #2F7D5B;
+      --radius: 10px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-16: 64px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      background: var(--ground);
+      color: var(--ink);
+      font-family: 'Albert Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(32px, 6vw, 72px) clamp(20px, 4vw, 40px) var(--space-16);
+    }
+
+    header {
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+      display: block;
+      margin-bottom: var(--space-8);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: var(--space-3);
+    }
+
+    h1 {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
+    }
+
+    .lede {
+      color: var(--muted);
+      max-width: 62ch;
+      text-wrap: pretty;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(20, 35, 58, .05), 0 8px 24px rgba(20, 35, 58, .05);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 4px rgba(20, 35, 58, .06), 0 14px 32px rgba(20, 35, 58, .1);
+    }
+
+    .swatches {
+      display: flex;
+      gap: 6px;
+      margin-bottom: var(--space-6);
+    }
+
+    .swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .card h2 {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-2);
+    }
+
+    .adj {
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 500;
+      margin-bottom: var(--space-4);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: var(--space-6);
+      flex: 1;
+      text-wrap: pretty;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--hairline);
+      padding-top: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 48px;
+      padding: 0 var(--space-6);
+      background: var(--navy);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .2s ease;
+    }
+
+    .btn:hover {
+      background: var(--navy-dark);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .note {
+      margin-top: var(--space-12);
+      padding: var(--space-6);
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .note h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: var(--space-2);
+    }
+
+    .note ul {
+      margin: var(--space-2) 0 0;
+      padding-left: 20px;
+    }
+
+    .note li {
+      margin-bottom: 4px;
+    }
+
+    .note a {
+      color: var(--navy);
+    }
+
+    footer {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--hairline);
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: space-between;
+    }
+
+    footer a {
+      color: var(--navy);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <img class="logo" src="../images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect">
+      <p class="eyebrow">Internal preview — not live</p>
+      <h1>Three design directions for the DAconnect homepage</h1>
+      <p class="lede">Each is a complete, working homepage built with our real copy, real product screenshots and live
+        development-application counts. Same content and same structure in all three — only the visual direction
+        changes. Open each one, scroll it top to bottom, and tell us which one a builder would trust with their money.
+      </p>
+    </header>
+
+    <div class="grid">
+      <article class="card">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch" style="background:#F7F9FB"></span>
+          <span class="swatch" style="background:#1D3557"></span>
+          <span class="swatch" style="background:#2F7D5B"></span>
+        </div>
+        <h2>Civic Tech</h2>
+        <p class="adj">Assured · modern · spacious</p>
+        <p>The natural evolution of the brand we have today — navy-anchored, generous, product-grade polish. The safest
+          option, and the one that stays most recognisably DAconnect.</p>
+        <p class="meta"><strong>Type:</strong> Bricolage Grotesque + Albert Sans</p>
+        <a class="btn" href="direction-c.html">Open Civic Tech</a>
+      </article>
+
+      <article class="card">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch" style="background:#F2F1EE"></span>
+          <span class="swatch" style="background:#191919"></span>
+          <span class="swatch" style="background:#E8600A"></span>
+        </div>
+        <h2>Worksite</h2>
+        <p class="adj">Bold · direct · industrial</p>
+        <p>Speaks the tradie's own language: hi-vis clarity, signage typography, hard edges, no decoration. The loudest
+          option and the biggest departure from what we look like now.</p>
+        <p class="meta"><strong>Type:</strong> Archivo Expanded</p>
+        <a class="btn" href="direction-b.html">Open Worksite</a>
+      </article>
+
+      <article class="card">
+        <div class="swatches" aria-hidden="true">
+          <span class="swatch" style="background:#10141A"></span>
+          <span class="swatch" style="background:#43D17C"></span>
+          <span class="swatch" style="background:#E5A83B"></span>
+        </div>
+        <h2>Dispatch</h2>
+        <p class="adj">Live · technical · confident</p>
+        <p>Treats the product as what it actually is — an alert engine. Dark, precise, with the live lead feed as the
+          hero. The wildcard, and the tightest-executed of the three.</p>
+        <p class="meta"><strong>Type:</strong> IBM Plex Sans + Mono</p>
+        <a class="btn" href="direction-d.html">Open Dispatch</a>
+      </article>
+    </div>
+
+    <div class="note">
+      <h3>What to know before you click</h3>
+      <ul>
+        <li>These are <strong>design previews</strong>. The forms and checkout buttons are not wired up — submitting a
+          form shows a preview message instead of sending anything.</li>
+        <li>The development-application counts are the real ones. The product screenshots are real. The testimonials are
+          the ones already on our site.</li>
+        <li>Each page has a small pill in the bottom-right corner to jump straight between the three directions.</li>
+        <li>The live site is unchanged and still at <a href="../index.html">daconnect.com.au</a>.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <span>DAconnect — design preview, July 2026</span>
+      <a href="../index.html">← Back to the live site</a>
+    </footer>
+  </div>
+</body>
+
+</html>
