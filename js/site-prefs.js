@@ -94,7 +94,9 @@
   function injectStyles() {
     if (document.getElementById('dac-prefs-styles')) return;
     var css =
-      '#dac-prefs-banner{position:fixed;right:1rem;bottom:1rem;z-index:2000;' +
+      // Bottom-LEFT so it never sits under the Tawk.to chat bubble, which
+      // anchors itself bottom-right (see js/chat-widget.js).
+      '#dac-prefs-banner{position:fixed;left:1rem;bottom:1rem;z-index:2000;' +
       'width:330px;max-width:calc(100vw - 2rem);background:#fff;color:#1d3557;border:1px solid rgba(0,0,0,.08);' +
       'border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:1rem 1.1rem;' +
       "font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;" +
