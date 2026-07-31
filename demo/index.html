@@ -22,6 +22,7 @@
       --navy: #1D3557;
       --navy-dark: #15294A;
       --green: #2F7D5B;
+      --gold: #B08A47;
       --radius: 10px;
       --space-2: 8px;
       --space-3: 12px;
@@ -91,6 +92,139 @@
       text-wrap: pretty;
     }
 
+    /* ---------- Section headings ---------- */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+
+    .section-label {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .tag--new {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .tag--old {
+      background: var(--hairline);
+      color: var(--muted);
+    }
+
+    .section {
+      margin-bottom: var(--space-16);
+    }
+
+    /* ---------- Featured (NEW) card ---------- */
+    .featured {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-8);
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: 16px;
+      padding: var(--space-8);
+      box-shadow: 0 1px 2px rgba(20, 35, 58, .05), 0 12px 32px rgba(20, 35, 58, .08);
+    }
+
+    .featured-copy h2 {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-2);
+    }
+
+    .featured .adj {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+
+    .featured p {
+      color: var(--muted);
+      margin-bottom: var(--space-4);
+      max-width: 60ch;
+      text-wrap: pretty;
+    }
+
+    .featured .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .featured .meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Live scaled preview of the actual v2 page */
+    .preview {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(20, 35, 58, .02);
+    }
+
+    .preview iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1460px;
+      height: 912px;
+      border: 0;
+      transform: scale(0.42);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+
+    .preview a.preview-cover {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .featured + .featured {
+      margin-top: var(--space-8);
+    }
+
+    @media (min-width: 860px) {
+      .featured {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-12);
+      }
+    }
+
+    /* ---------- Direction grid (OLD) ---------- */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -126,7 +260,7 @@
       border: 1px solid rgba(0, 0, 0, .1);
     }
 
-    .card h2 {
+    .card h3 {
       font-family: 'Bricolage Grotesque', system-ui, sans-serif;
       font-size: 22px;
       font-weight: 600;
@@ -180,6 +314,14 @@
 
     .btn:hover {
       background: var(--navy-dark);
+    }
+
+    .btn--green {
+      background: var(--green);
+    }
+
+    .btn--green:hover {
+      background: #256A4F;
     }
 
     .btn:focus-visible {
@@ -250,56 +392,147 @@
     <header>
       <img class="logo" src="../images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect">
       <p class="eyebrow">Internal preview — not live</p>
-      <h1>Three design directions for the DAconnect homepage</h1>
-      <p class="lede">Each is a complete, working homepage built with our real copy, real product screenshots and live
-        development-application counts. Same content and same structure in all three — only the visual direction
-        changes. Open each one, scroll it top to bottom, and tell us which one a builder would trust with their money.
-      </p>
+      <h1>The new DAconnect homepage — and the directions we explored to get here</h1>
+      <p class="lede">Start with the latest <strong>Directions E, F and G</strong>: complete, working homepages built
+        with our real copy, real product screenshots and live development-application counts. Below them are the earlier
+        three explorations for comparison. Open each one, scroll it top to bottom, and tell us which a builder would
+        trust with their money.</p>
     </header>
 
-    <div class="grid">
-      <article class="card">
-        <div class="swatches" aria-hidden="true">
-          <span class="swatch" style="background:#F7F9FB"></span>
-          <span class="swatch" style="background:#1D3557"></span>
-          <span class="swatch" style="background:#2F7D5B"></span>
-        </div>
-        <h2>Civic Tech</h2>
-        <p class="adj">Assured · modern · spacious</p>
-        <p>The natural evolution of the brand we have today — navy-anchored, generous, product-grade polish. The safest
-          option, and the one that stays most recognisably DAconnect.</p>
-        <p class="meta"><strong>Type:</strong> Bricolage Grotesque + Albert Sans</p>
-        <a class="btn" href="direction-c.html">Open Civic Tech</a>
-      </article>
+    <!-- ============ NEW ============ -->
+    <section class="section" aria-labelledby="new-head">
+      <div class="section-head">
+        <span class="tag tag--new">New</span>
+        <span class="section-label" id="new-head">The current proposals</span>
+        <span class="section-sub">Directions E, F &amp; G</span>
+      </div>
 
-      <article class="card">
-        <div class="swatches" aria-hidden="true">
-          <span class="swatch" style="background:#F2F1EE"></span>
-          <span class="swatch" style="background:#191919"></span>
-          <span class="swatch" style="background:#E8600A"></span>
+      <div class="featured">
+        <div class="featured-copy">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#101B2A"></span>
+            <span class="swatch" style="background:#2C7A5B"></span>
+            <span class="swatch" style="background:#B08A47"></span>
+            <span class="swatch" style="background:#F7F4EF"></span>
+          </div>
+          <h2>Direction F</h2>
+          <p class="adj">Warm · editorial · trustworthy</p>
+          <p>A full homepage rebuild: a construction-site hero, a green-and-gold palette on warm sand, and the product
+            told as a story from monitoring through to your first monthly report. It's interactive — switch the region
+            between South Australia and Queensland, flip pricing between monthly and yearly, and watch the live DA
+            tracker tick over.</p>
+          <p class="meta"><strong>Type:</strong> DM Sans &nbsp;·&nbsp; <strong>Palette:</strong> navy, green, gold, sand
+          </p>
+          <a class="btn btn--green" href="direction-f.html">Open Direction F →</a>
         </div>
-        <h2>Worksite</h2>
-        <p class="adj">Bold · direct · industrial</p>
-        <p>Speaks the tradie's own language: hi-vis clarity, signage typography, hard edges, no decoration. The loudest
-          option and the biggest departure from what we look like now.</p>
-        <p class="meta"><strong>Type:</strong> Archivo Expanded</p>
-        <a class="btn" href="direction-b.html">Open Worksite</a>
-      </article>
+        <div class="preview">
+          <iframe src="direction-f.html" title="Live preview of Direction F" loading="lazy" tabindex="-1"
+            aria-hidden="true" scrolling="no"></iframe>
+          <a class="preview-cover" href="direction-f.html" aria-label="Open Direction F"></a>
+        </div>
+      </div>
 
-      <article class="card">
-        <div class="swatches" aria-hidden="true">
-          <span class="swatch" style="background:#10141A"></span>
-          <span class="swatch" style="background:#43D17C"></span>
-          <span class="swatch" style="background:#E5A83B"></span>
+      <div class="featured">
+        <div class="featured-copy">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#0E1826"></span>
+            <span class="swatch" style="background:#2C7A5B"></span>
+            <span class="swatch" style="background:#B08A47"></span>
+            <span class="swatch" style="background:#EDE7DA"></span>
+          </div>
+          <h2>Direction E</h2>
+          <p class="adj">Sample-first · warm · construction</p>
+          <p>A sibling of Direction F that leads with the free sample instead of the trial: a dark navigation bar, a
+            construction-site hero, and a "get free samples" capture card front and centre. Same warm green-and-gold
+            palette, with the live DA tracker rendered in the darker treatment.</p>
+          <p class="meta"><strong>Type:</strong> DM Sans &nbsp;·&nbsp; <strong>Palette:</strong> navy, green, gold, sand
+          </p>
+          <a class="btn btn--green" href="direction-e.html">Open Direction E →</a>
         </div>
-        <h2>Dispatch</h2>
-        <p class="adj">Live · technical · confident</p>
-        <p>Treats the product as what it actually is — an alert engine. Dark, precise, with the live lead feed as the
-          hero. The wildcard, and the tightest-executed of the three.</p>
-        <p class="meta"><strong>Type:</strong> IBM Plex Sans + Mono</p>
-        <a class="btn" href="direction-d.html">Open Dispatch</a>
-      </article>
-    </div>
+        <div class="preview">
+          <iframe src="direction-e.html" title="Live preview of Direction E" loading="lazy" tabindex="-1"
+            aria-hidden="true" scrolling="no"></iframe>
+          <a class="preview-cover" href="direction-e.html" aria-label="Open Direction E"></a>
+        </div>
+      </div>
+
+      <div class="featured">
+        <div class="featured-copy">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#101B2A"></span>
+            <span class="swatch" style="background:#2C7A5B"></span>
+            <span class="swatch" style="background:#B08A47"></span>
+            <span class="swatch" style="background:#F7F4EF"></span>
+          </div>
+          <h2>Direction G</h2>
+          <p class="adj">Live copy · construction · trustworthy</p>
+          <p>The Direction E / F visual system — DM Sans, green-and-gold on sand, the live DA tracker and plan card —
+            but carrying the exact wording that's on daconnect.com.au today: the real hero headline, the "Game Changer"
+            framing, both South Australia and Gold Coast counts, all five testimonials, and the live pricing and contact
+            copy.</p>
+          <p class="meta"><strong>Type:</strong> DM Sans &nbsp;·&nbsp; <strong>Copy:</strong> live site, verbatim</p>
+          <a class="btn btn--green" href="direction-g.html">Open Direction G →</a>
+        </div>
+        <div class="preview">
+          <iframe src="direction-g.html" title="Live preview of Direction G" loading="lazy" tabindex="-1"
+            aria-hidden="true" scrolling="no"></iframe>
+          <a class="preview-cover" href="direction-g.html" aria-label="Open Direction G"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OLD ============ -->
+    <section class="section" aria-labelledby="old-head">
+      <div class="section-head">
+        <span class="tag tag--old">Earlier</span>
+        <span class="section-label" id="old-head">The first three explorations</span>
+        <span class="section-sub">Same content, three visual directions</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#F7F9FB"></span>
+            <span class="swatch" style="background:#1D3557"></span>
+            <span class="swatch" style="background:#2F7D5B"></span>
+          </div>
+          <h3>Civic Tech</h3>
+          <p class="adj">Assured · modern · spacious</p>
+          <p>The natural evolution of the brand we had — navy-anchored, generous, product-grade polish. The safest
+            option, and the one that stays most recognisably DAconnect.</p>
+          <p class="meta"><strong>Type:</strong> Bricolage Grotesque + Albert Sans</p>
+          <a class="btn" href="direction-c.html">Open Civic Tech</a>
+        </article>
+
+        <article class="card">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#F2F1EE"></span>
+            <span class="swatch" style="background:#191919"></span>
+            <span class="swatch" style="background:#E8600A"></span>
+          </div>
+          <h3>Worksite</h3>
+          <p class="adj">Bold · direct · industrial</p>
+          <p>Speaks the tradie's own language: hi-vis clarity, signage typography, hard edges, no decoration. The loudest
+            option and the biggest departure from what we looked like.</p>
+          <p class="meta"><strong>Type:</strong> Archivo Expanded</p>
+          <a class="btn" href="direction-b.html">Open Worksite</a>
+        </article>
+
+        <article class="card">
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch" style="background:#10141A"></span>
+            <span class="swatch" style="background:#43D17C"></span>
+            <span class="swatch" style="background:#E5A83B"></span>
+          </div>
+          <h3>Dispatch</h3>
+          <p class="adj">Live · technical · confident</p>
+          <p>Treats the product as what it actually is — an alert engine. Dark, precise, with the live lead feed as the
+            hero. The wildcard, and the tightest-executed of the three.</p>
+          <p class="meta"><strong>Type:</strong> IBM Plex Sans + Mono</p>
+          <a class="btn" href="direction-d.html">Open Dispatch</a>
+        </article>
+      </div>
+    </section>
 
     <div class="note">
       <h3>What to know before you click</h3>
@@ -308,7 +541,8 @@
           form shows a preview message instead of sending anything.</li>
         <li>The development-application counts are the real ones. The product screenshots are real. The testimonials are
           the ones already on our site.</li>
-        <li>Each page has a small pill in the bottom-right corner to jump straight between the three directions.</li>
+        <li>Directions E, F and G are wide desktop layouts (built at 1460px). On a narrow screen they scroll sideways —
+          view them on a laptop for the intended experience.</li>
         <li>The live site is unchanged and still at <a href="../index.html">daconnect.com.au</a>.</li>
       </ul>
     </div>
