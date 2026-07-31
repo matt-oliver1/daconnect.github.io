@@ -83,7 +83,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=11">
 </head>
 
 <body>
@@ -93,6 +93,7 @@
       <!-- Logo -->
       <a class="navbar-brand me-5" href="#">
         <img src="images/DA-Connect_logo_title_transparent_white_logo.png?v=2" alt="DAconnect" style="height: 42px;">
+        <span class="brand-tagline">Lead Generation Services</span>
       </a>
 
       <!-- Mobile Toggle -->
@@ -160,8 +161,8 @@
   <section id="dastats" class="hero-section" style="position: relative; min-height: 100vh; background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); overflow: hidden;">
     <!-- Background Image (right side) -->
     <div style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; z-index: 1;">
-      <img src="images/construction_looking_at_phone_banner.png?v=2" alt="Builder checking development application alerts on phone - DAconnect service" class="hero-bg"
-        style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%;">
+      <img src="images/hero-house-under-construction.jpg?v=1" alt="Modern home under construction with timber framing and roof trusses" class="hero-bg"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
       <!-- Gradient overlay from left -->
       <div style="position: absolute; top: 0; left: -1px; width: 70%; height: 100%; background: linear-gradient(to right, #f8f8f8 0%, #f8f8f8 15%, rgba(248,248,248,0.85) 35%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);"></div>
       <!-- Top fade -->
@@ -172,7 +173,9 @@
 
     <!-- Content -->
     <div class="container position-relative" style="z-index: 3; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 60px;">
-      <div style="max-width: 60%; margin-top: -80px;">
+      <div class="hero-grid" style="width: 100%; margin-top: -40px;">
+       <div class="row g-4 g-xl-5 align-items-start">
+        <div class="col-12 col-lg-7 col-xl-8">
         <!-- Text Content -->
         <div class="hero-content">
           <h1 class="mb-4"
@@ -228,6 +231,44 @@
             </div>
           </div>
         </div>
+        </div>
+
+        <!-- Free Trial Signup Card -->
+        <div class="col-12 col-lg-5 col-xl-4 trial-card-col">
+          <div class="trial-card">
+            <div class="trial-card-head">
+              <div class="trial-card-icon"><i class="fas fa-calendar-check"></i></div>
+              <h2 class="trial-card-title">Start Your<br>14-Day Free Trial</h2>
+            </div>
+            <p class="trial-card-sub">Full access.</p>
+
+            <ul class="trial-benefits">
+              <li><i class="fas fa-circle-check"></i>Find relevant developments</li>
+              <li><i class="fas fa-circle-check"></i>Your business sent to active developments</li>
+              <li><i class="fas fa-circle-check"></i>Try risk-free for 14 days</li>
+              <li><i class="fas fa-circle-check"></i>Cancel anytime</li>
+            </ul>
+
+            <form id="trialForm" novalidate>
+              <div class="trial-field">
+                <i class="fas fa-user"></i>
+                <input type="text" id="trialName" name="name" autocomplete="name" placeholder="Your Name" aria-label="Your name" required>
+              </div>
+              <div class="trial-field">
+                <i class="fas fa-building"></i>
+                <input type="text" id="trialBusiness" name="business" autocomplete="organization" placeholder="Business Name" aria-label="Business name">
+              </div>
+              <div class="trial-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="trialEmail" name="email" autocomplete="email" placeholder="Email Address" aria-label="Email address" required>
+              </div>
+              <button type="submit" class="trial-btn-primary">START MY FREE TRIAL</button>
+              <a href="#contact" class="trial-btn-outline enquire-now-btn">ENQUIRE NOW</a>
+              <div id="trialFeedback" class="trial-feedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+       </div>
       </div>
     </div>
   </section>
@@ -800,7 +841,8 @@
       <div class="row g-3">
         <!-- Brand Column -->
         <div class="col-lg-4">
-          <h5 class="mb-4">DAconnect</h5>
+          <h5 class="mb-1">DAconnect</h5>
+          <div class="footer-tagline mb-4">Lead Generation Services</div>
           <p class="mb-4">Get your business in front of real decision-makers before your competitor does.</p>
           <div class="social-links">
             <a href="https://www.facebook.com/da.connect.au" target="_blank" rel="noopener noreferrer"
@@ -883,10 +925,13 @@
   <script src="js/da-stats-counter.js?v=4"></script>
   <script src="js/navbar-effects.js?v=2"></script>
   <script src="js/cta-handlers.js?v=3"></script>
+  <script src="js/trial-form.js?v=7"></script>
   <script src="js/exclusive-scroll.js?v=2"></script>
   <!-- form-submit.js removed: contact form now handled by cta-handlers.js -->
-  <script src="js/nav-active.js?v=2"></script>
+  <script src="js/nav-active.js?v=3"></script>
+  <script src="js/nav-collapse.js?v=1"></script>
   <script src="js/pricing-toggle.js?v=2"></script>
-  <script src="js/site-prefs.js?v=1"></script>
+  <script src="js/site-prefs.js?v=2"></script>
+  <script src="js/chat-widget.js?v=1"></script>
 </body>
 </html>

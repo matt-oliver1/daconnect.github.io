@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // An open mobile menu makes the sticky navbar taller, which inflates every
+  // section's offsetTop. Measuring now and scrolling while the menu collapses
+  // overshoots by the menu's height, so wait until it has actually closed.
+  function scrollToSection(section) {
+    const go = () => window.scrollTo({ top: section.offsetTop - 80, behavior: 'smooth' });
+    const collapseEl = document.getElementById('navbarNav');
+    if (collapseEl && collapseEl.classList.contains('show')) {
+      collapseEl.addEventListener('hidden.bs.collapse', go, { once: true });
+    } else {
+      go();
+    }
+  }
+
   navLinks.forEach(link => {
     if (link.getAttribute('onclick')) return; // Skip if already has inline onclick
     const href = link.getAttribute('href');
@@ -40,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (targetId === '#') return;
       const targetSection = document.querySelector(targetId);
       if (targetSection) {
-        window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
+        scrollToSection(targetSection);
         navLinks.forEach(l => l.classList.remove('active'));
         this.classList.add('active');
       }
