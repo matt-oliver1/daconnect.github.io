@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAconnect — G · Editorial (Preview)</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #1A1A1A;
+      background: #FBF9F4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .v2 h1,
+    .v2 h2,
+    .v2 h3 {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+
+    .v2 a {
+      color: #1A1A1A;
+      text-decoration: none;
+    }
+
+    .v2 a:hover {
+      color: #B08A47;
+    }
+
+    .v2 input,
+    .v2 select,
+    .v2 button,
+    .v2 textarea {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .v2 input::placeholder,
+    .v2 textarea::placeholder {
+      color: #9A968C;
+    }
+
+    /* small-caps section eyebrow */
+    .v2-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #B08A47;
+      margin-bottom: 18px;
+    }
+
+    @keyframes daBlink {
+
+      0%,
+      49% {
+        opacity: 1;
+      }
+
+      50%,
+      100% {
+        opacity: 0.15;
+      }
+    }
+
+    .v2-cta-outline:hover {
+      background: #2C7A5B !important;
+      color: #fff !important;
+    }
+
+    .v2-cta-outline:hover svg {
+      stroke: #fff;
+    }
+
+    .v2-btn-green:hover {
+      background: #256A4F !important;
+      color: #fff !important;
+    }
+
+    .v2-link-under {
+      border-bottom: 1px solid #B08A47;
+      padding-bottom: 2px;
+    }
+
+    .v2-input:focus {
+      border-color: #2C7A5B !important;
+    }
+
+    .v2-social:hover {
+      background: #B08A47 !important;
+      color: #fff !important;
+    }
+
+    .v2-social:hover svg {
+      stroke: #fff !important;
+    }
+
+    .v2-back {
+      position: fixed;
+      left: 14px;
+      bottom: 14px;
+      z-index: 60;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(16, 27, 42, .96);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      text-decoration: none;
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(16, 27, 42, .3);
+    }
+
+    .v2-back:hover {
+      background: #1B2839;
+      color: #fff;
+    }
+
+    /* ---------- Chat widget ---------- */
+    .v2-chat, .v2-chat * { box-sizing: border-box; }
+    .v2-chat { position: fixed; right: 22px; bottom: 22px; z-index: 80; }
+    .v2-chat-btn {
+      width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
+      background: #2C7A5B; color: #fff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 26px rgba(44,122,91,.45);
+    }
+    .v2-chat-btn:hover { background: #256A4F; }
+    .v2-chat-box {
+      position: absolute; right: 0; bottom: 74px; width: 340px; max-width: calc(100vw - 44px);
+      background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #E7E0D2;
+      box-shadow: 0 24px 60px rgba(16,27,42,.3); font-family: 'Inter', system-ui, sans-serif;
+    }
+    .v2-chat-box[hidden] { display: none; }
+    .v2-chat-head { background: #101B2A; color: #fff; padding: 15px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .v2-chat-id { display: flex; align-items: center; gap: 12px; }
+    .v2-chat-avatar { width: 40px; height: 40px; border-radius: 50%; background: #2C7A5B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .v2-chat-title { font-size: 15px; font-weight: 700; }
+    .v2-chat-sub { font-size: 11.5px; color: #AEB6C0; display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+    .v2-chat-sub span { width: 7px; height: 7px; border-radius: 50%; background: #4CAF7D; }
+    .v2-chat-close { background: none; border: none; color: #AEB6C0; font-size: 24px; line-height: 1; cursor: pointer; padding: 0 2px; }
+    .v2-chat-close:hover { color: #fff; }
+    .v2-chat-body { background: #F7F4EF; padding: 18px; display: flex; flex-direction: column; gap: 10px; max-height: 320px; overflow-y: auto; }
+    .v2-chat-msg { background: #fff; border-radius: 4px 14px 14px 14px; padding: 11px 14px; font-size: 14px; line-height: 1.5; color: #1A1A1A; box-shadow: 0 2px 8px rgba(16,27,42,.08); max-width: 88%; align-self: flex-start; }
+    .v2-chat-msg--me { background: #2C7A5B; color: #fff; align-self: flex-end; border-radius: 14px 4px 14px 14px; box-shadow: 0 4px 12px rgba(44,122,91,.28); }
+    .v2-chat-quick { display: flex; flex-wrap: wrap; gap: 8px; }
+    .v2-chat-quick button { background: #fff; border: 1px solid #2C7A5B; color: #2C7A5B; border-radius: 999px; padding: 8px 14px; font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .v2-chat-quick button:hover { background: #2C7A5B; color: #fff; }
+    .v2-chat-input { display: flex; gap: 8px; padding: 12px; background: #fff; border-top: 1px solid #E7E0D2; }
+    .v2-chat-input input { flex: 1; min-width: 0; border: 1px solid #D5D0C2; border-radius: 10px; padding: 11px 14px; font-size: 14px; outline: none; color: #1A1A1A; font-family: inherit; }
+    .v2-chat-input input:focus { border-color: #2C7A5B; }
+    .v2-chat-send { background: #2C7A5B; color: #fff; border: none; border-radius: 10px; width: 44px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .v2-chat-send:hover { background: #256A4F; }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    .v2-burger {
+      display: none;
+      background: none;
+      border: 0;
+      padding: 8px;
+      margin: 0;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #1A1A1A;
+    }
+
+    /* ---------- Mobile / responsive (overrides the fixed 1460px desktop canvas) ---------- */
+    @media (max-width: 900px) {
+      html, body { overflow-x: hidden; }
+      .v2 > div { min-width: 0 !important; overflow-x: hidden; }
+      .v2 *, .v2 *::before, .v2 *::after { box-sizing: border-box; }
+
+      /* stack every multi-column grid */
+      .v2 [style*="display:grid"] { grid-template-columns: 1fr !important; }
+
+      /* let fixed-width flex rows wrap */
+      .v2 [style*="display:flex"] { flex-wrap: wrap; }
+
+      /* trim the big desktop side padding */
+      .v2 header,
+      .v2 section,
+      .v2 footer { padding-left: 20px !important; padding-right: 20px !important; }
+
+      /* header: logo + hamburger; nav collapses into a dropdown */
+      .v2 header { justify-content: flex-start; gap: 12px !important; flex-wrap: nowrap; }
+      .v2 header > div:first-child { margin-right: auto; }
+      .v2 header > a { display: none !important; }
+      .v2-burger { display: inline-flex !important; }
+      .v2 header nav { display: none !important; }
+      .v2 header.nav-open nav {
+        display: flex !important; flex-direction: column; align-items: stretch; gap: 0;
+        position: absolute; top: 100%; left: 0; right: 0; z-index: 60; margin: 0 !important;
+        background: #FBF9F4; border-top: 1px solid #E7E0D2;
+        box-shadow: 0 18px 34px rgba(16,27,42,0.14); padding: 6px 20px 14px;
+      }
+      .v2 header.nav-open nav a { padding: 13px 2px; width: 100%; }
+
+      /* display type */
+      .v2 h1 { font-size: 42px !important; line-height: 1.08 !important; }
+      .v2 h2 { font-size: 30px !important; }
+      .v2-signup-row { flex-direction: column !important; }
+      .v2-signup-field { border-right: 0 !important; border-bottom: 1px solid #E7E0D2 !important; }
+      .v2-num { font-size: 44px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .v2 h1 { font-size: 33px !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="v2">
+    <div style="min-width:1460px">
+      <header
+        style="display:flex;align-items:center;gap:30px;padding:20px 60px;background:#FBF9F4;position:relative;z-index:6;border-bottom:1px solid #E7E0D2">
+        <div style="flex-shrink:0">
+          <img src="../images/DA-Connect_logo_title_transparent_white_logo.png" alt="DAconnect"
+            style="height:44px;display:block">
+          <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:#1A1A1A;margin-top:5px">LEAD GENERATION
+            SERVICES</div>
+        </div>
+        <nav
+          style="display:flex;align-items:center;gap:34px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;margin:0 auto">
+          <a href="#">How it works</a>
+          <a href="#">Who it's for</a>
+          <a href="#">Pricing</a>
+          <a href="#">Free sample</a>
+          <a href="../faq.html">Q&amp;A</a>
+          <a href="#">Contact</a>
+        </nav>
+        <a href="https://app.daconnect.com.au" class="v2-cta-outline"
+          style="display:inline-flex;align-items:center;gap:10px;background:#FBF9F4;color:#2C7A5B;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 22px;border-radius:999px;border:1px solid #2C7A5B;white-space:nowrap;flex-shrink:0;transition:background .15s,color .15s">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <circle cx="12" cy="8" r="3.4"></circle>
+            <path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6"></path>
+          </svg>Sign in</a>
+        <button class="v2-burger" type="button" aria-label="Open menu"
+          onclick="this.closest('header').classList.toggle('nav-open')">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </header>
+
+      <!-- ============ HERO (editorial statement) ============ -->
+      <section style="background:#FBF9F4;padding:90px 60px 70px">
+        <div style="max-width:1160px;margin:0 auto">
+          <div class="v2-eyebrow">Get in front of developers earlier.</div>
+          <h1 style="font-size:76px;line-height:1.02;font-weight:600;margin:0 0 28px;letter-spacing:-1.5px;max-width:15ch">Your
+            Business Delivered to Every Development — <span style="color:#2C7A5B">Get the Work First!</span></h1>
+          <p style="font-size:20px;line-height:1.7;max-width:640px;margin:0 0 30px;color:#4A463D">Stop searching. Start
+            winning. We monitor Council websites 24/7 to bring you <span style="color:#2C7A5B;font-weight:600">exclusive
+              access</span> to new development applications in your area. Be the first they see and the first they
+            call.</p>
+          <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:44px">
+            <a href="#signup" class="v2-btn-green"
+              style="display:inline-flex;align-items:center;gap:10px;background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:16px 30px;border-radius:999px;transition:background .15s">Start
+              my free trial <span>&rarr;</span></a>
+            <a href="#sample"
+              style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#1A1A1A"><span
+                class="v2-link-under">See a free sample</span> <span>&rarr;</span></a>
+          </div>
+
+          <!-- refined lead-in line with flag + digital-card note -->
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-top:30px;border-top:1px solid #E7E0D2">
+            <img src="https://flagcdn.com/48x36/au.png" alt="Australia"
+              style="display:block;border-radius:4px;flex-shrink:0">
+            <div style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1A1A1A;line-height:1.5">
+              <span style="color:#2C7A5B">Australia's Lead Generation</span> Solutions
+              <span style="color:#4A463D">for the Construction Industry</span></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:22px">
+            <div
+              style="width:44px;height:44px;border-radius:50%;background:#FBF9F4;border:1px solid #2C7A5B;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C7A5B" stroke-width="1.8">
+                <path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z"></path>
+              </svg></div>
+            <div style="font-size:17px;font-weight:600;color:#1A1A1A;font-family:'Fraunces',serif">Your digital business card sent directly to
+              developers.</div>
+          </div>
+
+          <!-- editorial stat band -->
+          <div
+            style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid #E7E0D2;border-bottom:1px solid #E7E0D2">
+            <div style="display:flex;align-items:center;gap:12px;padding:26px 26px 26px 0;border-right:1px solid #E7E0D2">
+              <img src="https://flagcdn.com/36x27/au.png" alt="Australia"
+                style="display:block;border-radius:3px;flex-shrink:0">
+              <div>
+                <div style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:#B08A47;text-transform:uppercase">We cover</div>
+                <div style="font-size:14px;font-weight:700;color:#1A1A1A;line-height:1.35;font-family:'Fraunces',serif">South Australia &amp; Gold
+                  Coast</div>
+                <div style="font-size:11px;font-weight:600;color:#2C7A5B;margin-top:3px">More states coming soon!</div>
+              </div>
+            </div>
+            <div style="padding:26px;border-right:1px solid #E7E0D2">
+              <div style="font-size:34px;font-weight:600;color:#1A1A1A;font-family:'Fraunces',serif;letter-spacing:-0.5px">25,000+</div>
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.5px;color:#4A463D;line-height:1.4;text-transform:uppercase;margin-top:4px">
+                Development applications every year</div>
+            </div>
+            <div style="padding:26px;border-right:1px solid #E7E0D2">
+              <div style="font-size:34px;font-weight:600;color:#1A1A1A;font-family:'Fraunces',serif;letter-spacing:-0.5px">Thousands</div>
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.5px;color:#4A463D;line-height:1.4;text-transform:uppercase;margin-top:4px">
+                Of developer contacts</div>
+            </div>
+            <div style="padding:26px 0 26px 26px">
+              <div style="font-size:14px;font-weight:700;letter-spacing:0.5px;color:#2C7A5B;line-height:1.35;text-transform:uppercase;font-family:'Fraunces',serif">Other
+                Australian states</div>
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.5px;color:#4A463D;margin-top:6px;text-transform:uppercase">Coming
+                soon</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SIGN-UP STRIP (full-width bordered) ============ -->
+      <section id="signup" style="background:#101B2A;padding:60px">
+        <div style="max-width:1160px;margin:0 auto;color:#fff">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:26px">
+            <div>
+              <div class="v2-eyebrow" style="color:#B08A47;margin-bottom:10px">14 days free · full access</div>
+              <h2 style="font-size:36px;font-weight:600;margin:0;letter-spacing:-0.5px;color:#fff">Start Your 14-Day Free
+                Trial</h2>
+              <div style="font-size:15px;font-weight:600;color:#AEB6C0;margin-top:6px">Full access.</div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 26px;max-width:520px">
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#E4E7EB"><svg
+                  width="17" height="17" viewBox="0 0 24 24" fill="#2C7A5B"><circle cx="12" cy="12" r="10"></circle><path
+                    d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>Find
+                relevant developments</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#E4E7EB"><svg
+                  width="17" height="17" viewBox="0 0 24 24" fill="#2C7A5B"><circle cx="12" cy="12" r="10"></circle><path
+                    d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>Developer
+                contact details included</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#E4E7EB"><svg
+                  width="17" height="17" viewBox="0 0 24 24" fill="#2C7A5B"><circle cx="12" cy="12" r="10"></circle><path
+                    d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>Try
+                risk-free for 14 days</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:#E4E7EB"><svg
+                  width="17" height="17" viewBox="0 0 24 24" fill="#2C7A5B"><circle cx="12" cy="12" r="10"></circle><path
+                    d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>Cancel
+                anytime</div>
+            </div>
+          </div>
+          <form onsubmit="return false"
+            style="display:flex;align-items:stretch;gap:0;background:#fff;border:1px solid #E7E0D2;border-radius:12px;overflow:hidden;flex-wrap:wrap">
+            <div class="v2-signup-row" style="display:flex;flex:1;min-width:0">
+              <div class="v2-signup-field" style="flex:1;min-width:0;border-right:1px solid #E7E0D2">
+                <input class="v2-input" type="text" placeholder="Your Name"
+                  style="width:100%;box-sizing:border-box;border:1px solid transparent;background:transparent;padding:20px 22px;font-size:15px;outline:none;color:#1A1A1A">
+              </div>
+              <div class="v2-signup-field" style="flex:1;min-width:0;border-right:1px solid #E7E0D2">
+                <input class="v2-input" type="text" placeholder="Business Name"
+                  style="width:100%;box-sizing:border-box;border:1px solid transparent;background:transparent;padding:20px 22px;font-size:15px;outline:none;color:#1A1A1A">
+              </div>
+              <div class="v2-signup-field" style="flex:1;min-width:0;border-right:1px solid #E7E0D2">
+                <input class="v2-input" type="email" placeholder="Email Address"
+                  style="width:100%;box-sizing:border-box;border:1px solid transparent;background:transparent;padding:20px 22px;font-size:15px;outline:none;color:#1A1A1A">
+              </div>
+            </div>
+            <button id="v2-trial-btn" type="submit" class="v2-btn-green"
+              style="flex-shrink:0;background:#2C7A5B;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:20px 30px;border:none;cursor:pointer;transition:background .15s">START
+              MY FREE TRIAL</button>
+          </form>
+          <div style="text-align:center;margin-top:20px">
+            <a href="#" class="v2-cta-outline"
+              style="display:inline-flex;align-items:center;justify-content:center;background:transparent;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:14px 34px;border-radius:999px;border:1px solid rgba(255,255,255,0.4);transition:background .15s,color .15s">ENQUIRE
+              NOW</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DEVELOPMENT APPLICATIONS WE TRACK ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="max-width:1160px;margin:0 auto">
+          <div style="text-align:center">
+            <div class="v2-eyebrow">Live council data</div>
+            <h2 style="font-size:46px;font-weight:600;margin:0 0 16px;letter-spacing:-0.5px">Development Applications We
+              Track</h2>
+            <p style="font-size:17px;color:#4A463D;margin:0 auto 34px;max-width:640px;line-height:1.7">All development
+              data from every council in South Australia and the Gold Coast is received by DAconnect.</p>
+            <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:56px">
+              <span style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4A463D">Change
+                location</span>
+              <select id="v2-region"
+                style="border:1px solid #D5D0C2;border-radius:8px;padding:12px 14px;font-size:14.5px;font-weight:600;color:#1A1A1A;background:#fff;cursor:pointer">
+                <option value="sa">South Australia</option>
+                <option value="qld">Gold Coast</option>
+              </select>
+              <span id="v2-near-tag"
+                style="display:none;font-size:10px;font-weight:700;letter-spacing:1px;color:#2C7A5B;border:1px solid #2C7A5B;border-radius:999px;padding:5px 11px">NEAREST
+                YOU</span>
+            </div>
+          </div>
+
+          <!-- three big serif numerals divided by thin vertical rules -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #E7E0D2;border-bottom:1px solid #E7E0D2;margin-bottom:56px">
+            <div style="text-align:center;padding:40px 20px;border-right:1px solid #E7E0D2">
+              <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B08A47;margin-bottom:12px">The
+                past year</div>
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:64px;font-weight:600;color:#1A1A1A;letter-spacing:-1px;line-height:1"
+                id="v2-stat-0">36,911</div>
+              <div style="font-size:13.5px;font-weight:600;color:#4A463D;margin-top:12px" class="v2-region-label">South
+                Australia</div>
+            </div>
+            <div style="text-align:center;padding:40px 20px;border-right:1px solid #E7E0D2">
+              <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B08A47;margin-bottom:12px">The
+                past month</div>
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:64px;font-weight:600;color:#1A1A1A;letter-spacing:-1px;line-height:1"
+                id="v2-stat-1">1,548</div>
+              <div style="font-size:13.5px;font-weight:600;color:#4A463D;margin-top:12px" class="v2-region-label">South
+                Australia</div>
+            </div>
+            <div style="text-align:center;padding:40px 20px">
+              <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B08A47;margin-bottom:12px">The
+                past week</div>
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:64px;font-weight:600;color:#1A1A1A;letter-spacing:-1px;line-height:1"
+                id="v2-stat-2">119</div>
+              <div style="font-size:13.5px;font-weight:600;color:#4A463D;margin-top:12px" class="v2-region-label">South
+                Australia</div>
+            </div>
+          </div>
+
+          <!-- clean bordered live tracker list -->
+          <div style="max-width:760px;margin:0 auto;background:#fff;border:1px solid #E7E0D2;border-radius:12px;overflow:hidden;text-align:left;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid #E7E0D2">
+              <div style="display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:1.5px;color:#1A1A1A">
+                <span style="width:8px;height:8px;border-radius:50%;background:#2C7A5B;display:inline-block"></span>LIVE DA
+                TRACKER</div>
+              <span style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:#B08A47;border:1px solid #B08A47;border-radius:6px;padding:4px 10px">SAMPLE</span>
+            </div>
+            <div id="v2-feed"></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:14px 22px;font-size:12.5px;color:#6B6252;border-top:1px solid #E7E0D2"><span
+                style="width:8px;height:14px;background:#2C7A5B;display:inline-block;animation:daBlink 1.1s steps(2) infinite"></span>
+              awaiting next dispatch</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS (vertical numbered list) ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="max-width:960px;margin:0 auto">
+          <div style="text-align:center;margin-bottom:20px">
+            <div class="v2-eyebrow">How it works for you</div>
+            <h2 style="font-size:46px;font-weight:600;margin:0 0 16px;letter-spacing:-0.5px">From sign-up to your first
+              monthly report</h2>
+            <p style="font-size:17px;color:#4A463D;max-width:640px;margin:0 auto;line-height:1.7">All development data
+              from every council in South Australia and the Gold Coast is received by DAconnect.</p>
+          </div>
+
+          <div style="text-align:left">
+            <div style="display:grid;grid-template-columns:110px 96px 1fr;gap:30px;align-items:start;padding:36px 0;border-top:1px solid #E7E0D2">
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:60px;font-weight:600;color:#B08A47;line-height:1;letter-spacing:-1px">01</div>
+              <img src="../images/demo/how_it_works-step-1-v2.png" alt="Choose what Council you want to work in"
+                style="width:96px;height:72px;object-fit:cover;object-position:top;display:block;border-radius:8px;background:#E9E2D3">
+              <div>
+                <h3 style="font-size:22px;font-weight:600;line-height:1.3;margin:0 0 8px">Choose what Council (or
+                  Councils) you want to work in</h3>
+                <div style="font-size:15px;line-height:1.65;color:#4A463D">Choose the council areas you want — and get
+                  early access to every development opportunity before the rest of the market.</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 96px 1fr;gap:30px;align-items:start;padding:36px 0;border-top:1px solid #E7E0D2">
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:60px;font-weight:600;color:#B08A47;line-height:1;letter-spacing:-1px">02</div>
+              <img src="../images/demo/how_it_works-step-2-v2.png"
+                alt="Enter your business details and create your digital business card"
+                style="width:96px;height:72px;object-fit:cover;object-position:top;display:block;border-radius:8px;background:#E9E2D3">
+              <div>
+                <h3 style="font-size:22px;font-weight:600;line-height:1.3;margin:0 0 8px">Enter your business details and
+                  create your digital business card</h3>
+                <div style="font-size:15px;line-height:1.65;color:#4A463D">Build your professional profile with your
+                  logo, services, and contact information. You can update and change your details anytime.</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 96px 1fr;gap:30px;align-items:start;padding:36px 0;border-top:1px solid #E7E0D2">
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:60px;font-weight:600;color:#B08A47;line-height:1;letter-spacing:-1px">03</div>
+              <img src="../images/demo/how_it_works-step-3-v2.png"
+                alt="Your digital business card is sent to all publicly listed developments"
+                style="width:96px;height:72px;object-fit:cover;object-position:top;display:block;border-radius:8px;background:#E9E2D3">
+              <div>
+                <h3 style="font-size:22px;font-weight:600;line-height:1.3;margin:0 0 8px">Your digital business card is
+                  sent to all publicly listed developments</h3>
+                <div style="font-size:15px;line-height:1.65;color:#4A463D">Your profile reaches decision-makers in your
+                  chosen council area. Exclusive list of no more than 14 businesses per Council.</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:110px 96px 1fr;gap:30px;align-items:start;padding:36px 0;border-top:1px solid #E7E0D2;border-bottom:1px solid #E7E0D2">
+              <div class="v2-num" style="font-family:'Fraunces',serif;font-size:60px;font-weight:600;color:#B08A47;line-height:1;letter-spacing:-1px">04</div>
+              <img src="../images/demo/how_it_works-step-4-v2.png" alt="You receive a clear and full monthly report"
+                style="width:96px;height:72px;object-fit:cover;object-position:top;display:block;border-radius:8px;background:#E9E2D3">
+              <div>
+                <h3 style="font-size:22px;font-weight:600;line-height:1.3;margin:0 0 8px">You receive a clear and full
+                  monthly report</h3>
+                <div style="font-size:15px;line-height:1.65;color:#4A463D">Track your reach with detailed analytics
+                  showing exactly where your digital business card has been delivered.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin-top:44px">
+            <a href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly" class="v2-btn-green"
+              style="display:inline-flex;align-items:center;gap:10px;background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:16px 34px;border-radius:999px;transition:background .15s">Start
+              your 14-day trial now <span>&rarr;</span></a>
+            <div style="font-size:22px;font-weight:600;color:#1A1A1A;margin-top:28px;font-family:'Fraunces',serif">This
+              isn't just advertising &mdash; <em style="color:#B08A47">it's early access to real work</em></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHO BENEFITS (flat multi-column grid) ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="max-width:1160px;margin:0 auto">
+          <div style="text-align:center;margin-bottom:44px">
+            <div class="v2-eyebrow">Who it's for</div>
+            <h2 style="font-size:46px;font-weight:600;margin:0 0 16px;letter-spacing:-0.5px">Who Benefits from
+              DAconnect</h2>
+            <p style="font-size:17px;color:#4A463D;max-width:640px;margin:0 auto;line-height:1.7">Quote early to win the
+              work.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);border-right:1px solid #E7E0D2;border-bottom:1px solid #E7E0D2">
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-earthworks-v2.png" alt="Earthworks | Civil | Demolition"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#102132">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Earthworks | Civil
+                  | Demolition</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-solar-electrical-v2.png" alt="Solar & Electrical Companies"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#122132">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Solar &amp;
+                  Electrical Companies</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-suppliers-v2.png" alt="Independent Suppliers"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#112131">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Independent
+                  Suppliers</div>
+                <div style="font-size:13.5px;color:#4A463D;margin-top:6px;line-height:1.5">Flooring, tiles, kitchens,
+                  bathrooms, electrical merchants, curtains and blinds</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-tradies-v2.png" alt="Trades & Builders"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#112231">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Trades &amp;
+                  Builders</div>
+                <div style="font-size:13.5px;color:#4A463D;margin-top:6px;line-height:1.5">Plumbers, painters,
+                  concreters, carpenters, etc.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-certifiers-v2.png" alt="Building Certifiers"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#122231">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Building
+                  Certifiers</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-additions-v2.png" alt="Additional Suppliers"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#14222F">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Additional
+                  Suppliers</div>
+                <div style="font-size:13.5px;color:#4A463D;margin-top:6px;line-height:1.5">Pools, garage doors, pergolas,
+                  outdoor living</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-top:1px solid #E7E0D2;border-left:1px solid #E7E0D2">
+              <img src="../images/demo/industry-manufacturers-v2.png" alt="Independent Manufacturers"
+                style="width:48px;height:48px;object-fit:contain;padding:6px;box-sizing:border-box;border-radius:8px;flex-shrink:0;background:#14212D">
+              <div>
+                <div style="font-size:16px;font-weight:700;color:#1A1A1A;font-family:'Fraunces',serif">Independent
+                  Manufacturers</div>
+                <div style="font-size:13.5px;color:#4A463D;margin-top:6px;line-height:1.5">Windows, doors, stone,
+                  brickworks, etc.</div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:48px">
+            <a href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly" class="v2-btn-green"
+              style="display:inline-flex;align-items:center;gap:10px;background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:16px 34px;border-radius:999px;transition:background .15s">Start
+              your 14-day trial now <span>&rarr;</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROOF (large pull-quotes) ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="max-width:1160px;margin:0 auto">
+          <div style="text-align:center;margin-bottom:20px">
+            <div class="v2-eyebrow">Proof</div>
+            <h2 style="font-size:46px;font-weight:600;margin:0;letter-spacing:-0.5px">The calls come to you</h2>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0 60px">
+            <div style="padding:40px 0;border-top:1px solid #E7E0D2">
+              <div style="font-family:'Fraunces',serif;font-size:56px;line-height:0.6;color:#B08A47">&ldquo;</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;line-height:1.5;color:#1A1A1A;margin:14px 0 18px">Two
+                homeowners called me directly after seeing my business card. Picked up a renovation and a deck job in the
+                first month.</div>
+              <div><span style="font-size:14px;font-weight:700">Paul M.</span><span style="font-size:13.5px;color:#4A463D">
+                  &mdash; Builder, SA</span></div>
+            </div>
+            <div style="padding:40px 0;border-top:1px solid #E7E0D2">
+              <div style="font-family:'Fraunces',serif;font-size:56px;line-height:0.6;color:#B08A47">&ldquo;</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;line-height:1.5;color:#1A1A1A;margin:14px 0 18px">Having
+                my details land in front of applicants before anyone else is huge. I'm getting calls from people who just
+                lodged their DA.</div>
+              <div><span style="font-size:14px;font-weight:700">Alex P.</span><span style="font-size:13.5px;color:#4A463D">
+                  &mdash; Plumber, SA</span></div>
+            </div>
+            <div style="padding:40px 0;border-top:1px solid #E7E0D2">
+              <div style="font-family:'Fraunces',serif;font-size:56px;line-height:0.6;color:#B08A47">&ldquo;</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;line-height:1.5;color:#1A1A1A;margin:14px 0 18px">Applicants
+                are reaching out to me now instead of the other way around. It's completely changed how I find new
+                landscaping work.</div>
+              <div><span style="font-size:14px;font-weight:700">Sarah L.</span><span style="font-size:13.5px;color:#4A463D">
+                  &mdash; Landscaper, SA</span></div>
+            </div>
+            <div style="padding:40px 0;border-top:1px solid #E7E0D2">
+              <div style="font-family:'Fraunces',serif;font-size:56px;line-height:0.6;color:#B08A47">&ldquo;</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;line-height:1.5;color:#1A1A1A;margin:14px 0 18px">My
+                digital business card goes straight to the decision-makers. I've booked three electrical fit-outs from
+                people who saw my details on their DA.</div>
+              <div><span style="font-size:14px;font-weight:700">Mia W.</span><span style="font-size:13.5px;color:#4A463D">
+                  &mdash; Electrician, SA</span></div>
+            </div>
+            <div style="padding:40px 0;border-top:1px solid #E7E0D2;border-bottom:1px solid #E7E0D2">
+              <div style="font-family:'Fraunces',serif;font-size:56px;line-height:0.6;color:#B08A47">&ldquo;</div>
+              <div style="font-family:'Fraunces',serif;font-size:22px;line-height:1.5;color:#1A1A1A;margin:14px 0 18px">Being
+                on the exclusive list means I'm one of only 14 businesses they see. Two extension projects came from that
+                this month alone.</div>
+              <div><span style="font-size:14px;font-weight:700">Ben H.</span><span style="font-size:13.5px;color:#4A463D">
+                  &mdash; Builder, SA</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PRICING (thin-bordered plan card) ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="display:grid;grid-template-columns:1fr 560px;gap:80px;align-items:center;max-width:1160px;margin:0 auto">
+          <div>
+            <div class="v2-eyebrow">Pricing</div>
+            <h2 style="font-size:52px;font-weight:600;margin:0 0 20px;letter-spacing:-0.5px;line-height:1.08">Simple,
+              transparent<br>pricing</h2>
+            <p style="font-size:17px;color:#4A463D;margin:0 0 24px;line-height:1.7" id="v2-pricing-sub">Get ahead of the
+              competition with DAconnect. No hidden fees, cancel anytime.</p>
+            <p style="font-size:16px;color:#1A1A1A;margin:0 0 36px;font-weight:600;font-family:'Fraunces',serif;line-height:1.5">Get
+              in front of decision-makers before your competitors even hear about the project.</p>
+            <div style="display:inline-flex;background:#fff;border:1px solid #E7E0D2;border-radius:999px;padding:5px">
+              <button id="v2-bill-monthly" type="button"
+                style="border:none;cursor:pointer;border-radius:999px;padding:12px 26px;font-size:14.5px;font-weight:700;background:#2C7A5B;color:#fff">Monthly</button>
+              <button id="v2-bill-yearly" type="button"
+                style="border:none;cursor:pointer;border-radius:999px;padding:12px 26px;font-size:14.5px;font-weight:700;background:transparent;color:#4A463D">Yearly</button>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid #E7E0D2;border-radius:16px;overflow:hidden;text-align:left">
+            <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;font-size:13.5px;font-weight:600;color:#2C7A5B;border-bottom:1px solid #E7E0D2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C7A5B" stroke-width="1.8">
+                <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"></path>
+                <path d="M8.5 12l2.3 2.3L15.5 9.5"></path>
+              </svg>
+              Free 14-day trial &mdash; no credit card required
+            </div>
+            <div style="padding:36px 40px 38px">
+              <div style="border-bottom:1px solid #E7E0D2;padding-bottom:24px;margin-bottom:8px">
+                <div style="font-family:'Fraunces',serif;font-size:60px;font-weight:600;letter-spacing:-1px;line-height:1"><span
+                    id="v2-price-main">$99</span><span style="font-size:18px;font-weight:600;color:#4A463D;font-family:'Inter',sans-serif"
+                    id="v2-price-unit"> /month</span></div>
+                <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+                  <span style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#B08A47;text-transform:uppercase">Per
+                    council</span>
+                  <span id="v2-savings"
+                    style="display:none;font-size:12px;font-weight:700;color:#fff;background:#2C7A5B;border-radius:6px;padding:3px 9px">Save
+                    $198/yr</span>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;margin-bottom:26px" id="v2-pricing-features"></div>
+              <a href="https://app.daconnect.com.au/subscription?exclusive&amp;occurrence=monthly" id="v2-subscribe"
+                class="v2-btn-green"
+                style="display:flex;align-items:center;justify-content:center;gap:12px;background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:18px;border-radius:999px;transition:background .15s">Start
+                your free 14-day trial</a>
+              <div style="font-size:13px;color:#4A463D;text-align:center;margin-top:14px">Need a custom solution? <a
+                  href="#" style="color:#1A1A1A;font-weight:600" class="v2-link-under">Contact our team</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FREE SAMPLE ============ -->
+      <section id="sample" style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2;text-align:center">
+        <div style="max-width:960px;margin:0 auto">
+          <div class="v2-eyebrow">Free sample</div>
+          <h2 style="font-size:46px;font-weight:600;margin:0 0 16px;letter-spacing:-0.5px">Receive a Sample of the
+            Digital Business Card</h2>
+          <p style="font-size:17px;color:#4A463D;max-width:640px;margin:0 auto 44px;line-height:1.7">See exactly what a
+            developer receives when a development application is lodged &mdash; the exclusive list of local trade
+            partners' digital business cards. We'll send you a free sample before you subscribe.</p>
+          <div style="display:flex;justify-content:center;margin-bottom:48px">
+            <figure style="margin:0;width:440px;max-width:100%">
+              <img src="../images/demo/digital_businesscard.png"
+                alt="Exclusive list of local trade partners' digital business cards sent to a development applicant"
+                style="width:100%;display:block;border-radius:12px;border:1px solid #E7E0D2">
+              <figcaption style="font-size:13.5px;font-weight:600;color:#4A463D;margin-top:14px">The exclusive list of
+                digital business cards sent to a development applicant</figcaption>
+            </figure>
+          </div>
+          <form onsubmit="return false"
+            style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;max-width:720px;margin:0 auto">
+            <input class="v2-input" type="text" placeholder="Your Name"
+              style="width:220px;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+            <input class="v2-input" type="email" placeholder="Your Email"
+              style="width:220px;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+            <button id="v2-sample-btn2" type="submit" class="v2-btn-green"
+              style="background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:14px 28px;border-radius:999px;border:none;cursor:pointer;transition:background .15s">Get
+              Free Sample</button>
+          </form>
+          <p style="font-size:13.5px;color:#4A463D;margin-top:16px">Prefer email? Contact us at <a
+              href="mailto:council@daconnect.com.au" style="color:#1A1A1A;font-weight:600" class="v2-link-under">council@daconnect.com.au</a></p>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section style="background:#FBF9F4;padding:80px 60px;border-top:1px solid #E7E0D2">
+        <div style="max-width:1160px;margin:0 auto">
+          <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:end;margin-bottom:48px;padding-bottom:36px;border-bottom:1px solid #E7E0D2">
+            <div>
+              <div class="v2-eyebrow">Get in touch</div>
+              <h2 style="font-size:46px;font-weight:600;margin:0;letter-spacing:-0.5px">Contact Our Team</h2>
+            </div>
+            <p style="font-size:17px;color:#4A463D;line-height:1.7;margin:0">Have questions or need more information? Send
+              us a message and we'll get back to you as soon as possible.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start">
+            <form onsubmit="return false">
+              <div style="font-size:13.5px;color:#4A463D;margin-bottom:18px">Fields marked * are required.</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin-bottom:18px">
+                <div>
+                  <div style="font-size:14px;font-weight:700;margin-bottom:8px">Full Name *</div><input class="v2-input"
+                    type="text"
+                    style="width:100%;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+                </div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;margin-bottom:8px">Email Address *</div><input
+                    class="v2-input" type="email"
+                    style="width:100%;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+                </div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;margin-bottom:8px">Contact Phone (Optional)</div><input
+                    class="v2-input" type="tel"
+                    style="width:100%;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+                </div>
+                <div>
+                  <div style="font-size:14px;font-weight:700;margin-bottom:8px">Business Name (If applicable)</div><input
+                    class="v2-input" type="text"
+                    style="width:100%;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff">
+                </div>
+              </div>
+              <div style="margin-bottom:22px">
+                <div style="font-size:14px;font-weight:700;margin-bottom:8px">Your Message *</div><textarea
+                  class="v2-input" rows="5" placeholder="How can we help you?"
+                  style="width:100%;box-sizing:border-box;border:1px solid #D5D0C2;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1A1A1A;background:#fff;font-family:'Inter',sans-serif;resize:vertical"></textarea>
+              </div>
+              <button id="v2-contact-btn" type="submit" class="v2-btn-green"
+                style="background:#2C7A5B;color:#fff;font-size:15px;font-weight:600;letter-spacing:0.3px;padding:16px 34px;border-radius:999px;border:none;cursor:pointer;transition:background .15s">Send
+                Message</button>
+            </form>
+            <div style="background:#fff;border:1px solid #E7E0D2;border-radius:16px;padding:30px 32px">
+              <div style="display:flex;flex-direction:column;gap:22px;border-bottom:1px solid #E7E0D2;padding-bottom:24px;margin-bottom:20px">
+                <div style="display:flex;gap:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#1A1A1A" stroke-width="1.6" style="flex-shrink:0;margin-top:2px">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="M3 7l9 6 9-6"></path>
+                  </svg>
+                  <div>
+                    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#4A463D">EMAIL US</div><a
+                      href="mailto:council@daconnect.com.au"
+                      style="font-size:15px;font-weight:600;color:#1A1A1A">council@daconnect.com.au</a>
+                  </div>
+                </div>
+                <div style="display:flex;gap:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#1A1A1A" stroke-width="1.6" style="flex-shrink:0;margin-top:2px">
+                    <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z">
+                    </path>
+                  </svg>
+                  <div>
+                    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#4A463D">PHONE</div><a
+                      href="tel:+61872286805" style="font-size:15px;font-weight:600;color:#1A1A1A">(08) 7228 6805</a>
+                  </div>
+                </div>
+                <div style="display:flex;gap:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#1A1A1A" stroke-width="1.6" style="flex-shrink:0;margin-top:2px">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3.5 2"></path>
+                  </svg>
+                  <div>
+                    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#4A463D">BUSINESS HOURS</div>
+                    <div style="font-size:15px;font-weight:600;color:#1A1A1A">Monday &ndash; Friday: 9:00 AM &ndash; 5:00
+                      PM AEST</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="#1A1A1A" stroke-width="1.6" style="flex-shrink:0;margin-top:2px">
+                    <path d="M4 11l8-7 8 7"></path>
+                    <path d="M6 9.5V20h12V9.5"></path>
+                  </svg>
+                  <div>
+                    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#4A463D">ABN</div>
+                    <div style="font-size:15px;font-weight:600;color:#1A1A1A">74 168 911 402</div>
+                  </div>
+                </div>
+              </div>
+              <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#4A463D;margin-bottom:12px">FOLLOW US
+              </div>
+              <div style="display:flex;gap:12px">
+                <a href="https://www.facebook.com/da.connect.au" class="v2-social"
+                  style="width:44px;height:44px;border-radius:10px;background:#F3EEE4;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#1A1A1A;transition:background .15s,color .15s">f</a>
+                <a href="https://www.instagram.com/da.connect.au" class="v2-social"
+                  style="width:44px;height:44px;border-radius:10px;background:#F3EEE4;display:flex;align-items:center;justify-content:center;transition:background .15s">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.2" cy="6.8" r="1" fill="#1A1A1A" stroke="none"></circle>
+                  </svg></a>
+                <a href="https://www.linkedin.com/company/daconnectau" class="v2-social"
+                  style="width:44px;height:44px;border-radius:10px;background:#F3EEE4;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#1A1A1A;transition:background .15s,color .15s">in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background:#101B2A;padding:34px 60px;text-align:center">
+        <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:999px;padding:12px 24px">
+          <img src="https://flagcdn.com/28x21/au.png" alt="Australian flag" style="display:block;border-radius:2px">
+          <span style="color:#fff;font-size:14.5px;font-weight:600;letter-spacing:0.3px">Proudly Australian-owned and
+            powered by Australian-developed technology</span>
+        </div>
+      </section>
+
+      <footer style="background:#101B2A;color:#AEB6C0;padding:64px 60px 36px">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:60px;max-width:1520px;margin:0 auto;text-align:left">
+          <div>
+            <img src="../images/DA-Connect_logo_title_transparent_dark_logo.png" alt="DAconnect"
+              style="height:44px;display:block;margin-bottom:8px">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:3.2px;color:#B08A47;margin-bottom:18px">LEAD
+              GENERATION SERVICES</div>
+            <div style="font-size:14px;line-height:1.6;max-width:340px">Get your business in front of real
+              decision-makers before your competitor does.</div>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:700;letter-spacing:1.5px;color:#fff;margin-bottom:16px">QUICK LINKS
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="#" style="color:#AEB6C0">Home</a><a href="#" style="color:#AEB6C0">How It Works</a><a href="#"
+                style="color:#AEB6C0">Why Choose Us</a><a href="#" style="color:#AEB6C0">Pricing</a><a href="#"
+                style="color:#AEB6C0">Free Sample</a><a href="../faq.html" style="color:#AEB6C0">Q&amp;A</a><a href="#"
+                style="color:#AEB6C0">Contact</a><a href="../compliance.html" style="color:#AEB6C0">Compliance &amp;
+                Privacy</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:700;letter-spacing:1.5px;color:#fff;margin-bottom:16px">CONTACT INFO
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <div>Email &mdash; <a href="mailto:council@daconnect.com.au"
+                  style="color:#fff">council@daconnect.com.au</a></div>
+              <div>Phone &mdash; <a href="tel:+61872286805" style="color:#fff">(08) 7228 6805</a></div>
+              <div>Mon &ndash; Fri: 9:00 AM &ndash; 5:00 PM AEST</div>
+              <div>ABN: 74 168 911 402</div>
+            </div>
+          </div>
+        </div>
+        <div style="max-width:1520px;margin:44px auto 0;border-top:1px solid rgba(255,255,255,0.14);padding-top:28px;font-size:11.5px;line-height:1.65;color:#7C8794;text-align:left">
+          <div style="font-size:12.5px;font-weight:700;letter-spacing:1px;color:#AEB6C0;margin-bottom:10px">DISCLAIMER AND
+            COMPLIANCE</div>
+          DAconnect is an independent service and is not affiliated with, endorsed by, or connected to any local council,
+          government department, or regulatory authority. Nothing within this service should be interpreted as
+          preferential treatment or official endorsement from any government body. DAconnect operates in compliance with
+          the Australian Spam Act 2003 (Cth). All correspondence sent through DAconnect &mdash; whether directly to
+          subscribers or issued on behalf of subscribers in relation to specific Development Applications &mdash; is
+          distributed in accordance with applicable consent requirements and includes clear sender identification. All
+          information provided by DAconnect is derived from publicly available records and is supplied on an
+          &ldquo;as available&rdquo; basis.
+          <div style="margin-top:16px;color:#AEB6C0">&copy; 2026 DAconnect. All rights reserved. ABN: 74 168 911 402</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <a class="v2-back" href="index.html">&larr; All previews</a>
+
+  <!-- Chat widget -->
+  <div class="v2-chat">
+    <div class="v2-chat-box" id="v2-chat-box" hidden>
+      <div class="v2-chat-head">
+        <div class="v2-chat-id">
+          <span class="v2-chat-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"></path></svg></span>
+          <div>
+            <div class="v2-chat-title">DAconnect</div>
+            <div class="v2-chat-sub"><span></span>Typically replies in a few minutes</div>
+          </div>
+        </div>
+        <button class="v2-chat-close" type="button" aria-label="Close chat" onclick="document.getElementById('v2-chat-box').hidden = true">&times;</button>
+      </div>
+      <div class="v2-chat-body">
+        <div class="v2-chat-msg">G'day! &#128075; Want to see the development applications in your area, or grab a free sample? Ask us anything.</div>
+        <div class="v2-chat-quick">
+          <button type="button">Get a free sample</button>
+          <button type="button">How does it work?</button>
+          <button type="button">Pricing</button>
+        </div>
+      </div>
+      <div class="v2-chat-input">
+        <input type="text" placeholder="Type a message&#8230;" aria-label="Type a message">
+        <button class="v2-chat-send" type="button" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button>
+      </div>
+    </div>
+    <button class="v2-chat-btn" type="button" aria-label="Chat with us" onclick="var b=document.getElementById('v2-chat-box'); b.hidden=!b.hidden;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"></path></svg>
+    </button>
+  </div>
+  <script>
+    (function () {
+      var body = document.querySelector('.v2-chat-body');
+      function say(t) {
+        if (!body || !t) return;
+        var u = document.createElement('div'); u.className = 'v2-chat-msg v2-chat-msg--me'; u.textContent = t;
+        body.appendChild(u); body.scrollTop = body.scrollHeight;
+        setTimeout(function () {
+          var r = document.createElement('div'); r.className = 'v2-chat-msg';
+          r.textContent = 'Thanks! One of our team will be right with you. Meanwhile, you can grab a free sample from the form on the page.';
+          body.appendChild(r); body.scrollTop = body.scrollHeight;
+        }, 600);
+      }
+      document.querySelectorAll('.v2-chat-quick button').forEach(function (b) { b.addEventListener('click', function () { say(b.textContent); }); });
+      var input = document.querySelector('.v2-chat-input input');
+      var send = document.querySelector('.v2-chat-send');
+      function submit() { if (input && input.value.trim()) { say(input.value.trim()); input.value = ''; } }
+      if (send) send.addEventListener('click', submit);
+      if (input) input.addEventListener('keydown', function (e) { if (e.key === 'Enter') submit(); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      /* ---- Region toggle + live DA tracker (single state, geo-defaulted) ---- */
+      var regions = {
+        sa: {
+          label: 'South Australia',
+          stats: ['36,911', '1,548', '119'],
+          pool: [
+            { title: 'Verandah & carport', council: 'City of Onkaparinga' },
+            { title: 'Swimming pool & safety barrier', council: 'City of Playford' },
+            { title: 'Dwelling additions & alterations', council: 'City of Salisbury' },
+            { title: 'Two-storey dwelling', council: 'City of Charles Sturt' },
+            { title: 'Garage conversion & studio', council: 'City of Tea Tree Gully' },
+            { title: 'Retaining wall & fencing', council: 'Mount Barker District' }
+          ]
+        },
+        qld: {
+          label: 'Gold Coast',
+          stats: ['3,930', '410', '94'],
+          pool: [
+            { title: 'Two-storey dwelling', council: 'Gold Coast City' },
+            { title: 'Dwelling additions & alterations', council: 'Gold Coast City' },
+            { title: 'Secondary dwelling', council: 'Gold Coast City' },
+            { title: 'Swimming pool & safety barrier', council: 'Gold Coast City' },
+            { title: 'Duplex development', council: 'Gold Coast City' }
+          ]
+        }
+      };
+      var region = 'sa';
+      var feedTick = 0;
+      var feedEl = document.getElementById('v2-feed');
+
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      function renderFeed() {
+        var pool = regions[region].pool;
+        var html = '';
+        for (var i = 0; i < 4; i++) {
+          var it = pool[(feedTick + i) % pool.length];
+          var badge = i < 2
+            ? '<span style="font-size:10.5px;font-weight:700;letter-spacing:1.5px;color:#2C7A5B;border:1px solid #2C7A5B;border-radius:5px;padding:3px 8px;flex-shrink:0">NEW</span>'
+            : '';
+          html += '<div style="display:flex;align-items:flex-start;gap:12px;padding:15px 20px;border-bottom:1px solid #EAE8DE">'
+            + '<span style="color:#2C7A5B;font-weight:700">&rsaquo;</span>'
+            + '<div style="flex:1;font-size:13px;line-height:1.55;color:#6B6252">'
+            + '<span style="color:#1E2A38;font-weight:700">' + esc(it.title) + '</span> &mdash; ' + esc(it.council) + ' &middot; lodged this week</div>'
+            + badge + '</div>';
+        }
+        feedEl.innerHTML = html;
+      }
+
+      function applyRegion() {
+        var r = regions[region];
+        for (var i = 0; i < 3; i++) {
+          document.getElementById('v2-stat-' + i).textContent = r.stats[i];
+        }
+        var labels = document.querySelectorAll('.v2-region-label');
+        for (var j = 0; j < labels.length; j++) labels[j].textContent = r.label;
+        feedTick = 0;
+        renderFeed();
+      }
+
+      var regionSel = document.getElementById('v2-region');
+      var nearTag = document.getElementById('v2-near-tag');
+      var detectedRegion = null;
+      function updateNearTag() {
+        nearTag.style.display = (detectedRegion && region === detectedRegion) ? 'inline-block' : 'none';
+      }
+      regionSel.addEventListener('change', function () {
+        region = this.value;
+        applyRegion();
+        updateNearTag();
+      });
+
+      applyRegion();
+
+      /* Geo-locate (by IP, no permission prompt): default to the visitor's state
+         — Gold Coast (QLD) if in Queensland, otherwise South Australia. */
+      (function () {
+        try {
+          fetch('https://get.geojs.io/v1/ip/geo.json')
+            .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+            .then(function (d) {
+              var st = String((d && d.region) || '');
+              var qld = String((d && d.country_code) || '').toUpperCase() === 'AU' &&
+                (/queensland/i.test(st) || st.toUpperCase() === 'QLD');
+              var detected = qld ? 'qld' : 'sa';
+              detectedRegion = detected;
+              if (detected !== region) { region = detected; regionSel.value = detected; applyRegion(); }
+              updateNearTag();
+            })
+            .catch(function () { /* keep SA default */ });
+        } catch (e) { /* keep SA default */ }
+      })();
+
+      setInterval(function () { feedTick++; renderFeed(); }, 3500);
+
+      /* ---- Pricing monthly / yearly toggle ---- */
+      var baseFeatures = [
+        '14-day free trial — no credit card required',
+        'Target the council areas you want to work in',
+        'Your digital business card delivered directly to real developments',
+        'Exclusive placement within a capped list of up to 14 businesses per council',
+        'Transparent monthly reporting with full visibility of every delivery'
+      ];
+      var check = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C7A5B" stroke-width="2.4" style="flex-shrink:0;margin-top:2px"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>';
+      var featuresEl = document.getElementById('v2-pricing-features');
+      var monthlyBtn = document.getElementById('v2-bill-monthly');
+      var yearlyBtn = document.getElementById('v2-bill-yearly');
+      var savingsEl = document.getElementById('v2-savings');
+
+      function renderPricing(yearly) {
+        var feats = baseFeatures.concat(yearly ? [] : ['Cancel anytime']);
+        var html = '';
+        for (var i = 0; i < feats.length; i++) {
+          html += '<div style="display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.5;color:#2A3542;padding:13px 0;border-bottom:1px solid #F0EBE0">'
+            + check + esc(feats[i]) + '</div>';
+        }
+        featuresEl.innerHTML = html;
+
+        document.getElementById('v2-price-main').textContent = yearly ? '$990' : '$99';
+        document.getElementById('v2-price-unit').textContent = yearly ? ' /year' : ' /month';
+        document.getElementById('v2-pricing-sub').textContent = yearly
+          ? 'Get ahead of the competition with DAconnect. No hidden fees.'
+          : 'Get ahead of the competition with DAconnect. No hidden fees, cancel anytime.';
+        savingsEl.style.display = yearly ? 'inline-block' : 'none';
+        document.getElementById('v2-subscribe').href =
+          'https://app.daconnect.com.au/subscription?exclusive&occurrence=' + (yearly ? 'yearly' : 'monthly');
+
+        monthlyBtn.style.background = yearly ? 'transparent' : '#2C7A5B';
+        monthlyBtn.style.color = yearly ? '#3A4653' : '#fff';
+        yearlyBtn.style.background = yearly ? '#2C7A5B' : 'transparent';
+        yearlyBtn.style.color = yearly ? '#fff' : '#3A4653';
+      }
+
+      monthlyBtn.addEventListener('click', function () { renderPricing(false); });
+      yearlyBtn.addEventListener('click', function () { renderPricing(true); });
+      renderPricing(false);
+
+      /* ---- Preview-only form buttons (not wired to a backend) ---- */
+      function wireBtn(id, label) {
+        var b = document.getElementById(id);
+        if (b) b.addEventListener('click', function () { b.textContent = label; });
+      }
+      wireBtn('v2-trial-btn', 'THANKS — CHECK YOUR INBOX');
+      wireBtn('v2-sample-btn2', 'Thanks — check your inbox');
+      wireBtn('v2-contact-btn', 'Message Sent — Thank You');
+    })();
+  </script>
+  <script>
+    /* Scale the fixed 1460px desktop layout down to fit screens between the
+       900px mobile breakpoint and 1460px, so nothing gets cut off. */
+    (function () {
+      function fit() {
+        var wrap = document.querySelector('.v2 > div');
+        if (!wrap) return;
+        var vw = document.documentElement.clientWidth;
+        wrap.style.zoom = (vw > 900 && vw < 1460) ? (vw / 1460) : '';
+      }
+      window.addEventListener('resize', fit);
+      fit();
+    })();
+  </script>
+</body>
+
+</html>
