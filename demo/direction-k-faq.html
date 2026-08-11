@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DAconnect — G · Multi-page · Contact (Preview)</title>
+  <title>DAconnect — G · Multi-page · FAQ (Preview)</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,20 @@
     .k-feed-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #E7E5DA; gap: 10px; flex-wrap: wrap; }
     .k-feed-foot { display: flex; align-items: center; gap: 10px; padding: 14px 20px; font-size: 12.5px; color: #6B6252; }
 
+    /* ---------- How it works ---------- */
+    .k-how-step {
+      background: #fff; border: 1px solid #EAE3D4; border-radius: 14px; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .k-how-step img { width: 100%; height: 190px; object-fit: cover; object-position: top; display: block; background: #E9E2D3; }
+    .k-how-step-body { padding: 22px 22px 26px; }
+    .k-how-step-num {
+      width: 36px; height: 36px; border-radius: 50%; background: #B08A47; color: #fff;
+      font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .k-how-step-title { font-size: 16px; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .k-how-step-desc { font-size: 13.5px; line-height: 1.55; color: #3A4653; }
+
     /* ---------- Footer ---------- */
     .k-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 60px; text-align: left; }
     @media (max-width: 800px) { .k-footer-grid { grid-template-columns: 1fr; gap: 36px; } }
@@ -104,44 +118,20 @@
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
       border-radius: 999px; padding: 12px 24px;
     }
-
-    /* ---------- Contact page ---------- */
-    .k-contact-head {
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: end;
-      margin-bottom: 44px; text-align: left;
+  </style>
+  <style>
+    .k-faq { display: flex; flex-direction: column; border-top: 1px solid #EAE3D4; max-width: 860px; margin: 0 auto; text-align: left; }
+    .k-faq-item { border-bottom: 1px solid #EAE3D4; }
+    .k-faq-item > summary {
+      list-style: none; cursor: pointer; padding: 20px 4px; gap: 16px;
+      font-size: 16px; font-weight: 800; color: #101B2A;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    @media (max-width: 900px) { .k-contact-head { grid-template-columns: 1fr; align-items: start; gap: 20px; } }
-    .k-contact-grid {
-      display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; text-align: left;
-    }
-    @media (max-width: 900px) { .k-contact-grid { grid-template-columns: 1fr; } }
-    .k-contact-field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; margin-bottom: 18px; }
-    @media (max-width: 560px) { .k-contact-field-grid { grid-template-columns: 1fr; } }
-    .k-contact-label { font-size: 14px; font-weight: 800; margin-bottom: 8px; }
-    .k-contact-input {
-      width: 100%; box-sizing: border-box; border: 1px solid #D5D9DE; border-radius: 8px;
-      padding: 14px 16px; font-size: 14.5px; outline: none; color: #1E2A38;
-    }
-    textarea.k-contact-input { font-family: 'DM Sans', system-ui, sans-serif; resize: vertical; }
-    .k-contact-card {
-      background: #fff; border: 1px solid #EAE3D4; border-radius: 16px;
-      box-shadow: 0 16px 40px rgba(16,27,42,0.1); padding: 30px 32px;
-    }
-    .k-contact-details {
-      display: flex; flex-direction: column; gap: 22px; border-bottom: 1px solid #EAE3D4;
-      padding-bottom: 24px; margin-bottom: 20px;
-    }
-    .k-contact-row { display: flex; gap: 14px; }
-    .k-contact-row svg { flex-shrink: 0; margin-top: 2px; }
-    .k-contact-row-label { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; color: #3A4653; }
-    .k-contact-row-value { font-size: 15px; font-weight: 700; color: #1E2A38; }
-    .k-social-row { display: flex; gap: 12px; }
-    .v2-social {
-      width: 44px; height: 44px; border-radius: 10px; background: #F3EEE4;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 900; color: #1E2A38;
-      transition: background .15s, color .15s;
-    }
+    .k-faq-item > summary::-webkit-details-marker { display: none; }
+    .k-faq-item > summary::after { content: '+'; font-size: 24px; font-weight: 700; color: #2C7A5B; flex-shrink: 0; line-height: 1; }
+    .k-faq-item[open] > summary::after { content: '\2212'; }
+    .k-faq-item > summary:hover { color: #2C7A5B; }
+    .k-faq-a { padding: 0 4px 24px; font-size: 15px; line-height: 1.7; color: #3A4653; max-width: 760px; }
   </style>
 </head>
 
@@ -159,8 +149,8 @@
       <a href="direction-k-who.html">WHO IT'S FOR</a>
       <a href="direction-k-pricing.html">PRICING</a>
       <a href="direction-k-sample.html">FREE SAMPLE</a>
-      <a href="direction-k-faq.html">Q&amp;A</a>
-      <a href="direction-k-contact.html" class="is-active" aria-current="page">CONTACT</a>
+      <a href="direction-k-faq.html" class="is-active" aria-current="page">Q&amp;A</a>
+      <a href="direction-k-contact.html">CONTACT</a>
     </nav>
     <a href="https://app.daconnect.com.au" class="k-cta-outline">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
@@ -176,97 +166,99 @@
   </header>
 
   <main>
-    <!-- CONTACT -->
-    <section class="k-band k-band--sand">
-      <div class="k-wrap">
-        <div class="k-contact-head">
-          <div>
-            <h2 class="k-h2" style="margin:0">Contact Our Team</h2>
-          </div>
-          <p style="font-size:16px;color:#3A4653;line-height:1.6;margin:0">Have questions or need more information? Send us a message and we'll get back to you as soon as possible.</p>
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="k-band k-band--white">
+      <div class="k-wrap" style="max-width:900px">
+        <h2 class="k-h2" style="text-align:center">Frequently Asked Questions</h2>
+        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:16px auto 44px;text-align:center">Everything you need to know about DAconnect and how it works for your business.</p>
+        <div class="k-faq">
+          <details class="k-faq-item">
+            <summary>What is sent</summary>
+            <div class="k-faq-a">Each DAconnect email contains a professionally presented, single-page summary of up to 14 carefully selected local businesses. This includes logos, service descriptions, and direct contact details.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Who receives the DAconnect email</summary>
+            <div class="k-faq-a">DAconnect is issued to all relevant, publicly listed Development Application email contacts. Non-applicable government (.gov) addresses are excluded by design.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>When are DAconnect emails sent</summary>
+            <div class="k-faq-a">DAconnect emails are sent shortly after a Development Application is lodged, once the relevant public contact details are available.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>How many emails are sent</summary>
+            <div class="k-faq-a">We send a single email to each development-related contact address only, ensuring full compliance with Australian law.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>How many businesses are included</summary>
+            <div class="k-faq-a">Each DAconnect email includes a maximum of 14 businesses.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Will I be the only business of my type</summary>
+            <div class="k-faq-a">We aim to keep competition low and relevance high. While we can’t always guarantee exclusivity by trade, each development is shared with a strictly limited group of businesses—never more than 14 in total.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Where will my business be placed</summary>
+            <div class="k-faq-a">Business placement within each DAconnect email is randomly ordered for every send. This ensures fairness across campaigns.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Can I cancel at any time</summary>
+            <div class="k-faq-a">Yes. DAconnect operates on a cancel-anytime basis. There are no lock-in contracts.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>What happens when I cancel</summary>
+            <div class="k-faq-a">Once a cancellation is requested, your business will simply be removed from future DAconnect emails. There are no penalties or additional charges.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Is there a minimum term</summary>
+            <div class="k-faq-a">No. There is no minimum term required to use DAconnect.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>What if I’ve paid annually</summary>
+            <div class="k-faq-a">If you choose an annual payment option, it is offered at a discounted rate. Annual payments are non-refundable once the service has commenced.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>How do I know DAconnect is working</summary>
+            <div class="k-faq-a">DAconnect provides clear, tangible, and auditable proof of value. Businesses can see their details being actively presented to real Development Application contacts.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Will I receive confirmation that my business was included</summary>
+            <div class="k-faq-a">Yes. Businesses receive confirmation that their details were included in DAconnect communications.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Can I pay for better placement</summary>
+            <div class="k-faq-a">No. DAconnect does not offer paid placement or prioritisation. Business placement is randomly ordered for each email to ensure fairness.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Do I need any special software or access</summary>
+            <div class="k-faq-a">No. DAconnect does not require any special software, logins, or technical setup. Everything is handled for you.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Is this spam</summary>
+            <div class="k-faq-a">No. DAconnect operates in full compliance with Australian communications and spam legislation. Each Development Application contact address is emailed once only.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Are my business details shared elsewhere</summary>
+            <div class="k-faq-a">No. Your business details are used solely for inclusion in DAconnect communications. Your information is not sold, shared, or used for unrelated marketing purposes.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Can I change my business details later</summary>
+            <div class="k-faq-a">Yes. You can update your business details if they change by contacting the DAconnect team.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Can I be included in more than one council</summary>
+            <div class="k-faq-a">Yes. Businesses can choose to be included across multiple councils, subject to availability and relevance.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Who is DAconnect best suited for</summary>
+            <div class="k-faq-a">DAconnect is best suited for builders, trades, consultants, and suppliers who want early visibility on real Development Applications.</div>
+          </details>
+          <details class="k-faq-item">
+            <summary>Can I approach the development contacts after DAconnect has sent my business card</summary>
+            <div class="k-faq-a">Yes. Once DAconnect has introduced your business, you’re free to follow up independently. DAconnect acts as the first touch—a warm, professional introduction. From there, any direct follow-up is entirely up to you.</div>
+          </details>
         </div>
-        <div class="k-contact-grid">
-          <form onsubmit="return false">
-            <div style="font-size:13.5px;color:#3A4653;margin-bottom:18px">Fields marked * are required.</div>
-            <div class="k-contact-field-grid">
-              <div>
-                <div class="k-contact-label">Full Name *</div>
-                <input class="v2-input k-contact-input" type="text">
-              </div>
-              <div>
-                <div class="k-contact-label">Email Address *</div>
-                <input class="v2-input k-contact-input" type="email">
-              </div>
-              <div>
-                <div class="k-contact-label">Contact Phone (Optional)</div>
-                <input class="v2-input k-contact-input" type="tel">
-              </div>
-              <div>
-                <div class="k-contact-label">Business Name (If applicable)</div>
-                <input class="v2-input k-contact-input" type="text">
-              </div>
-            </div>
-            <div style="margin-bottom:22px">
-              <div class="k-contact-label">Your Message *</div>
-              <textarea class="v2-input k-contact-input" rows="5" placeholder="How can we help you?"></textarea>
-            </div>
-            <button id="v2-contact-btn" type="submit" class="k-btn-green" style="border-radius:8px;padding:16px 34px">Send Message</button>
-          </form>
-          <div class="k-contact-card">
-            <div class="k-contact-details">
-              <div class="k-contact-row">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E2A38" stroke-width="1.6">
-                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                  <path d="M3 7l9 6 9-6"></path>
-                </svg>
-                <div>
-                  <div class="k-contact-row-label">EMAIL US</div>
-                  <a href="mailto:council@daconnect.com.au" class="k-contact-row-value">council@daconnect.com.au</a>
-                </div>
-              </div>
-              <div class="k-contact-row">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E2A38" stroke-width="1.6">
-                  <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path>
-                </svg>
-                <div>
-                  <div class="k-contact-row-label">PHONE</div>
-                  <a href="tel:+61872286805" class="k-contact-row-value">(08) 7228 6805</a>
-                </div>
-              </div>
-              <div class="k-contact-row">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E2A38" stroke-width="1.6">
-                  <circle cx="12" cy="12" r="9"></circle>
-                  <path d="M12 7v5l3.5 2"></path>
-                </svg>
-                <div>
-                  <div class="k-contact-row-label">BUSINESS HOURS</div>
-                  <div class="k-contact-row-value">Monday &ndash; Friday: 9:00 AM &ndash; 5:00 PM AEST</div>
-                </div>
-              </div>
-              <div class="k-contact-row">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E2A38" stroke-width="1.6">
-                  <path d="M4 11l8-7 8 7"></path>
-                  <path d="M6 9.5V20h12V9.5"></path>
-                </svg>
-                <div>
-                  <div class="k-contact-row-label">ABN</div>
-                  <div class="k-contact-row-value">74 168 911 402</div>
-                </div>
-              </div>
-            </div>
-            <div style="font-size:12px;font-weight:800;letter-spacing:1.5px;color:#3A4653;margin-bottom:12px">FOLLOW US</div>
-            <div class="k-social-row">
-              <a href="https://www.facebook.com/da.connect.au" class="v2-social">f</a>
-              <a href="https://www.instagram.com/da.connect.au" class="v2-social">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1E2A38" stroke-width="1.8">
-                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <circle cx="17.2" cy="6.8" r="1" fill="#1E2A38" stroke="none"></circle>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/company/daconnectau" class="v2-social">in</a>
-            </div>
-          </div>
+        <div style="text-align:center;margin-top:48px">
+          <a href="direction-k-pricing.html" class="k-btn-green">View Pricing <span>&rarr;</span></a>
         </div>
       </div>
     </section>
