@@ -105,6 +105,46 @@
       border-radius: 999px; padding: 12px 24px;
     }
   </style>
+  <style>
+    /* Live DA ticker (fixed bottom bar) */
+    body { padding-bottom: 62px; }
+    .k-ticker {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+      background: #101B2A; color: #fff; border-top: 2px solid #2C7A5B;
+      box-shadow: 0 -8px 24px rgba(16,27,42,0.22);
+    }
+    .k-ticker-inner {
+      display: flex; align-items: center; gap: clamp(12px,1.8vw,26px);
+      max-width: 1600px; margin: 0 auto; padding: 9px clamp(14px,4vw,40px);
+    }
+    .k-ticker-title { font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; color: #B08A47; white-space: nowrap; }
+    .k-ticker select {
+      background: #16233A; color: #fff; border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 7px; padding: 7px 10px; font-size: 13px; font-weight: 700; cursor: pointer;
+    }
+    .k-ticker-near { font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #4CAF7D; border: 1px solid #2C7A5B; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+    .k-ticker-stats { display: flex; align-items: center; gap: clamp(12px,1.6vw,22px); white-space: nowrap; }
+    .k-ticker-stat { display: inline-flex; align-items: baseline; gap: 6px; }
+    .k-ticker-stat b { font-size: 17px; font-weight: 900; letter-spacing: -0.3px; color: #fff; }
+    .k-ticker-stat > span { font-size: 10.5px; font-weight: 700; letter-spacing: 1px; color: #8E99A6; text-transform: uppercase; }
+    .k-ticker-feed { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; overflow: hidden; }
+    .k-ticker-live { flex-shrink: 0; font-size: 10.5px; font-weight: 800; letter-spacing: 1.5px; color: #4CAF7D; border: 1px solid #2C7A5B; border-radius: 5px; padding: 4px 9px; display: inline-flex; align-items: center; gap: 7px; }
+    .k-ticker-dot { width: 7px; height: 7px; border-radius: 50%; background: #4CAF7D; display: inline-block; animation: daBlink 1.1s steps(2) infinite; }
+    .k-ticker-feed #v2-feed { flex: 1; min-width: 0; overflow: hidden; }
+    .k-ticker-feed #v2-feed > div { padding: 0 !important; border: 0 !important; align-items: center !important; }
+    .k-ticker-feed #v2-feed > div:not(:first-child) { display: none !important; }
+    .k-ticker-feed #v2-feed > div > div { color: #AEB6C0 !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .k-ticker-feed #v2-feed > div > div > span { color: #fff !important; }
+    /* lift floating controls above the ticker on this page */
+    .k-chat-fab { bottom: 78px; }
+    .v2-chat-box { bottom: 150px; }
+    .k-back { bottom: 72px; }
+    @media (max-width: 720px) {
+      .k-ticker-title, .k-ticker-feed { display: none; }
+      .k-ticker-inner { justify-content: space-between; gap: 10px; }
+      .k-ticker-stat b { font-size: 15px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -259,56 +299,6 @@
     </section>
 
     <!-- DEVELOPMENT APPLICATIONS WE TRACK -->
-    <section class="k-band k-band--white" style="text-align:center">
-      <div class="k-wrap">
-        <div style="font-size:14px;font-weight:800;letter-spacing:3px;color:#B08A47;margin-bottom:12px">LIVE COUNCIL DATA</div>
-        <h2 class="k-h2">Development Applications We Track</h2>
-        <p style="font-size:15.5px;color:#3A4653;margin:0 auto 28px;max-width:640px">All development data from every council in South Australia and the Gold Coast is received by DAconnect.</p>
-        <div class="k-tracker-controls">
-          <span style="font-size:13px;font-weight:800;letter-spacing:1.5px;color:#3A4653">CHANGE LOCATION</span>
-          <select id="v2-region" style="border:1px solid #D5D9DE;border-radius:8px;padding:12px 14px;font-size:14.5px;font-weight:700;color:#1E2A38;background:#fff;cursor:pointer">
-            <option value="sa">South Australia</option>
-            <option value="qld">Gold Coast</option>
-          </select>
-          <span id="v2-near-tag" style="display:none;font-size:10px;font-weight:800;letter-spacing:1px;color:#2C7A5B;border:1px solid #2C7A5B;border-radius:999px;padding:5px 11px">NEAREST YOU</span>
-        </div>
-        <div class="k-tracker-grid">
-          <div class="k-tracker-stats">
-            <div class="k-stat-card">
-              <div>
-                <div style="font-size:13px;font-weight:800;letter-spacing:2px;color:#B08A47;margin-bottom:6px">THE PAST YEAR</div>
-                <div style="font-size:13.5px;font-weight:700;color:#3A4653" class="v2-region-label">South Australia</div>
-              </div>
-              <div style="font-size:42px;font-weight:900;color:#1E2A38;letter-spacing:-1px" id="v2-stat-0">36,911</div>
-            </div>
-            <div class="k-stat-card">
-              <div>
-                <div style="font-size:13px;font-weight:800;letter-spacing:2px;color:#B08A47;margin-bottom:6px">THE PAST MONTH</div>
-                <div style="font-size:13.5px;font-weight:700;color:#3A4653" class="v2-region-label">South Australia</div>
-              </div>
-              <div style="font-size:42px;font-weight:900;color:#1E2A38;letter-spacing:-1px" id="v2-stat-1">1,548</div>
-            </div>
-            <div class="k-stat-card">
-              <div>
-                <div style="font-size:13px;font-weight:800;letter-spacing:2px;color:#B08A47;margin-bottom:6px">THE PAST WEEK</div>
-                <div style="font-size:13.5px;font-weight:700;color:#3A4653" class="v2-region-label">South Australia</div>
-              </div>
-              <div style="font-size:42px;font-weight:900;color:#1E2A38;letter-spacing:-1px" id="v2-stat-2">119</div>
-            </div>
-          </div>
-          <div class="k-feed-panel">
-            <div class="k-feed-head">
-              <div style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:1.5px;color:#1E2A38">
-                <span style="width:8px;height:8px;border-radius:50%;background:#2C7A5B;display:inline-block"></span>LIVE DA TRACKER
-              </div>
-              <span style="font-size:11px;font-weight:700;letter-spacing:1.5px;color:#B08A47;border:1px solid #B08A47;border-radius:6px;padding:4px 10px">SAMPLE</span>
-            </div>
-            <div style="flex:1" id="v2-feed"></div>
-            <div class="k-feed-foot"><span style="width:8px;height:14px;background:#2C7A5B;display:inline-block;animation:daBlink 1.1s steps(2) infinite"></span>awaiting next dispatch</div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="k-footer">
@@ -357,6 +347,27 @@
       </div>
     </div>
   </footer>
+
+  <!-- LIVE DA TICKER (fixed bottom bar) -->
+  <aside class="k-ticker" aria-label="Live development application tracker">
+    <div class="k-ticker-inner">
+      <span class="k-ticker-title">DEVELOPMENT APPLICATIONS WE TRACK</span>
+      <select id="v2-region" aria-label="Change location">
+        <option value="sa">South Australia</option>
+        <option value="qld">Gold Coast</option>
+      </select>
+      <span id="v2-near-tag" class="k-ticker-near" style="display:none">NEAREST YOU</span>
+      <div class="k-ticker-stats">
+        <span class="k-ticker-stat"><b id="v2-stat-0">36,911</b><span>past year</span></span>
+        <span class="k-ticker-stat"><b id="v2-stat-1">1,548</b><span>past month</span></span>
+        <span class="k-ticker-stat"><b id="v2-stat-2">119</b><span>past week</span></span>
+      </div>
+      <div class="k-ticker-feed">
+        <span class="k-ticker-live"><span class="k-ticker-dot"></span>LIVE</span>
+        <div id="v2-feed"></div>
+      </div>
+    </div>
+  </aside>
 
   <div class="v2-chat-box" id="v2-chat-box" hidden>
     <div class="v2-chat-head">
