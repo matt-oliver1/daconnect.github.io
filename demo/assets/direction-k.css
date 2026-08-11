@@ -152,7 +152,7 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
 .k-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(16px, 2vw, 30px);
   margin: 0 auto;
   font-size: 14px;
   font-weight: 700;

@@ -120,6 +120,12 @@
     .k-tile-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 22px 20px; }
     .k-tile-title { font-size: 15.5px; font-weight: 800; color: #fff; }
     .k-tile-sub { font-size: 13px; color: #AEB6C0; margin-top: 6px; line-height: 1.5; }
+    .k-tile-grid {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: clamp(16px, 1.6vw, 24px); max-width: 1180px; margin: 0 auto;
+    }
+    .k-tile { flex: 1 1 250px; max-width: 290px; min-height: 300px; }
+    @media (max-width: 900px) { .k-tile { flex-basis: 100%; max-width: 380px; min-height: 0; } }
 
     .k-who-cta { margin-top: 48px; text-align: center; }
 
@@ -154,6 +160,7 @@
       <div class="k-logo-kicker">LEAD GENERATION SERVICES</div>
     </div>
     <nav class="k-nav">
+      <a href="direction-k.html">HOME</a>
       <a href="direction-k-how.html">HOW IT WORKS</a>
       <a href="direction-k-who.html" class="is-active" aria-current="page">WHO IT'S FOR</a>
       <a href="direction-k-pricing.html">PRICING</a>
@@ -181,7 +188,7 @@
         <div class="k-who-kicker">WHO IT'S FOR</div>
         <h2 class="k-h2" style="color:#fff">Who Benefits from DAconnect</h2>
         <p class="k-who-lead">Quote early to win the work.</p>
-        <div class="k-grid">
+        <div class="k-tile-grid">
           <div class="k-tile">
             <img src="../images/demo/industry-earthworks-v2.png" alt="Earthworks | Civil | Demolition" style="background:#102132">
             <div class="k-tile-body">
