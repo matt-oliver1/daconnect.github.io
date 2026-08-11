@@ -27,8 +27,9 @@
     }
 
     /* ---------- Pricing ---------- */
+    .k-pricing-band { padding-top: clamp(18px, 3vw, 32px); padding-bottom: clamp(24px, 4vw, 44px); }
     .k-pricing-grid {
-      display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;
+      display: grid; grid-template-columns: 1fr; gap: clamp(20px, 3vw, 32px); align-items: center;
       max-width: 620px; margin: 0 auto; text-align: center;
     }
     .k-pricing-intro { text-align: center; }
@@ -89,7 +90,7 @@
 
   <main>
     <!-- PRICING -->
-    <section class="k-band k-band--sand">
+    <section class="k-band k-band--sand k-pricing-band">
       <div class="k-wrap">
         <div class="k-pricing-grid">
           <div class="k-pricing-intro">
