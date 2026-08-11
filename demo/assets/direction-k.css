@@ -330,7 +330,7 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .k-burger { display: inline-flex; }
+  .k-burger { display: inline-flex; margin-left: auto; }
   .k-nav { display: none; }
   .k-header > .k-cta-solid { display: none; }
   header.nav-open .k-nav {
