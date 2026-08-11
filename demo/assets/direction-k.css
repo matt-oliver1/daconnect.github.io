@@ -256,6 +256,14 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 26px rgba(44, 122, 91, .45);
+  animation: kChatGlow 2.4s ease-in-out infinite;
+}
+@keyframes kChatGlow {
+  0%, 100% { box-shadow: 0 10px 26px rgba(44, 122, 91, .45), 0 0 0 0 rgba(44, 122, 91, .55); }
+  50%      { box-shadow: 0 12px 30px rgba(44, 122, 91, .6), 0 0 0 14px rgba(44, 122, 91, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .k-chat-fab { animation: none; }
 }
 .k-chat-fab:hover { background: #256A4F; }
 
