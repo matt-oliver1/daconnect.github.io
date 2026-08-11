@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Direction K — shared stylesheet
+   Fluid, responsive re-implementation of Direction G's look.
+   No fixed-width canvas, no zoom scaler. Safe from 360px to 2560px wide.
+   Brand: green only. NO blue.
+   ========================================================================== */
+
+:root {
+  --k-green: #2C7A5B;
+  --k-green-hover: #256A4F;
+  --k-bright: #4CAF7D;
+  --k-gold: #B08A47;
+  --k-navy: #101B2A;
+  --k-ink: #1E2A38;
+  --k-sand: #F7F4EF;
+  --k-border: #EEE9DE;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #1E2A38;
+  background: #fff;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, select, textarea {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+input::placeholder, textarea::placeholder { color: #9AA3AE; }
+
+@keyframes daBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Layout primitives ---------- */
+.k-wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.k-band {
+  padding: clamp(48px, 7vw, 90px) 0;
+}
+.k-band--sand { background: #F7F4EF; }
+.k-band--navy { background: #101B2A; color: #fff; }
+.k-band--white { background: #fff; }
+
+.k-h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
+}
+
+.k-grid {
+  display: grid;
+  gap: clamp(16px, 2vw, 28px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Optional helper: two-column sections (hero, contact, pricing) that
+   collapse to one column on small screens. Not part of the strict
+   contract, but useful for pages porting G's two-column layouts. */
+.k-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .k-two-col { grid-template-columns: 1fr; }
+}
+
+/* ---------- Buttons ---------- */
+.k-btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #2C7A5B;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .15s;
+  box-shadow: 0 8px 18px rgba(44, 122, 91, 0.28);
+}
+.k-btn-green:hover { background: #256A4F; color: #fff; }
+
+.k-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  color: #2C7A5B;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 1.5px solid #2C7A5B;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.k-cta-outline:hover { background: #2C7A5B; color: #fff; }
+.k-cta-outline:hover svg { stroke: #fff; }
+
+/* Ported micro-interactions from G, kept under G's original class names
+   so page markup can reuse them verbatim. */
+.v2-input:focus { border: 1px solid #2C7A5B !important; }
+.v2-social:hover { background: #B08A47 !important; color: #fff !important; }
+.v2-social:hover svg { stroke: #fff !important; }
+
+/* ---------- Header / nav ---------- */
+.k-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 16px clamp(20px, 5vw, 48px);
+  background: #fff;
+  border-bottom: 1px solid #EEE9DE;
+  position: relative;
+  z-index: 6;
+}
+
+.k-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.k-nav a {
+  color: #1E2A38;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.k-nav a:hover { color: #2C7A5B; }
+.k-nav a.is-active { color: #2C7A5B; border-bottom-color: #2C7A5B; }
+
+.k-burger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  margin: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #1E2A38;
+}
+
+.k-back {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(16, 27, 42, .96);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(16, 27, 42, .3);
+}
+.k-back:hover { background: #1B2839; color: #fff; }
+
+/* ---------- Footer / trust strip ---------- */
+.k-footer {
+  background: #101B2A;
+  color: #AEB6C0;
+  padding: 64px 0 36px;
+}
+.k-footer a { color: #AEB6C0; text-decoration: none; }
+.k-footer a:hover { color: #fff; }
+
+.k-trust {
+  background: #101B2A;
+  color: #fff;
+  padding: 34px 0;
+  text-align: center;
+}
+
+/* ---------- Chat widget ---------- */
+.k-chat-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 81;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: #2C7A5B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(44, 122, 91, .45);
+  animation: v2chatGlow 2.2s ease-in-out infinite;
+}
+.k-chat-fab:hover { background: #256A4F; }
+@keyframes v2chatGlow {
+  0%, 100% { box-shadow: 0 10px 26px rgba(44, 122, 91, .45), 0 0 0 0 rgba(44, 122, 91, .55); }
+  50%      { box-shadow: 0 12px 30px rgba(44, 122, 91, .6), 0 0 0 14px rgba(44, 122, 91, 0); }
+}
+
+.v2-chat-box, .v2-chat-box * { box-sizing: border-box; }
+.v2-chat-box {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  z-index: 80;
+  width: 340px;
+  max-width: calc(100vw - 44px);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #EAE3D4;
+  box-shadow: 0 24px 60px rgba(16, 27, 42, .3);
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+.v2-chat-box[hidden] { display: none; }
+.v2-chat-head {
+  background: #101B2A;
+  color: #fff;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.v2-chat-id { display: flex; align-items: center; gap: 12px; }
+.v2-chat-avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: #2C7A5B;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.v2-chat-title { font-size: 15px; font-weight: 800; }
+.v2-chat-sub {
+  font-size: 11.5px; color: #AEB6C0; display: flex; align-items: center; gap: 6px; margin-top: 2px;
+}
+.v2-chat-sub span { width: 7px; height: 7px; border-radius: 50%; background: #4CAF7D; }
+.v2-chat-close {
+  background: none; border: none; color: #AEB6C0; font-size: 24px; line-height: 1; cursor: pointer; padding: 0 2px;
+}
+.v2-chat-close:hover { color: #fff; }
+.v2-chat-body {
+  background: #F7F4EF; padding: 18px; display: flex; flex-direction: column; gap: 10px;
+  max-height: 320px; overflow-y: auto;
+}
+.v2-chat-msg {
+  background: #fff; border-radius: 4px 14px 14px 14px; padding: 11px 14px; font-size: 14px; line-height: 1.5;
+  color: #1E2A38; box-shadow: 0 2px 8px rgba(16, 27, 42, .08); max-width: 88%; align-self: flex-start;
+}
+.v2-chat-msg--me {
+  background: #2C7A5B; color: #fff; align-self: flex-end; border-radius: 14px 4px 14px 14px;
+  box-shadow: 0 4px 12px rgba(44, 122, 91, .28);
+}
+.v2-chat-quick { display: flex; flex-wrap: wrap; gap: 8px; }
+.v2-chat-quick button {
+  background: #fff; border: 1px solid #2C7A5B; color: #2C7A5B; border-radius: 999px; padding: 8px 14px;
+  font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit;
+}
+.v2-chat-quick button:hover { background: #2C7A5B; color: #fff; }
+.v2-chat-input { display: flex; gap: 8px; padding: 12px; background: #fff; border-top: 1px solid #EAE3D4; }
+.v2-chat-input input {
+  flex: 1; min-width: 0; border: 1px solid #D5D9DE; border-radius: 10px; padding: 11px 14px;
+  font-size: 14px; outline: none; color: #1E2A38; font-family: inherit;
+}
+.v2-chat-input input:focus { border-color: #2C7A5B; }
+.v2-chat-send {
+  background: #2C7A5B; color: #fff; border: none; border-radius: 10px; width: 44px; flex-shrink: 0;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.v2-chat-send:hover { background: #256A4F; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .k-burger { display: inline-flex; }
+  .k-nav { display: none; }
+  header.nav-open .k-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #EEE9DE;
+    padding: 12px 24px;
+    gap: 14px;
+    z-index: 20;
+  }
+  header.nav-open .k-nav a { padding: 8px 2px; width: 100%; }
+
+  .k-h2 { letter-spacing: -0.3px; }
+
+  .k-chat-fab { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+  .v2-chat-box { right: 16px; bottom: 82px; width: calc(100vw - 32px); }
+}
+
+@media (max-width: 480px) {
+  .k-band { padding: clamp(36px, 9vw, 60px) 0; }
+}
