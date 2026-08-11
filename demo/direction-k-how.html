@@ -92,12 +92,13 @@
     .k-feed-foot { display: flex; align-items: center; gap: 10px; padding: 14px 20px; font-size: 12.5px; color: #6B6252; }
 
     /* ---------- How it works ---------- */
+    .k-how-band { padding-top: clamp(16px, 3vw, 32px); }
     .k-how-step {
       background: #fff; border: 1px solid #EAE3D4; border-radius: 14px; overflow: hidden;
       display: flex; flex-direction: column;
     }
-    .k-how-step img { width: 100%; height: 190px; object-fit: cover; object-position: top; display: block; background: #E9E2D3; }
-    .k-how-step-body { padding: 22px 22px 26px; }
+    .k-how-step img { width: 100%; height: 246px; object-fit: cover; object-position: top; display: block; background: #E9E2D3; }
+    .k-how-step-body { flex: 1; padding: 26px 24px 32px; }
     .k-how-step-num {
       width: 36px; height: 36px; border-radius: 50%; background: #B08A47; color: #fff;
       font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
@@ -154,10 +155,10 @@
 
   <main>
     <!-- HOW IT WORKS -->
-    <section class="k-band k-band--sand">
+    <section class="k-band k-band--sand k-how-band">
       <div class="k-wrap" style="text-align:center">
         <h2 class="k-h2">From sign-up to your first monthly report</h2>
-        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:0 auto 48px">All development data from every council in South Australia and the Gold Coast is received by DAconnect.</p>
+        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:0 auto 40px">All development data from every council in South Australia and the Gold Coast is received by DAconnect.</p>
         <div class="k-grid" style="text-align:left">
           <div class="k-how-step">
             <img src="../images/demo/how_it_works-step-1-v2.png" alt="Choose what Council you want to work in">
