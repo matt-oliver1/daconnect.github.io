@@ -235,13 +235,8 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 26px rgba(44, 122, 91, .45);
-  animation: v2chatGlow 2.2s ease-in-out infinite;
 }
 .k-chat-fab:hover { background: #256A4F; }
-@keyframes v2chatGlow {
-  0%, 100% { box-shadow: 0 10px 26px rgba(44, 122, 91, .45), 0 0 0 0 rgba(44, 122, 91, .55); }
-  50%      { box-shadow: 0 12px 30px rgba(44, 122, 91, .6), 0 0 0 14px rgba(44, 122, 91, 0); }
-}
 
 .v2-chat-box, .v2-chat-box * { box-sizing: border-box; }
 .v2-chat-box {
