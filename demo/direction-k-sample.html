@@ -109,10 +109,11 @@
     /* Free Sample — split showcase */
     .k-sample-split { display: grid; grid-template-columns: 1.05fr 0.95fr; min-height: calc(100vh - 80px); }
     .k-sample-left {
-      background: #2C7A5B; color: #fff; display: flex; align-items: center;
+      background: #101B2A; color: #fff; display: flex; align-items: center;
       padding: clamp(40px, 6vw, 84px) clamp(24px, 5vw, 72px);
     }
     .k-sample-left-inner { max-width: 520px; margin-left: auto; width: 100%; }
+    .k-sample-rule { width: 60px; height: 5px; border-radius: 3px; background: #B08A47; margin: 0 0 22px; }
     .k-sample-left h1 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; font-weight: 900; letter-spacing: -1px; margin: 0 0 18px; }
     .k-sample-left .lead { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.92); margin: 0 0 30px; }
     .k-sample-form { display: flex; flex-direction: column; gap: 12px; max-width: 440px; }
@@ -125,11 +126,11 @@
     .k-sample-form input:focus { border-color: #fff; background: rgba(255,255,255,0.18); }
     .k-sample-cta {
       align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; margin-top: 4px;
-      background: #fff; color: #2C7A5B; font-size: 15px; font-weight: 800; letter-spacing: 0.3px;
+      background: #B08A47; color: #101B2A; font-size: 15px; font-weight: 800; letter-spacing: 0.3px;
       border: none; border-radius: 9px; padding: 15px 28px; cursor: pointer;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.16); transition: transform .15s, box-shadow .15s, color .15s;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22); transition: transform .15s, box-shadow .15s, background .15s;
     }
-    .k-sample-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.22); color: #256A4F; }
+    .k-sample-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.28); background: #C79A4F; }
     .k-sample-note { font-size: 13.5px; color: rgba(255,255,255,0.85); margin: 18px 0 0; }
     .k-sample-note a { color: #fff; text-decoration: underline; font-weight: 700; }
     .k-sample-right {
@@ -138,7 +139,7 @@
     }
     .k-sample-right::before {
       content: ''; position: absolute; width: 440px; height: 440px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(44,122,91,0.12), rgba(44,122,91,0)); top: -90px; right: -90px;
+      background: radial-gradient(circle, rgba(176,138,71,0.16), rgba(176,138,71,0)); top: -90px; right: -90px;
     }
     .k-sample-right img {
       position: relative; width: 100%; max-width: 560px; display: block; border-radius: 14px;
@@ -188,6 +189,7 @@
     <section class="k-sample-split">
       <div class="k-sample-left">
         <div class="k-sample-left-inner">
+          <div class="k-sample-rule"></div>
           <h1>Receive a Sample of the Digital Business Card</h1>
           <p class="lead">See exactly what a developer receives when a development application is lodged &mdash; the exclusive list of local trade partners' digital business cards. We'll send you a free sample before you subscribe.</p>
           <form class="k-sample-form" onsubmit="return false">

@@ -120,18 +120,27 @@
     }
   </style>
   <style>
-    .k-faq { display: flex; flex-direction: column; border-top: 1px solid #EAE3D4; max-width: 860px; margin: 0 auto; text-align: left; }
-    .k-faq-item { border-bottom: 1px solid #EAE3D4; }
+    .k-faq-rule { width: 66px; height: 5px; border-radius: 3px; background: #B08A47; margin: 22px auto 40px; }
+    .k-faq { display: flex; flex-direction: column; gap: 14px; max-width: 820px; margin: 0 auto; text-align: left; }
+    .k-faq-item {
+      background: #fff; border: 1px solid #EAE3D4; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 6px 18px rgba(16,27,42,0.05); transition: box-shadow .18s ease, border-color .18s ease;
+    }
+    .k-faq-item[open] { border-color: #2C7A5B; box-shadow: 0 14px 32px rgba(16,27,42,0.10); }
     .k-faq-item > summary {
-      list-style: none; cursor: pointer; padding: 20px 4px; gap: 16px;
+      list-style: none; cursor: pointer; padding: 20px 24px; gap: 18px;
       font-size: 16px; font-weight: 800; color: #101B2A;
       display: flex; justify-content: space-between; align-items: center;
     }
     .k-faq-item > summary::-webkit-details-marker { display: none; }
-    .k-faq-item > summary::after { content: '+'; font-size: 24px; font-weight: 700; color: #2C7A5B; flex-shrink: 0; line-height: 1; }
-    .k-faq-item[open] > summary::after { content: '\2212'; }
+    .k-faq-item > summary::after {
+      content: '+'; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+      background: #EAF3EE; color: #2C7A5B; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700; line-height: 1; transition: background .18s, color .18s;
+    }
+    .k-faq-item[open] > summary::after { content: '\2212'; background: #2C7A5B; color: #fff; }
     .k-faq-item > summary:hover { color: #2C7A5B; }
-    .k-faq-a { padding: 0 4px 24px; font-size: 15px; line-height: 1.7; color: #3A4653; max-width: 760px; }
+    .k-faq-a { padding: 0 24px 24px; font-size: 15px; line-height: 1.7; color: #3A4653; }
   </style>
 </head>
 
@@ -171,7 +180,8 @@
     <section class="k-band k-band--sand">
       <div class="k-wrap" style="max-width:900px">
         <h2 class="k-h2" style="text-align:center">Frequently Asked Questions</h2>
-        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:16px auto 44px;text-align:center">Everything you need to know about DAconnect and how it works for your business.</p>
+        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:16px auto 0;text-align:center">Everything you need to know about DAconnect and how it works for your business.</p>
+        <div class="k-faq-rule"></div>
         <div class="k-faq">
           <details class="k-faq-item">
             <summary>What is sent</summary>
