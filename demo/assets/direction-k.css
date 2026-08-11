@@ -145,8 +145,10 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
   padding: 16px clamp(20px, 5vw, 48px);
   background: #fff;
   border-bottom: 1px solid #EEE9DE;
-  position: relative;
-  z-index: 6;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 18px rgba(16, 27, 42, 0.06);
 }
 
 .k-nav {
