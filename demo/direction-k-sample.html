@@ -105,6 +105,51 @@
       border-radius: 999px; padding: 12px 24px;
     }
   </style>
+  <style>
+    /* Free Sample — split showcase */
+    .k-sample-split { display: grid; grid-template-columns: 1.05fr 0.95fr; min-height: calc(100vh - 80px); }
+    .k-sample-left {
+      background: #2C7A5B; color: #fff; display: flex; align-items: center;
+      padding: clamp(40px, 6vw, 84px) clamp(24px, 5vw, 72px);
+    }
+    .k-sample-left-inner { max-width: 520px; margin-left: auto; width: 100%; }
+    .k-sample-left h1 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; font-weight: 900; letter-spacing: -1px; margin: 0 0 18px; }
+    .k-sample-left .lead { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.92); margin: 0 0 30px; }
+    .k-sample-form { display: flex; flex-direction: column; gap: 12px; max-width: 440px; }
+    .k-sample-form input {
+      width: 100%; box-sizing: border-box; border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12); color: #fff; border-radius: 9px; padding: 15px 16px;
+      font-size: 14.5px; outline: none;
+    }
+    .k-sample-form input::placeholder { color: rgba(255,255,255,0.72); }
+    .k-sample-form input:focus { border-color: #fff; background: rgba(255,255,255,0.18); }
+    .k-sample-cta {
+      align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; margin-top: 4px;
+      background: #fff; color: #2C7A5B; font-size: 15px; font-weight: 800; letter-spacing: 0.3px;
+      border: none; border-radius: 9px; padding: 15px 28px; cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16); transition: transform .15s, box-shadow .15s, color .15s;
+    }
+    .k-sample-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.22); color: #256A4F; }
+    .k-sample-note { font-size: 13.5px; color: rgba(255,255,255,0.85); margin: 18px 0 0; }
+    .k-sample-note a { color: #fff; text-decoration: underline; font-weight: 700; }
+    .k-sample-right {
+      position: relative; background: #F7F4EF; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: clamp(30px, 4vw, 64px); overflow: hidden;
+    }
+    .k-sample-right::before {
+      content: ''; position: absolute; width: 440px; height: 440px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(44,122,91,0.12), rgba(44,122,91,0)); top: -90px; right: -90px;
+    }
+    .k-sample-right img {
+      position: relative; width: 100%; max-width: 560px; display: block; border-radius: 14px;
+      border: 1px solid #EAE3D4; box-shadow: 0 30px 70px rgba(16,27,42,0.28);
+    }
+    .k-sample-cap { position: relative; font-size: 13px; font-weight: 700; color: #3A4653; margin: 18px 0 0; max-width: 460px; text-align: center; }
+    @media (max-width: 900px) {
+      .k-sample-split { grid-template-columns: 1fr; min-height: 0; }
+      .k-sample-left-inner { margin: 0 auto; }
+    }
+  </style>
 </head>
 
 <body>
@@ -139,35 +184,23 @@
   </header>
 
   <main>
-    <!-- RECEIVE A SAMPLE OF THE DIGITAL BUSINESS CARD -->
-    <section class="k-band k-band--white">
-      <div class="k-wrap">
-        <h2 class="k-h2" style="text-align:center">Receive a Sample of the Digital Business Card</h2>
-        <p style="font-size:15.5px;color:#3A4653;max-width:640px;margin:0 auto 44px;text-align:center">See exactly what a developer receives
-          when a development application is lodged &mdash; the exclusive list of local trade partners' digital business
-          cards. We'll send you a free sample before you subscribe.</p>
-        <div class="k-two-col">
-          <div style="background:#F7F4EF;border:1px solid #EAE3D4;border-radius:16px;padding:clamp(24px,3vw,36px)">
-            <form onsubmit="return false" style="display:flex;flex-direction:column;gap:12px">
-              <input class="v2-input" type="text" placeholder="Your Name"
-                style="width:100%;box-sizing:border-box;border:1px solid #D5D9DE;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1E2A38">
-              <input class="v2-input" type="email" placeholder="Your Email"
-                style="width:100%;box-sizing:border-box;border:1px solid #D5D9DE;border-radius:8px;padding:14px 16px;font-size:14.5px;outline:none;color:#1E2A38">
-              <button id="v2-sample-btn2" type="submit" class="k-btn-green" style="align-self:flex-start">Get
-                Free Sample</button>
-            </form>
-            <p style="font-size:13.5px;color:#3A4653;margin-top:16px">Prefer email? Contact us at <a
-                href="mailto:council@daconnect.com.au"
-                style="color:#1E2A38;text-decoration:underline;font-weight:700">council@daconnect.com.au</a></p>
-          </div>
-          <figure style="margin:0">
-            <img src="../images/demo/digital_businesscard.png"
-              alt="Exclusive list of local trade partners' digital business cards sent to a development applicant"
-              style="width:100%;max-width:100%;display:block;border-radius:12px;box-shadow:0 14px 36px rgba(16,27,42,0.16)">
-            <figcaption style="font-size:13.5px;font-weight:700;color:#3A4653;margin-top:14px">The exclusive list of digital
-              business cards sent to a development applicant</figcaption>
-          </figure>
+    <!-- RECEIVE A SAMPLE — split showcase -->
+    <section class="k-sample-split">
+      <div class="k-sample-left">
+        <div class="k-sample-left-inner">
+          <h1>Receive a Sample of the Digital Business Card</h1>
+          <p class="lead">See exactly what a developer receives when a development application is lodged &mdash; the exclusive list of local trade partners' digital business cards. We'll send you a free sample before you subscribe.</p>
+          <form class="k-sample-form" onsubmit="return false">
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <button id="v2-sample-btn2" type="submit" class="k-sample-cta">Get Free Sample <span>&rarr;</span></button>
+          </form>
+          <p class="k-sample-note">Prefer email? Contact us at <a href="mailto:council@daconnect.com.au">council@daconnect.com.au</a></p>
         </div>
+      </div>
+      <div class="k-sample-right">
+        <img src="../images/demo/digital_businesscard.png" alt="Exclusive list of local trade partners' digital business cards sent to a development applicant">
+        <p class="k-sample-cap">The exclusive list of digital business cards sent to a development applicant</p>
       </div>
     </section>
   </main>
