@@ -131,6 +131,25 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
 .k-cta-outline:hover { background: #2C7A5B; color: #fff; }
 .k-cta-outline:hover svg { stroke: #fff; }
 
+.k-cta-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #2C7A5B;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  border: 1.5px solid #2C7A5B;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.k-cta-solid:hover { background: #256A4F; border-color: #256A4F; color: #fff; }
+
 /* Ported micro-interactions from G, kept under G's original class names
    so page markup can reuse them verbatim. */
 .v2-input:focus { border: 1px solid #2C7A5B !important; }
@@ -313,6 +332,7 @@ input::placeholder, textarea::placeholder { color: #9AA3AE; }
 @media (max-width: 900px) {
   .k-burger { display: inline-flex; }
   .k-nav { display: none; }
+  .k-header > .k-cta-solid { display: none; }
   header.nav-open .k-nav {
     display: flex;
     flex-direction: column;
